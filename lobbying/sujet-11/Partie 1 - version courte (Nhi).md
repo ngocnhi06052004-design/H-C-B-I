@@ -9,7 +9,7 @@ subtitle: "Version courte avec sources (norme ISO 690, appel numérique)"
 
 ### 1.1. Le contexte : l'essor de l'IA générative
 
-Le 30 novembre 2022, OpenAI lance ChatGPT, qui atteint environ 100 millions d'utilisateurs en deux mois, selon une estimation de la banque UBS [1]. Ces outils reposent sur des « modèles d'IA à usage général » (en anglais *general-purpose AI*, ou GPAI), comme GPT-4 (OpenAI), Gemini (Google), Llama (Meta) ou les modèles de Mistral AI : un seul modèle peut accomplir des tâches très variées et servir de base à des milliers d'applications. Ce marché est dominé par quelques entreprises, surtout américaines : en 2023, 61 modèles d'IA notables venaient des États-Unis, contre 21 de l'Union européenne [2]. En Europe, les principaux concurrents sont alors Mistral AI (France) et Aleph Alpha (Allemagne).
+Le 30 novembre 2022, OpenAI lance ChatGPT, qui atteint environ 100 millions d'utilisateurs en deux mois, selon une estimation de la banque UBS [1]. Ces outils reposent sur des « modèles d'IA à usage général » (en anglais *general-purpose AI*, ou GPAI), comme GPT-4, Gemini ou Llama : un seul modèle peut accomplir des tâches très variées et servir de base à des milliers d'applications. Ce marché est dominé par quelques entreprises, surtout américaines : en 2023, 61 modèles d'IA notables venaient des États-Unis, contre 21 de l'Union européenne [2]. En Europe, les principaux concurrents sont alors Mistral AI (France) et Aleph Alpha (Allemagne).
 
 ### 1.2. Le problème public
 
@@ -64,7 +64,7 @@ Cette question a opposé les institutions européennes, plusieurs États membres
 
 ### 1.1. Bối cảnh: sự bùng nổ của AI tạo sinh
 
-Ngày 30/11/2022, OpenAI ra mắt ChatGPT, đạt khoảng 100 triệu người dùng sau hai tháng, theo ước tính của ngân hàng UBS [1]. Các công cụ này dựa trên "mô hình AI đa dụng" (tiếng Anh: *general-purpose AI*, viết tắt GPAI), như GPT-4 (OpenAI), Gemini (Google), Llama (Meta) hay các mô hình của Mistral AI: một mô hình duy nhất có thể làm rất nhiều việc khác nhau và làm nền cho hàng nghìn ứng dụng. Thị trường này do một số ít công ty, chủ yếu của Mỹ, chi phối: năm 2023, có 61 mô hình AI đáng chú ý đến từ Mỹ, so với 21 mô hình từ Liên minh châu Âu [2]. Ở châu Âu, các đối thủ chính lúc đó là Mistral AI (Pháp) và Aleph Alpha (Đức).
+Ngày 30/11/2022, OpenAI ra mắt ChatGPT, đạt khoảng 100 triệu người dùng sau hai tháng, theo ước tính của ngân hàng UBS [1]. Các công cụ này dựa trên "mô hình AI đa dụng" (tiếng Anh: *general-purpose AI*, viết tắt GPAI), như GPT-4, Gemini hay Llama: một mô hình duy nhất có thể làm rất nhiều việc khác nhau và làm nền cho hàng nghìn ứng dụng. Thị trường này do một số ít công ty, chủ yếu của Mỹ, chi phối: năm 2023, có 61 mô hình AI đáng chú ý đến từ Mỹ, so với 21 mô hình từ Liên minh châu Âu [2]. Ở châu Âu, các đối thủ chính lúc đó là Mistral AI (Pháp) và Aleph Alpha (Đức).
 
 ### 1.2. Vấn đề công
 
