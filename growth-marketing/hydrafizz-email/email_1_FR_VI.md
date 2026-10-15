@@ -1,8 +1,8 @@
-# Exercice portfolio HydraFizz : Email 1 (v3, ngắn + lịch sự)
+# Exercice portfolio HydraFizz : Email 1 (v4, gửi kèm PDF)
 
 - **Gửi tới:** benjamin.dahan@ffbde.fr
 - **Gửi lúc:** buổi tối. Nên gửi **tối thứ Năm 15/10, khoảng 20h**. Nếu chưa kịp thì **tối thứ Sáu 16/10, khoảng 19h**. Hạn chót: trước 18/10.
-- **Cần thay trước khi gửi:** `[lien Canva]` và ảnh bìa.
+- **Gửi kèm:** `Proposition_HydraFizz_Ngoc-Nhi-LUU.pdf` (đính kèm) + ảnh bìa chèn trong thân email (không cần link Canva).
 - **Yêu cầu:** gửi buổi tối, ngắn gọn nhưng lịch sự và mạch lạc; objet rõ ràng, có thông tin về Nhi, và chạm tới người đọc.
 
 ---
@@ -25,10 +25,9 @@ Bonjour Monsieur Dahan,
 
 Étudiante en Master Communication à l'EFAP Paris, j'ai appris que vous recherchiez un(e) chargé(e) de communication et marketing junior pour vous assister au quotidien sur HydraFizz. Ce poste m'intéresse vivement.
 
-Plutôt qu'une lettre de motivation, je vous ai préparé 3 idées pour HydraFizz, présentées en 5 slides :
+Plutôt qu'une lettre de motivation, je vous ai préparé 3 idées pour HydraFizz, à découvrir dans le PDF ci-joint :
 
-**[IMAGE : slide de couverture, cliquable vers le lien Canva]**
-👉 Voir les 5 slides : [lien Canva]
+**[IMAGE : slide de couverture]**
 
 Mes expériences en organisation d'événements, notamment au ministère des Affaires étrangères du Vietnam, et en création de contenus vidéo à Hanoi TV me permettraient d'être rapidement opérationnelle à vos côtés.
 
@@ -40,9 +39,9 @@ Bien cordialement,
 
 **Ngoc Nhi LUU**
 Étudiante en Master Communication – EFAP Paris
-06 68 57 73 85 · [Portfolio](https://ngocnhidavhn.wixstudio.com/creative-portfolio)
+06 68 57 73 85
 
-P.-S. J'ai goûté l'échantillon Hydra Citron : « Diluez, buvez, rayonnez », promesse tenue !
+**Pièce jointe :** Proposition_HydraFizz_Ngoc-Nhi-LUU.pdf
 
 ---
 
@@ -54,10 +53,9 @@ Chào ông Dahan,
 
 Là sinh viên Thạc sĩ Truyền thông tại EFAP Paris, tôi được biết ông đang tìm một chuyên viên truyền thông và marketing junior để hỗ trợ ông hằng ngày cho HydraFizz. Tôi rất quan tâm đến vị trí này.
 
-Thay vì một lá thư xin việc, tôi đã chuẩn bị cho ông 3 ý tưởng dành cho HydraFizz, trình bày trong 5 slide:
+Thay vì một lá thư xin việc, tôi đã chuẩn bị cho ông 3 ý tưởng dành cho HydraFizz, mời ông xem trong file PDF đính kèm:
 
-**[ẢNH: slide bìa, bấm vào sẽ mở link Canva]**
-👉 Xem 5 slide: [link Canva]
+**[ẢNH: slide bìa]**
 
 Kinh nghiệm tổ chức sự kiện, đặc biệt tại Bộ Ngoại giao Việt Nam, và sản xuất nội dung video tại Đài Phát thanh – Truyền hình Hà Nội sẽ giúp tôi nhanh chóng bắt tay vào việc bên cạnh ông.
 
@@ -69,9 +67,9 @@ Trân trọng,
 
 **Lưu Ngọc Nhi**
 Sinh viên Thạc sĩ Truyền thông, EFAP Paris
-06 68 57 73 85 · Portfolio
+06 68 57 73 85
 
-T.B. Tôi đã thử gói mẫu Hydra Citron: « Pha, uống, rạng rỡ », đúng như lời hứa!
+**Tệp đính kèm:** Proposition_HydraFizz_Ngoc-Nhi-LUU.pdf
 
 ---
 
