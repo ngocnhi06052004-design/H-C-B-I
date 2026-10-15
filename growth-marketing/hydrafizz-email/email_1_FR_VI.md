@@ -33,7 +33,7 @@ Mes expériences en organisation d'événements, notamment au ministère des Aff
 
 Accepteriez-vous de m'accorder 15 minutes, le jeudi 22 ou le vendredi 23 octobre, pour en échanger ? Je m'adapterai volontiers à vos disponibilités.
 
-Je vous remercie de votre attention et vous souhaite un excellent week-end.
+Je vous remercie de votre attention et vous souhaite une excellente fin de semaine.
 
 Bien cordialement,
 
@@ -61,7 +61,7 @@ Kinh nghiệm tổ chức sự kiện, đặc biệt tại Bộ Ngoại giao Vi�
 
 Ông có thể dành cho tôi 15 phút vào thứ Năm 22 hoặc thứ Sáu 23 tháng 10 để trao đổi không? Tôi sẵn sàng sắp xếp theo lịch của ông.
 
-Cảm ơn ông đã dành thời gian đọc thư và chúc ông cuối tuần vui vẻ.
+Cảm ơn ông đã dành thời gian đọc thư và chúc ông những ngày cuối tuần tốt lành.
 
 Trân trọng,
 
