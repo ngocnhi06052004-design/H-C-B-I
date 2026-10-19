@@ -1,0 +1,245 @@
+<title>Brand Content QCM</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: one reading column (max 880px) under a sticky tab bar; the quiz is a single question card with a numbered navigator, the notes read like a highlighted study sheet */
+:root{
+  --paper:#f4f5f8; --surface:#ffffff; --ink:#17213a; --muted:#5b6479; --line:#dce0e8;
+  --accent:#2443b8; --on-accent:#ffffff; --hl:#ffe064;
+  --ok:#15784b; --ok-bg:#e5f4ec; --bad:#c0342a; --bad-bg:#fbebea;
+  --f-display:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;
+  --f-body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0f131b; --surface:#171d29; --ink:#e7eaf2; --muted:#9ba4b8; --line:#2a3246;
+  --accent:#93a9ff; --on-accent:#0f131b; --hl:rgba(255,214,64,.34);
+  --ok:#62d59d; --ok-bg:rgba(98,213,157,.12); --bad:#ff8b80; --bad-bg:rgba(255,139,128,.12); color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0f131b; --surface:#171d29; --ink:#e7eaf2; --muted:#9ba4b8; --line:#2a3246;
+  --accent:#93a9ff; --on-accent:#0f131b; --hl:rgba(255,214,64,.34);
+  --ok:#62d59d; --ok-bg:rgba(98,213,157,.12); --bad:#ff8b80; --bad-bg:rgba(255,139,128,.12); color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:880px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px 16px;flex-wrap:wrap;padding-block:10px}
+.logo{font-family:var(--f-display);font-weight:800;font-size:19px;letter-spacing:-.01em;line-height:1.2}
+.logo span{background:linear-gradient(transparent 50%,var(--hl) 50%);padding:0 3px}
+.tabs{display:flex;gap:2px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px;max-width:100%;overflow-x:auto}
+.tab{border:0;background:transparent;color:var(--muted);font:600 13px/1 var(--f-body);padding:9px 13px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.tab .n{font-family:var(--f-mono);font-size:11px;margin-left:4px;opacity:.8}
+main{padding-block:28px 72px}
+h1{font-family:var(--f-display);font-weight:800;font-size:clamp(28px,5vw,40px);line-height:1.08;letter-spacing:-.02em;text-wrap:balance;margin:0 0 10px}
+.lede{color:var(--muted);max-width:64ch;margin:0 0 24px}
+.eyebrow{font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+mark{background:linear-gradient(transparent 50%,var(--hl) 50%);color:inherit;padding:0 2px}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* notes */
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 8px}
+.toc a{font-size:13px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;color:var(--ink);text-decoration:none;background:var(--surface)}
+.toc a:hover{border-color:var(--ink)}
+.sec{padding-block:26px 8px;border-top:1px solid var(--line);margin-top:22px;scroll-margin-top:80px}
+.sec h2{font-family:var(--f-display);font-weight:700;font-size:clamp(22px,3.4vw,27px);line-height:1.2;letter-spacing:-.01em;margin:4px 0 12px;text-wrap:balance}
+.sec h3{font-size:16px;font-weight:700;margin:22px 0 6px}
+.sec p,.sec li{max-width:70ch}
+.sec ul,.sec ol{padding-left:20px;margin:8px 0}
+.sec li{margin:3px 0}
+.tbl{overflow-x:auto;margin:12px 0 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+.tbl table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px;line-height:1.5}
+.tbl th,.tbl td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+.tbl tr:last-child td{border-bottom:0}
+.tbl th{font-family:var(--f-mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500}
+.tip{border:1.5px dashed var(--line);border-radius:10px;padding:12px 14px;margin:14px 0;max-width:70ch}
+.tip::before{content:"Mẹo nhớ";display:block;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.fr{font-style:italic;color:var(--muted)}
+.def{max-width:70ch;margin:12px 0;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-style:italic}
+.def::before{content:"Định nghĩa trong cours";display:block;font-style:normal;font-family:var(--f-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+
+/* mini cas */
+.cq{display:grid;gap:10px}
+.cq details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.cq summary{cursor:pointer;font-family:var(--f-display);font-weight:700;font-size:17px;line-height:1.35}
+.cq summary .vi{display:block;font-family:var(--f-body);font-weight:400;font-size:13px;color:var(--muted);margin-top:2px}
+.cq ol{margin:10px 0 0;padding-left:20px;font-size:14px}
+.cq .model{margin:10px 0 0;font-size:14px;padding:10px 12px;border:1.5px dashed var(--line);border-radius:8px;max-width:72ch}
+.cform{display:grid;gap:12px}
+.cform label{display:grid;gap:4px;font-weight:600;font-size:14px}
+.cform textarea{font:inherit;font-weight:400;color:var(--ink);background:var(--surface);border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;min-height:64px;resize:vertical;width:100%}
+.cform textarea:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.saved{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* exam list */
+.group{margin:26px 0 10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.ex{display:flex;flex-direction:column;gap:4px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px;cursor:pointer;font:inherit;color:inherit;min-width:0}
+.ex:hover{border-color:var(--ink)}
+.ex .n{font-family:var(--f-display);font-weight:700;font-size:18px;line-height:1.25}
+.ex .d{color:var(--muted);font-size:13px;line-height:1.5}
+.ex .meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:12px;color:var(--muted);margin-top:auto;padding-top:10px}
+.ex .best{color:var(--ok)}
+.ex.dark{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ex.dark .d,.ex.dark .meta,.ex.dark .eyebrow{color:var(--paper);opacity:.75}
+
+/* quiz */
+.qbar{display:flex;align-items:center;justify-content:space-between;gap:8px 12px;flex-wrap:wrap;margin-bottom:10px}
+.qbar .t{font-weight:600;min-width:0}
+.qbar .r{display:flex;gap:8px;align-items:center}
+.timer{font-family:var(--f-mono);font-variant-numeric:tabular-nums;font-size:14px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+.timer.low{color:var(--bad);border-color:var(--bad)}
+.progress{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin-bottom:16px}
+.progress i{display:block;height:100%;background:var(--accent);transition:width .25s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:clamp(18px,4vw,28px)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;align-items:center}
+.chip{font-family:var(--f-mono);font-size:11px;padding:3px 9px;border-radius:999px;border:1px solid var(--line);color:var(--muted);line-height:1.5}
+.chip.multi{border-color:var(--accent);color:var(--accent)}
+.qtext{font-family:var(--f-display);font-weight:600;font-size:clamp(18px,2.6vw,21px);line-height:1.38;margin:0 0 4px;text-wrap:pretty}
+.hint{font-size:13px;color:var(--muted);margin:0 0 16px}
+.opts{display:grid;gap:8px}
+.opt{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;padding:11px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--paper);color:var(--ink);font:inherit;line-height:1.5;cursor:pointer}
+.opt:hover:not(:disabled){border-color:var(--muted)}
+.opt .L{flex:none;width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-mono);font-size:12px;border:1.5px solid var(--line);background:var(--surface);margin-top:-1px}
+.opts.m .opt .L{border-radius:6px}
+.opt.sel{border-color:var(--accent)}
+.opt.sel .L{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.right .L{background:var(--ok);border-color:var(--ok);color:var(--surface)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.wrong .L{background:var(--bad);border-color:var(--bad);color:var(--surface)}
+.opt:disabled{cursor:default}
+.opt .tag{margin-left:auto;flex:none;font-family:var(--f-mono);font-size:11px;padding-left:8px;white-space:nowrap}
+.opt.right .tag{color:var(--ok)} .opt.wrong .tag{color:var(--bad)}
+.fb{margin-top:16px;border-radius:10px;padding:14px 16px;border:1.5px solid var(--line);background:var(--paper)}
+.fb.ok{border-color:var(--ok)} .fb.bad{border-color:var(--bad)}
+.fb-h{font-weight:700}
+.fb.ok .fb-h{color:var(--ok)} .fb.bad .fb-h{color:var(--bad)}
+.fb p{margin:8px 0 0;font-size:14px;max-width:72ch}
+.fb .lbl{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-right:6px}
+.actions{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap;margin-top:18px}
+.actions div{display:flex;gap:8px;flex-wrap:wrap}
+.btn{font:600 14px/1.2 var(--f-body);padding:11px 16px;border-radius:10px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--ink)}
+.btn.pri{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.ghost{background:transparent}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.nav{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.dot{width:34px;height:34px;border-radius:8px;border:1px solid var(--line);background:var(--surface);font-family:var(--f-mono);font-size:12px;color:var(--muted);cursor:pointer;padding:0}
+.dot.ans{background:color-mix(in srgb,var(--accent) 16%,var(--surface));color:var(--ink)}
+.dot.ok{background:var(--ok-bg);border-color:var(--ok);color:var(--ok)}
+.dot.bad{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.dot.cur{outline:2px solid var(--ink);outline-offset:1px;font-weight:700}
+.keys{font-size:12px;color:var(--muted);margin-top:14px}
+kbd{font-family:var(--f-mono);font-size:11px;border:1px solid var(--line);border-bottom-width:2px;border-radius:4px;padding:0 5px;background:var(--surface)}
+
+/* result */
+.score{display:flex;align-items:flex-end;gap:8px 20px;flex-wrap:wrap;margin:6px 0 18px}
+.score .big{font-family:var(--f-display);font-weight:800;font-size:clamp(56px,10vw,84px);line-height:.95;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.score .of{color:var(--muted);padding-bottom:8px}
+.verdict{display:inline-block;font-weight:700;padding:4px 10px;border-radius:999px;font-size:13px}
+.verdict.ok{background:var(--ok-bg);color:var(--ok)} .verdict.bad{background:var(--bad-bg);color:var(--bad)}
+.rows{display:grid;gap:8px;margin:12px 0 24px}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 120px 56px;gap:12px;align-items:center;font-size:14px}
+.bar{height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok)}
+.row .v{font-family:var(--f-mono);font-size:12px;text-align:right;font-variant-numeric:tabular-nums}
+.qlist{list-style:none;padding:0;margin:10px 0;display:grid;gap:8px}
+.qlist button{width:100%;text-align:left;font:inherit;color:inherit;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;cursor:pointer;display:flex;gap:10px}
+.qlist button:hover{border-color:var(--ink)}
+.qlist .i{font-family:var(--f-mono);font-size:12px;color:var(--bad);flex:none;padding-top:2px}
+details.wq{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+details.wq summary{cursor:pointer;font-weight:600;line-height:1.45}
+details.wq summary .chip{margin-right:6px;font-weight:400}
+details.wq .body{font-size:14px;margin-top:8px}
+details.wq .body p{margin:6px 0 0}
+.empty{background:var(--surface);border:1.5px dashed var(--line);border-radius:12px;padding:22px;color:var(--muted)}
+@media (max-width:520px){.row{grid-template-columns:minmax(0,1fr) 70px 48px}.logo{font-size:17px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="logo"><span>Brand Content</span> · Ôn thi QCM</div>
+    <nav class="tabs" role="tablist" aria-label="Chế độ">
+      <button class="tab" role="tab" id="tab-learn" data-view="learn">Kiến thức</button>
+      <button class="tab" role="tab" id="tab-exams" data-view="exams">Đề ôn tập</button>
+      <button class="tab" role="tab" id="tab-case" data-view="case">Mini cas</button>
+      <button class="tab" role="tab" id="tab-wrong" data-view="wrong">Câu sai<span class="n" id="wrongN">0</span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="view-learn" hidden>
+    <div class="eyebrow">Bản tổng hợp kiến thức</div>
+    <h1>Brand Content: những gì cần nhớ trước giờ thi</h1>
+    <p class="lede">Soạn theo giáo trình 4A Brand Content 2026–2027 của cô Céline Crespin (séances 1–4). Thuật ngữ giữ nguyên tiếng Pháp như trong slide, giải thích bằng tiếng Việt. Cụm tô vàng là định nghĩa và ví dụ dễ ra đề nhất.</p>
+    <nav class="toc" id="toc" aria-label="Mục lục"></nav>
+    <div id="notes"></div>
+  </section>
+
+  <section id="view-exams" hidden>
+    <div class="eyebrow">Ngân hàng <span id="qTotal">0</span> câu hỏi</div>
+    <h1>Chọn một đề để luyện</h1>
+    <p class="lede">Câu hỏi bằng tiếng Pháp, bám sát slide của cours. Chế độ luyện tập chấm ngay sau mỗi câu, kèm dịch nghĩa và giải thích tiếng Việt. Thi thử giống đề thật: 12 câu, bấm giờ, chỉ chấm khi nộp. Thứ tự đáp án được xáo trộn mỗi lần làm.</p>
+    <div id="examGroups"></div>
+  </section>
+
+  <section id="view-quiz" hidden>
+    <div class="qbar">
+      <div class="t"><div class="eyebrow" id="qPos"></div><div id="qTitle"></div></div>
+      <div class="r"><span class="timer" id="timer" hidden></span><button class="btn ghost" id="finishBtn">Kết thúc</button></div>
+    </div>
+    <div class="progress"><i id="prog" style="width:0"></i></div>
+    <article class="qcard" aria-live="polite">
+      <div class="chips" id="qChips"></div>
+      <p class="qtext" id="qText"></p>
+      <p class="hint" id="qHint"></p>
+      <div class="opts" id="opts"></div>
+      <div id="fb"></div>
+      <div class="actions">
+        <div><button class="btn" id="prevBtn">← Câu trước</button></div>
+        <div><button class="btn pri" id="mainBtn"></button></div>
+      </div>
+    </article>
+    <div class="nav" id="dots" aria-label="Danh sách câu"></div>
+    <p class="keys">Phím tắt: <kbd>1</kbd>–<kbd>5</kbd> hoặc <kbd>A</kbd>–<kbd>E</kbd> chọn đáp án · <kbd>Enter</kbd> kiểm tra / câu tiếp · <kbd>←</kbd> <kbd>→</kbd> chuyển câu</p>
+  </section>
+
+  <section id="view-case" hidden>
+    <div class="eyebrow">3 câu về chiến dịch nhóm bạn · 12 điểm</div>
+    <h1>Chuẩn bị phần mini cas</h1>
+    <p class="lede">Phần này chiếm 12/20 điểm của bài kiểm tra cá nhân. Dưới đây là các câu dễ được hỏi nhất, khung trả lời theo đúng khái niệm trong cours và một ví dụ mẫu dùng thương hiệu Aqualys của cours. Cuối trang có phiếu để bạn điền chiến dịch của nhóm mình.</p>
+    <div id="caseQs" class="cq"></div>
+    <div class="group eyebrow">Phiếu chiến dịch của nhóm bạn</div>
+    <p class="lede" style="margin-bottom:14px">Nội dung tự lưu trên trình duyệt này, chỉ bạn thấy. Hãy điền bằng tiếng Pháp để học thuộc cách diễn đạt.</p>
+    <form id="caseForm" class="cform"></form>
+  </section>
+
+  <section id="view-result" hidden></section>
+  <section id="view-wrong" hidden></section>
+</main>
+
+<script>
+window.QB={list:[],add(t,arr){arr.forEach((q,i)=>{q.topic=t;q.id=t+'-'+(i+1);this.list.push(q)})}};
+window.SUMMARY=[];
+</script>
+<script src="data/summary-1.js"></script>
+<script src="data/summary-2.js"></script>
+<script src="data/summary-3.js"></script>
+<script src="data/summary-4.js"></script>
+<script src="data/q-intro.js"></script>
+<script src="data/q-da.js"></script>
+<script src="data/q-codes.js"></script>
+<script src="data/q-strat.js"></script>
+<script src="data/q-story.js"></script>
+<script src="data/q-eco.js"></script>
+<script src="data/q-offline.js"></script>
+<script src="data/q-online.js"></script>
+<script src="data/minicas.js"></script>
+<script src="app.js"></script>
