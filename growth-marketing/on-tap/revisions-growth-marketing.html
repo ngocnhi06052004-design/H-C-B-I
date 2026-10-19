@@ -1,0 +1,833 @@
+<title>Révisions Growth Marketing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: a study binder. Sticky tab bar (Kiến thức / Luyện đề / Cas pratique), one readable column,
+   AARRR stages carry their own colour everywhere (funnel, chips, quiz topics). */
+:root{
+  --bg:#F3F6F5; --surface:#FFFFFF; --surface-2:#E9EFEE; --ink:#13201E; --muted:#56635F; --line:#D5DFDC;
+  --accent:#0B6E5F; --accent-ink:#FFFFFF; --accent-soft:#D6EEE8;
+  --ok:#1C7C3A; --ok-soft:#DDF2E3; --bad:#B42318; --bad-soft:#FBE3E0; --warn:#9A5B00; --warn-soft:#FDF0D8;
+  --acq:#2F62D0; --act:#7B45C9; --ret:#0E857A; --ref:#C9661A; --rev:#B4246B;
+  --display:"Bricolage Grotesque","Be Vietnam Pro",system-ui,sans-serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --radius:12px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0E1513; --surface:#151E1C; --surface-2:#1C2724; --ink:#E4ECEA; --muted:#9BABA6; --line:#2A3835;
+  --accent:#43C2AC; --accent-ink:#06211C; --accent-soft:#163A33;
+  --ok:#5ED17F; --ok-soft:#173523; --bad:#FF8A7E; --bad-soft:#3B1C19; --warn:#F2B455; --warn-soft:#3A2B12;
+  --acq:#7FA6FF; --act:#B793F2; --ret:#4FCBBE; --ref:#F2A45E; --rev:#F07AAE; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E1513; --surface:#151E1C; --surface-2:#1C2724; --ink:#E4ECEA; --muted:#9BABA6; --line:#2A3835;
+  --accent:#43C2AC; --accent-ink:#06211C; --accent-soft:#163A33;
+  --ok:#5ED17F; --ok-soft:#173523; --bad:#FF8A7E; --bad-soft:#3B1C19; --warn:#F2B455; --warn-soft:#3A2B12;
+  --acq:#7FA6FF; --act:#B793F2; --ret:#4FCBBE; --ref:#F2A45E; --rev:#F07AAE; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 48px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:980px;margin-inline:auto}
+h1,h2,h3{font-family:var(--display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.vi{color:var(--muted)}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+.top-inner{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 20px;padding:14px max(16px,env(safe-area-inset-left,0px)) 0;max-width:calc(980px + 32px);margin-inline:auto}
+.brand h1{font-size:clamp(22px,4.2vw,30px);font-weight:800;letter-spacing:-.01em}
+.brand h1 span{color:var(--accent)}
+.tabs{display:flex;gap:4px;overflow-x:auto;max-width:100%}
+.tabs button{border:0;background:none;padding:10px 14px 12px;font-weight:600;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
+main{padding-top:22px}
+
+/* fiches */
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:18px}
+.seg{display:inline-flex;background:var(--surface-2);border-radius:999px;padding:3px}
+.seg button{border:0;background:none;padding:6px 14px;border-radius:999px;font-weight:600;font-size:14px;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.toc{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:22px}
+.toc button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 12px;font-size:13.5px}
+.toc button:hover{border-color:var(--accent)}
+.fiche{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px clamp(16px,3vw,28px);margin-bottom:18px;scroll-margin-top:130px}
+.fiche > h2{font-size:clamp(20px,3vw,25px);font-weight:800;display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:14px}
+.fiche > h2 .n{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:700}
+.fiche > h2 small{font-family:var(--body);font-size:14px;font-weight:500;color:var(--muted)}
+.fiche h3{font-size:17px;font-weight:600;margin:18px 0 8px}
+.bi{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px}
+.bi > *{min-width:0}
+.bi > [data-l="vi"]{border-left:2px solid var(--line);padding-left:16px}
+.bi p + p,.bi p + ul,.bi ul + p{margin-top:8px}
+ul.clean{margin:6px 0 0;padding-left:20px}
+ul.clean li{margin:3px 0}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:1px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);margin-bottom:6px}
+#p-fiches[data-lang="fr"] [data-l="vi"],#p-cas[data-lang="fr"] [data-l="vi"]{display:none}
+#p-fiches[data-lang="vi"] [data-l="fr"],#p-cas[data-lang="vi"] [data-l="fr"]{display:none}
+#p-fiches[data-lang="fr"] .bi,#p-fiches[data-lang="vi"] .bi,#p-cas[data-lang="fr"] .bi,#p-cas[data-lang="vi"] .bi{grid-template-columns:1fr}
+#p-fiches[data-lang="fr"] .bi > [data-l],#p-fiches[data-lang="vi"] .bi > [data-l],#p-cas[data-lang="fr"] .bi > [data-l],#p-cas[data-lang="vi"] .bi > [data-l]{border-left:0;padding-left:0}
+.cell-vi{display:block;color:var(--muted);font-size:.93em;margin-top:2px}
+.tbl{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:10px}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;vertical-align:top;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{background:var(--surface-2);font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700}
+tr:last-child td{border-bottom:0}
+td.term{font-weight:700;white-space:nowrap}
+.callout{border-radius:var(--radius);padding:18px clamp(16px,3vw,24px);margin-bottom:18px;background:var(--warn-soft);border:1px solid color-mix(in srgb,var(--warn) 30%,transparent)}
+.callout h2{font-size:20px;font-weight:800;margin-bottom:10px}
+.traps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px}
+.trap{background:var(--surface);border-radius:10px;padding:10px 12px;min-width:0}
+.trap b{display:block}
+/* funnel */
+.funnel{display:grid;gap:6px;justify-items:center;margin:4px 0 14px}
+.funnel div{color:#fff;font-weight:700;border-radius:8px;padding:7px 12px;text-align:center;font-size:14.5px;max-width:100%}
+.funnel div span{font-weight:500;opacity:.92}
+.s-acq{background:var(--acq)}.s-act{background:var(--act)}.s-ret{background:var(--ret)}.s-ref{background:var(--ref)}.s-rev{background:var(--rev)}
+:root[data-theme="dark"] .funnel div{color:#0E1513}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .funnel div{color:#0E1513}}
+.stage{font-weight:800}
+.st-acq{color:var(--acq)}.st-act{color:var(--act)}.st-ret{color:var(--ret)}.st-ref{color:var(--ref)}.st-rev{color:var(--rev)}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:8px}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-width:0}
+.box.ok{background:var(--ok-soft);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+.box.bad{background:var(--bad-soft);border-color:color-mix(in srgb,var(--bad) 35%,transparent)}
+.box h3{margin-top:0}
+
+/* quiz */
+.lv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin:6px 0 16px}
+.lv{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.lv h3{font-size:21px;font-weight:800}
+.lv h3 small{font-family:var(--body);font-size:13px;color:var(--muted);font-weight:500;margin-left:4px}
+.lv p{font-size:14px;color:var(--muted)}
+.lv .meta{font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+.lv .best{font-size:13px;font-weight:600}
+.lv.exam{border:2px solid var(--accent)}
+.dots{display:flex;gap:4px}
+.dots i{width:10px;height:10px;border-radius:50%;background:var(--line)}
+.dots i.on{background:var(--accent)}
+.btn{border:0;border-radius:10px;padding:10px 16px;font-weight:700;background:var(--accent);color:var(--accent-ink);align-self:flex-start}
+.btn.ghost{background:var(--surface-2);color:var(--ink)}
+.btn.small{padding:7px 12px;font-size:14px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.switch{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+.switch input{width:18px;height:18px;accent-color:var(--accent)}
+.tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin-top:4px}
+.tips div{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px;min-width:0}
+.run-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;margin-bottom:10px}
+.run-head .lvname{font-weight:800;font-family:var(--display);font-size:19px}
+.timer{font-family:var(--mono);font-weight:700;font-size:20px;padding:4px 12px;border-radius:8px;background:var(--surface-2);font-variant-numeric:tabular-nums}
+.timer.low{background:var(--bad-soft);color:var(--bad)}
+.counter{font-family:var(--mono);font-size:14px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--surface-2);border-radius:999px;overflow:hidden;margin-bottom:14px}
+.bar > div{height:100%;background:var(--accent);transition:width .25s}
+.qcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px clamp(16px,3vw,26px)}
+.qtopic{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.qtext{font-family:var(--body);font-size:18.5px;font-weight:600;line-height:1.45}
+.qvi{margin-top:6px;color:var(--muted);font-size:15px}
+.hide-vi .qvi,.hide-vi .evi{display:none}
+.opts{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:8px}
+.opt{width:100%;text-align:left;display:flex;gap:12px;align-items:flex-start;border:1.5px solid var(--line);background:var(--surface);border-radius:10px;padding:11px 14px;font-size:15.5px;line-height:1.45}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt .k{font-family:var(--mono);font-weight:700;color:var(--muted);flex:none;width:18px}
+.opt[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-soft)}
+.opt[disabled]{cursor:default}
+.fb{margin-top:14px;border-radius:10px;padding:12px 14px;background:var(--surface-2);font-size:15px}
+.fb .verdict{font-weight:800;margin-bottom:4px}
+.fb .verdict.ok{color:var(--ok)}.fb .verdict.bad{color:var(--bad)}
+.fb .evi{margin-top:6px;color:var(--muted)}
+.run-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;margin-top:16px}
+.grid-nums{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.grid-nums button{width:34px;height:32px;border-radius:7px;border:1px solid var(--line);background:var(--surface);font-family:var(--mono);font-size:12.5px}
+.grid-nums button.done{background:var(--accent-soft);border-color:var(--accent)}
+.grid-nums button.cur{outline:2px solid var(--ink);outline-offset:1px}
+.confirm{margin-top:12px;padding:12px 14px;border-radius:10px;background:var(--warn-soft);display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.score{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;margin:6px 0 14px}
+.score .big{font-family:var(--display);font-weight:800;font-size:clamp(40px,8vw,56px);line-height:1;font-variant-numeric:tabular-nums}
+.score .sub{font-family:var(--mono);color:var(--muted)}
+.review{display:grid;gap:10px;margin-top:14px}
+.rv{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--surface)}
+.rv .q{font-weight:600}
+.rv .a{margin-top:6px;font-size:14.5px}
+.rv .a .yours{color:var(--bad)}
+.rv .a .good{color:var(--ok);font-weight:600}
+.rv .e{margin-top:6px;font-size:14px;color:var(--muted)}
+details.ans{margin-top:12px;border:1px solid var(--line);border-radius:10px;background:var(--surface-2)}
+details.ans summary{cursor:pointer;padding:10px 14px;font-weight:700}
+details.ans > div{padding:0 14px 14px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:8px 0 0;display:grid;gap:8px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:30px 1fr;gap:10px;align-items:start}
+.steps li::before{content:counter(s);font-family:var(--mono);font-weight:700;background:var(--accent);color:var(--accent-ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px}
+.steps li > div{min-width:0}
+.foot{margin-top:28px;font-size:13px;color:var(--muted)}
+@media (max-width:760px){.bi{grid-template-columns:1fr}.bi > [data-l="vi"]{border-left:0;padding-left:0;border-top:1px dashed var(--line);padding-top:10px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<header class="top">
+  <div class="top-inner">
+    <div class="brand">
+      <div class="eyebrow">EFAP 4A · Growth Marketing · Benjamin Dahan</div>
+      <h1>Révisions <span>Growth Marketing</span></h1>
+    </div>
+    <nav class="tabs" role="tablist" aria-label="Mục">
+      <button role="tab" id="tab-fiches" data-tab="fiches" aria-controls="p-fiches" aria-selected="true">Kiến thức</button>
+      <button role="tab" id="tab-quiz" data-tab="quiz" aria-controls="p-quiz" aria-selected="false">Luyện đề</button>
+      <button role="tab" id="tab-cas" data-tab="cas" aria-controls="p-cas" aria-selected="false">Cas pratique</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===================== FICHES ===================== -->
+<section id="p-fiches" role="tabpanel" aria-labelledby="tab-fiches" data-lang="both">
+  <div class="toolbar">
+    <p class="vi" style="max-width:60ch">Tổng hợp từ syllabus, vở ghi (15/09 và 22/09) và slide Cours 3. Chọn ngôn ngữ hiển thị:</p>
+    <div class="seg" role="group" aria-label="Ngôn ngữ">
+      <button data-setlang="both" aria-pressed="true">FR + VI</button>
+      <button data-setlang="fr" aria-pressed="false">FR</button>
+      <button data-setlang="vi" aria-pressed="false">VI</button>
+    </div>
+  </div>
+
+  <div class="toc" aria-label="Mục lục">
+    <button data-go="s-traps">Bẫy hay gặp</button>
+    <button data-go="s-def">1 · Définition</button>
+    <button data-go="s-aarrr">2 · AARRR</button>
+    <button data-go="s-glo">3 · Vocabulaire</button>
+    <button data-go="s-gms">4 · GMS</button>
+    <button data-go="s-strat">5 · Stratégie</button>
+    <button data-go="s-pub">6 · Supports pub</button>
+    <button data-go="s-crm">7 · CRM</button>
+    <button data-go="s-tools">8 · Outils</button>
+    <button data-go="s-auto">9 · PhantomBuster &amp; Lemlist</button>
+    <button data-go="s-agences">10 · Agences</button>
+    <button data-go="s-cours">11 · Le cours</button>
+    <button data-go="s-cas">12 · Cas vus en cours</button>
+  </div>
+
+  <div class="callout" id="s-traps">
+    <h2>Bẫy hay gặp khi làm trắc nghiệm</h2>
+    <div class="traps">
+      <div class="trap"><b>Up-sell ≠ Cross-sell</b><span data-l="fr">Up-sell = gamme au-dessus (plus chère). Cross-sell = produit complémentaire.</span><span data-l="vi" class="cell-vi">Up-sell = bán bản cao cấp hơn. Cross-sell = bán thêm món bổ sung.</span></div>
+      <div class="trap"><b>Shrinkflation ≠ Cheapflation</b><span data-l="fr">Shrink = quantité ↓, prix =. Cheap = recette/composition dégradée, prix =.</span><span data-l="vi" class="cell-vi">Shrink = giảm khối lượng. Cheap = giảm chất lượng công thức. Giá giữ nguyên.</span></div>
+      <div class="trap"><b>Lead brut → qualifié → prospect</b><span data-l="fr">Sans besoin précis → profil et intérêt vérifiés → projet d’achat réel et proche.</span><span data-l="vi" class="cell-vi">Chưa có nhu cầu rõ → đã xác minh → sắp mua thật.</span></div>
+      <div class="trap"><b>MDD ≠ marque nationale</b><span data-l="fr">MDD = marque de l’enseigne (Marque Repère, Carrefour). Nationale = Coca-Cola, Danone, Nestlé.</span><span data-l="vi" class="cell-vi">MDD = nhãn riêng của siêu thị. Quốc gia = thương hiệu lớn của tập đoàn.</span></div>
+      <div class="trap"><b>DN ≠ DV</b><span data-l="fr">DN = % de points de vente (en nombre). DV = pondérée par le CA des magasins.</span><span data-l="vi" class="cell-vi">DN = đếm số điểm bán. DV = có trọng số theo doanh thu điểm bán.</span></div>
+      <div class="trap"><b>Newsletter : Activation hay Rétention?</b><span data-l="fr">S’abonner à une newsletter = Activation. Newsletter utile envoyée aux clients = Rétention.</span><span data-l="vi" class="cell-vi">Đăng ký nhận = Activation. Gửi nội dung hữu ích cho khách cũ = Rétention.</span></div>
+      <div class="trap"><b>Agence RP ≠ média</b><span data-l="fr">Hopscotch, Melchior, Kingcom… = agences RP/event. Webedia, Banijay = médias / production.</span><span data-l="vi" class="cell-vi">Hopscotch, Melchior… = agency PR/sự kiện. Webedia, Banijay = media/sản xuất.</span></div>
+      <div class="trap"><b>Vanity metrics</b><span data-l="fr">Likes, vues, nombre de contacts : flatteurs mais sans impact direct sur le CA.</span><span data-l="vi" class="cell-vi">Like, view, số contact: đẹp nhưng không trực tiếp tạo doanh thu.</span></div>
+    </div>
+  </div>
+
+  <article class="fiche" id="s-def">
+    <h2><span class="n">01</span> Le growth marketing <small>Growth marketing là gì?</small></h2>
+    <div class="bi">
+      <div data-l="fr" lang="fr">
+        <p><strong>Définition.</strong> Approche globale et <em>pilotée par la donnée</em> qui vise la croissance rapide et durable d’une entreprise. Contrairement au marketing classique, centré sur l’image de marque et l’acquisition de prospects, il analyse et optimise <strong>l’ensemble du parcours client</strong>, de la découverte du produit jusqu’à la fidélisation.</p>
+        <p><strong>Méthode.</strong> Données + créativité + expérimentation (<em>test &amp; learn</em>) pour identifier vite les canaux d’acquisition les plus efficaces, attirer, engager et fidéliser les clients en optimisant le ROI.</p>
+      </div>
+      <div data-l="vi" lang="vi">
+        <p><strong>Định nghĩa.</strong> Cách tiếp cận toàn diện, <em>dựa trên dữ liệu</em>, nhằm giúp doanh nghiệp tăng trưởng nhanh và bền vững. Khác với marketing truyền thống (tập trung vào hình ảnh thương hiệu và thu hút khách tiềm năng), growth marketing phân tích và tối ưu <strong>toàn bộ hành trình khách hàng</strong>, từ lúc khám phá sản phẩm đến khi trung thành.</p>
+        <p><strong>Phương pháp.</strong> Dữ liệu + sáng tạo + thử nghiệm (<em>test &amp; learn</em>) để nhanh chóng tìm ra kênh thu hút hiệu quả nhất, thu hút, gắn kết và giữ chân khách hàng, đồng thời tối ưu ROI.</p>
+      </div>
+    </div>
+
+    <h3>À quoi sert le growth ? <span class="vi">Growth dùng để làm gì?</span></h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Domaine</th><th>Utilité</th></tr></thead>
+      <tbody>
+        <tr><td class="term">Événementiel</td><td><span data-l="fr">Doper une billetterie, convaincre des exposants, augmenter le panier</span><span data-l="vi" class="cell-vi">Sự kiện: tăng bán vé, thuyết phục nhà triển lãm, tăng giá trị giỏ hàng</span></td></tr>
+        <tr><td class="term">Marketing</td><td><span data-l="fr">Acquisition et fidélisation</span><span data-l="vi" class="cell-vi">Thu hút và giữ chân khách hàng</span></td></tr>
+        <tr><td class="term">Ventes</td><td><span data-l="fr">Trouver de nouveaux clients, augmenter le panier moyen</span><span data-l="vi" class="cell-vi">Bán hàng: tìm khách mới, tăng giá trị đơn hàng trung bình</span></td></tr>
+        <tr><td class="term">RP / relations presse</td><td><span data-l="fr">Mieux relancer les journalistes, les influenceurs</span><span data-l="vi" class="cell-vi">PR: follow-up nhà báo, influencer hiệu quả hơn</span></td></tr>
+        <tr><td class="term">Communication</td><td><span data-l="fr">Ads, influence, paid media</span><span data-l="vi" class="cell-vi">Truyền thông: quảng cáo, influencer, paid media</span></td></tr>
+      </tbody></table></div>
+
+    <h3>3 types de structure <span class="vi">3 loại hình doanh nghiệp áp dụng</span></h3>
+    <div class="tbl"><table>
+      <thead><tr><th>Structure</th><th>Ce que le growth optimise</th></tr></thead>
+      <tbody>
+        <tr><td class="term">Startups / éditeurs SaaS</td><td><span data-l="fr">Les abonnements et l’usage du produit</span><span data-l="vi" class="cell-vi">Số thuê bao và mức sử dụng sản phẩm</span></td></tr>
+        <tr><td class="term">E-commerce</td><td><span data-l="fr">Panier moyen, relance des paniers abandonnés, fidélisation</span><span data-l="vi" class="cell-vi">Giá trị đơn trung bình, nhắc giỏ hàng bị bỏ quên, giữ chân khách</span></td></tr>
+        <tr><td class="term">B2B (PME, grands comptes)</td><td><span data-l="fr">Génération et enrichissement de leads pour les commerciaux (<em>Sales Intelligence</em>)</span><span data-l="vi" class="cell-vi">Tạo và làm giàu dữ liệu lead cho đội sales</span></td></tr>
+      </tbody></table></div>
+  </article>
+
+  <article class="fiche" id="s-aarrr">
+    <h2><span class="n">02</span> Le framework AARRR <small>Phễu AARRR, trọng tâm của môn</small></h2>
+    <div class="funnel" aria-hidden="true">
+      <div class="s-acq" style="width:100%">Acquisition <span>· attirer</span></div>
+      <div class="s-act" style="width:88%">Activation <span>· faire agir</span></div>
+      <div class="s-ret" style="width:76%">Rétention <span>· faire revenir</span></div>
+      <div class="s-ref" style="width:64%">Recommandation <span>· faire parler</span></div>
+      <div class="s-rev" style="width:52%">Revenu <span>· faire payer plus</span></div>
+    </div>
+    <div class="tbl"><table>
+      <thead><tr><th>Étape</th><th>Objectif</th><th>Leviers vus en cours</th></tr></thead>
+      <tbody>
+        <tr><td class="term stage st-acq">Acquisition</td>
+          <td><span data-l="fr">Attirer des visiteurs qualifiés. « Comment attirez-vous vos prospects ? »</span><span data-l="vi" class="cell-vi">Thu hút đúng người quan tâm đến website/sản phẩm</span></td>
+          <td><span data-l="fr">Bon contenu SEO, outils et tutoriels gratuits, campagnes SEA, publicité réseaux sociaux / influenceurs, RP soignées (blog, ads)</span><span data-l="vi" class="cell-vi">Nội dung SEO, công cụ & hướng dẫn miễn phí, quảng cáo Google (SEA), quảng cáo mạng xã hội / influencer, PR</span></td></tr>
+        <tr><td class="term stage st-act">Activation</td>
+          <td><span data-l="fr">Faire agir la cible pour qu’elle découvre la valeur du produit</span><span data-l="vi" class="cell-vi">Khiến khách thực hiện hành động đầu tiên để thấy giá trị sản phẩm</span></td>
+          <td><span data-l="fr">Formulaire de contact, adhésion newsletter, essai d’un outil, webinaire, démo, offre de bienvenue (onboarding, essai gratuit, UX fluide)</span><span data-l="vi" class="cell-vi">Điền form liên hệ, đăng ký newsletter, dùng thử, webinar, demo, ưu đãi chào mừng</span></td></tr>
+        <tr><td class="term stage st-ret">Rétention</td>
+          <td><span data-l="fr">Garantir que les prospects activés ou convertis reviennent ; éviter le <em>churn</em></span><span data-l="vi" class="cell-vi">Giữ chân, khiến khách quay lại; tránh khách rời bỏ (churn)</span></td>
+          <td><span data-l="fr">Promotions spéciales, programme de fidélité, newsletters utiles, conseils et astuces, réponses rapides et assistance personnelle (emails, notifications, contenu exclusif, gamification)</span><span data-l="vi" class="cell-vi">Khuyến mãi riêng, chương trình khách hàng thân thiết, newsletter hữu ích, mẹo sử dụng, hỗ trợ nhanh</span></td></tr>
+        <tr><td class="term stage st-ref">Recommandation (Referral)</td>
+          <td><span data-l="fr">Faire des utilisateurs actuels des prescripteurs</span><span data-l="vi" class="cell-vi">Biến khách hiện tại thành người giới thiệu</span></td>
+          <td><span data-l="fr">Parrainage, mécaniques virales, avis clients (NPS, récompenses, communauté)</span><span data-l="vi" class="cell-vi">Giới thiệu bạn bè có thưởng, cơ chế lan truyền, đánh giá của khách</span></td></tr>
+        <tr><td class="term stage st-rev">Revenu</td>
+          <td><span data-l="fr">Optimiser la valeur générée par chaque utilisateur. <strong>LTV est un KPI.</strong></span><span data-l="vi" class="cell-vi">Tối ưu giá trị mỗi khách mang lại. LTV là một KPI</span></td>
+          <td><span data-l="fr">Up-sell, cross-sell, prix, panier moyen, LTV. Actions : modifier les tarifs, retravailler la compréhension de l’offre, promotions, pousser la gamme au-dessus</span><span data-l="vi" class="cell-vi">Bán nâng cấp, bán chéo, điều chỉnh giá, tăng giỏ hàng; làm rõ lại ưu đãi, khuyến mãi, đẩy dòng cao cấp</span></td></tr>
+      </tbody></table></div>
+    <div class="bi" style="margin-top:12px">
+      <p data-l="fr" lang="fr"><strong>À retenir (séance 1).</strong> Sécuriser les leviers de <strong>rétention avant</strong> de lancer une acquisition à grande échelle : sinon on remplit un seau percé.</p>
+      <p data-l="vi" lang="vi"><strong>Ghi nhớ (buổi 1).</strong> Phải xử lý <strong>giữ chân khách trước</strong> khi đổ tiền vào thu hút khách mới, nếu không giống như đổ nước vào thùng thủng.</p>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-glo">
+    <h2><span class="n">03</span> Vocabulaire clé <small>Từ vựng hay ra thi</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+      <tbody>
+        <tr><td class="term">SaaS</td><td><span data-l="fr">Software as a Service : logiciel hébergé dans le cloud, accessible via un navigateur, souvent sur abonnement mensuel ou annuel, sans installation locale.</span><span data-l="vi" class="cell-vi">Phần mềm trên cloud, dùng qua trình duyệt, trả phí thuê bao tháng/năm, không cần cài đặt.</span></td></tr>
+        <tr><td class="term">Freemium</td><td><span data-l="fr">Version basique gratuite, fonctionnalités avancées payantes, pour attirer une large base et en convertir une partie.</span><span data-l="vi" class="cell-vi">Bản cơ bản miễn phí, tính năng nâng cao trả phí; thu hút nhiều người rồi chuyển một phần thành khách trả tiền.</span></td></tr>
+        <tr><td class="term">Licorne</td><td><span data-l="fr">Start-up de moins de 10 ans, non cotée, non affiliée à un grand groupe, valorisée à plus d’1 milliard de dollars.</span><span data-l="vi" class="cell-vi">« Kỳ lân »: startup dưới 10 năm, chưa niêm yết, độc lập, định giá trên 1 tỷ USD.</span></td></tr>
+        <tr><td class="term">CRM</td><td><span data-l="fr">Customer Relationship Management : centralise données, appels, emails et historique de chaque client ou prospect ; aide ventes, marketing et support à collaborer.</span><span data-l="vi" class="cell-vi">Quản lý quan hệ khách hàng: gom dữ liệu, cuộc gọi, email, lịch sử của từng khách vào một chỗ.</span></td></tr>
+        <tr><td class="term">Retargeting</td><td><span data-l="fr">Reciblage publicitaire : publicités montrées aux personnes ayant visité un site/une app sans réaliser l’action attendue (achat, inscription).</span><span data-l="vi" class="cell-vi">Quảng cáo bám đuổi người đã ghé website/app nhưng chưa mua hay đăng ký.</span></td></tr>
+        <tr><td class="term">Lead</td><td><span data-l="fr">Personne ou entreprise ayant montré de l’intérêt en laissant ses coordonnées (email, téléphone). Lead brut → lead qualifié → prospect.</span><span data-l="vi" class="cell-vi">Khách tiềm năng đã để lại thông tin liên hệ. Lead thô → lead đủ điều kiện → prospect (sắp mua).</span></td></tr>
+        <tr><td class="term">Crowdfunding</td><td><span data-l="fr">Financement participatif : collecte de fonds auprès d’un large public pour un projet de création, reprise ou développement.</span><span data-l="vi" class="cell-vi">Gọi vốn cộng đồng từ đông đảo công chúng.</span></td></tr>
+        <tr><td class="term">MLM</td><td><span data-l="fr">Multilevel marketing : vente directe où les distributeurs gagnent sur leurs ventes et sur celles des personnes qu’ils recrutent (filleuls).</span><span data-l="vi" class="cell-vi">Bán hàng đa cấp: hưởng tiền từ doanh số của mình và của người mình tuyển.</span></td></tr>
+        <tr><td class="term">Drive to Store</td><td><span data-l="fr">Stratégies pour attirer des clients en magasin physique, souvent à partir de canaux digitaux.</span><span data-l="vi" class="cell-vi">Dùng kênh digital để kéo khách đến cửa hàng thật.</span></td></tr>
+        <tr><td class="term">Pure player</td><td><span data-l="fr">Entreprise exclusivement sur Internet, sans magasin physique.</span><span data-l="vi" class="cell-vi">Doanh nghiệp chỉ bán online, không có cửa hàng.</span></td></tr>
+        <tr><td class="term">Cash back</td><td><span data-l="fr">Remboursement partiel du montant de l’achat, souvent en pourcentage.</span><span data-l="vi" class="cell-vi">Hoàn lại một phần tiền mua, thường theo %.</span></td></tr>
+        <tr><td class="term">Cross-selling</td><td><span data-l="fr">Vente croisée : proposer un produit complémentaire à l’achat principal.</span><span data-l="vi" class="cell-vi">Bán chéo: gợi ý món bổ sung (điện thoại → ốp lưng).</span></td></tr>
+        <tr><td class="term">Up-selling</td><td><span data-l="fr">Montée en gamme : proposer une version supérieure, plus chère.</span><span data-l="vi" class="cell-vi">Bán nâng cấp: gợi ý phiên bản cao cấp hơn, đắt hơn.</span></td></tr>
+        <tr><td class="term">Marketing automation</td><td><span data-l="fr">Automatiser des actions marketing (emails, relances, segmentation) selon des scénarios et le comportement des contacts.</span><span data-l="vi" class="cell-vi">Tự động hóa email, nhắc lại… theo kịch bản và hành vi khách.</span></td></tr>
+        <tr><td class="term">Lobbying</td><td><span data-l="fr">Actions d’influence auprès des décideurs publics pour défendre les intérêts d’une entreprise ou d’un secteur.</span><span data-l="vi" class="cell-vi">Vận động hành lang: tác động người làm chính sách.</span></td></tr>
+        <tr><td class="term">Churn</td><td><span data-l="fr">Désengagement, perte de clients ou d’abonnés.</span><span data-l="vi" class="cell-vi">Tỷ lệ khách rời bỏ / hủy đăng ký.</span></td></tr>
+        <tr><td class="term">LTV</td><td><span data-l="fr">(Customer) Lifetime Value : valeur générée par un client sur toute sa relation avec la marque. C’est un KPI. ≈ panier moyen × fréquence × durée.</span><span data-l="vi" class="cell-vi">Giá trị vòng đời khách hàng; là một KPI. ≈ giỏ TB × tần suất × thời gian gắn bó.</span></td></tr>
+        <tr><td class="term">CAC</td><td><span data-l="fr">Coût d’acquisition client = dépenses d’acquisition ÷ nombre de nouveaux clients.</span><span data-l="vi" class="cell-vi">Chi phí để có một khách mới = tổng chi ÷ số khách mới.</span></td></tr>
+        <tr><td class="term">ROI</td><td><span data-l="fr">Retour sur investissement : ce que rapporte une action par rapport à ce qu’elle coûte.</span><span data-l="vi" class="cell-vi">Lợi tức đầu tư: thu về so với bỏ ra.</span></td></tr>
+        <tr><td class="term">CRO</td><td><span data-l="fr">Conversion Rate Optimization : augmenter le taux de passage à l’acte (séance 5).</span><span data-l="vi" class="cell-vi">Tối ưu tỷ lệ chuyển đổi.</span></td></tr>
+        <tr><td class="term">Test A/B</td><td><span data-l="fr">Comparer deux versions (objet d’email, page…) sur deux groupes et garder la plus performante.</span><span data-l="vi" class="cell-vi">So sánh 2 phiên bản trên 2 nhóm, giữ bản hiệu quả hơn.</span></td></tr>
+        <tr><td class="term">Vanity metrics</td><td><span data-l="fr">Indicateurs flatteurs (likes, vues, nombre de contacts) sans impact direct sur le chiffre d’affaires.</span><span data-l="vi" class="cell-vi">Chỉ số « làm đẹp »: like, view, số contact.</span></td></tr>
+        <tr><td class="term">Inbound / Outbound</td><td><span data-l="fr">Inbound : le client vient à vous (SEO, contenu). Outbound : vous allez vers lui (cold email, prospection).</span><span data-l="vi" class="cell-vi">Inbound: khách tự tìm đến. Outbound: mình chủ động tiếp cận.</span></td></tr>
+        <tr><td class="term">SEO / SEA</td><td><span data-l="fr">SEO = référencement naturel (gratuit, long terme). SEA = référencement payant (Google Ads).</span><span data-l="vi" class="cell-vi">SEO = tối ưu tìm kiếm tự nhiên. SEA = quảng cáo tìm kiếm trả phí.</span></td></tr>
+        <tr><td class="term">Cold email</td><td><span data-l="fr">Email de prospection envoyé à quelqu’un qui ne vous connaît pas encore.</span><span data-l="vi" class="cell-vi">Email chào hàng gửi người chưa quen biết.</span></td></tr>
+        <tr><td class="term">Scraping</td><td><span data-l="fr">Extraction automatique de données (profils, listes) depuis des sites ou réseaux.</span><span data-l="vi" class="cell-vi">Tự động thu thập dữ liệu từ web/mạng xã hội.</span></td></tr>
+        <tr><td class="term">Landing page</td><td><span data-l="fr">Page d’atterrissage dédiée à une action (inscription, achat).</span><span data-l="vi" class="cell-vi">Trang đích dành riêng cho một hành động.</span></td></tr>
+        <tr><td class="term">Street marketing</td><td><span data-l="fr">Opération dans la rue (flyers, animations) pour toucher la cible sur le terrain.</span><span data-l="vi" class="cell-vi">Marketing đường phố: phát tờ rơi, hoạt động ngoài trời.</span></td></tr>
+        <tr><td class="term">Pyramide de dotations</td><td><span data-l="fr">Lots d’un jeu-concours à plusieurs niveaux : peu de gros lots, beaucoup de petits lots.</span><span data-l="vi" class="cell-vi">Cơ cấu giải thưởng hình kim tự tháp: ít giải lớn, nhiều giải nhỏ.</span></td></tr>
+        <tr><td class="term">Score d’appétence</td><td><span data-l="fr">Note qui estime l’intérêt probable d’un client pour une offre, calculée avec les données du CRM.</span><span data-l="vi" class="cell-vi">Điểm đo mức độ khách có khả năng quan tâm/mua một ưu đãi.</span></td></tr>
+      </tbody></table></div>
+  </article>
+
+  <article class="fiche" id="s-gms">
+    <h2><span class="n">04</span> Vocabulaire GMS &amp; trade marketing <small>Từ vựng siêu thị / bán lẻ</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Terme</th><th>Définition</th></tr></thead>
+      <tbody>
+        <tr><td class="term">GMS</td><td><span data-l="fr">Grandes et moyennes surfaces (grande distribution).</span><span data-l="vi" class="cell-vi">Hệ thống siêu thị, đại siêu thị.</span></td></tr>
+        <tr><td class="term">MDD</td><td><span data-l="fr">Marque de distributeur : marque propre d’une enseigne (Carrefour, Marque Repère E.Leclerc), souvent moins chère.</span><span data-l="vi" class="cell-vi">Nhãn hàng riêng của chuỗi siêu thị, thường rẻ hơn.</span></td></tr>
+        <tr><td class="term">Marques nationales</td><td><span data-l="fr">Marques à forte notoriété de grands groupes (Coca-Cola, Danone, Nestlé), vendues dans plusieurs enseignes.</span><span data-l="vi" class="cell-vi">Thương hiệu lớn của tập đoàn, bán ở nhiều chuỗi.</span></td></tr>
+        <tr><td class="term">Trade marketing</td><td><span data-l="fr">Actions menées conjointement par fabricant et distributeur pour mieux vendre en point de vente (promotions, théâtralisation des rayons, PLV).</span><span data-l="vi" class="cell-vi">Nhà sản xuất và nhà phân phối cùng làm marketing tại điểm bán.</span></td></tr>
+        <tr><td class="term">Chef de secteur</td><td><span data-l="fr">Commercial itinérant d’une marque sur une zone : négocie la présence en rayon, vérifie la mise en rayon, installe les animations.</span><span data-l="vi" class="cell-vi">Nhân viên sales lưu động phụ trách một khu vực điểm bán.</span></td></tr>
+        <tr><td class="term">ODR</td><td><span data-l="fr">Offre de remboursement : remboursement partiel ou total après achat, sur preuve d’achat ou formulaire en ligne.</span><span data-l="vi" class="cell-vi">Ưu đãi hoàn tiền sau khi mua (gửi chứng từ / điền form).</span></td></tr>
+        <tr><td class="term">Linéaire</td><td><span data-l="fr">Espace d’exposition attribué aux produits en rayon, mesuré en « mètres linéaires ».</span><span data-l="vi" class="cell-vi">Không gian kệ trưng bày, đo bằng mét kệ.</span></td></tr>
+        <tr><td class="term">PLV</td><td><span data-l="fr">Publicité sur le lieu de vente (présentoirs, stop-rayons, affiches en magasin).</span><span data-l="vi" class="cell-vi">Quảng cáo tại điểm bán: kệ trưng bày, biển, poster trong cửa hàng.</span></td></tr>
+        <tr><td class="term">APV</td><td><span data-l="fr">Noté dans le cours à côté de PLV et ODR : actions/animations sur le point de vente.</span><span data-l="vi" class="cell-vi">Ghi trong vở cạnh PLV, ODR: các hoạt động tại điểm bán.</span></td></tr>
+        <tr><td class="term">DN</td><td><span data-l="fr">Distribution numérique : % des points de vente qui référencent le produit (en nombre).</span><span data-l="vi" class="cell-vi">% số điểm bán có bán sản phẩm (đếm số lượng).</span></td></tr>
+        <tr><td class="term">DV</td><td><span data-l="fr">Distribution valeur : même idée, pondérée par le poids (CA) des magasins dans la catégorie.</span><span data-l="vi" class="cell-vi">Như DN nhưng tính theo doanh thu của điểm bán.</span></td></tr>
+        <tr><td class="term">Shrinkflation</td><td><span data-l="fr">Réduire la taille/quantité d’un produit pour masquer une hausse de prix.</span><span data-l="vi" class="cell-vi">Giảm khối lượng, giữ giá.</span></td></tr>
+        <tr><td class="term">Cheapflation</td><td><span data-l="fr">Modifier la recette/composition (ingrédients moins chers) sans baisser le prix.</span><span data-l="vi" class="cell-vi">Thay nguyên liệu rẻ hơn, giữ giá.</span></td></tr>
+      </tbody></table></div>
+  </article>
+
+  <article class="fiche" id="s-strat">
+    <h2><span class="n">05</span> Stratégie marketing <small>Mục tiêu · Mục tiêu khách hàng · Phương tiện</small></h2>
+    <div class="duo">
+      <div class="box"><h3>Objectifs</h3>
+        <ul class="clean"><li>Augmenter la part de marché de X %</li><li>Augmenter les ventes de X %</li><li>Augmenter la DN / la DV de X %</li><li>Bâtir une offre commerciale</li><li>Positionner ou repositionner un produit</li></ul>
+        <p data-l="vi" class="cell-vi">Tăng thị phần, doanh số, DN/DV; xây dựng ưu đãi; định vị / tái định vị sản phẩm.</p></div>
+      <div class="box"><h3>Cibles</h3>
+        <ul class="clean"><li><strong>Cœur de cible</strong> : tranche de 5 ans max (ex. 25–30 ans)</li><li><strong>Cible primaire</strong> : tranche de 10 ans (ex. 20–30 ans)</li><li><strong>Cible secondaire / élargie</strong> : au-delà, prescripteurs</li></ul>
+        <p data-l="vi" class="cell-vi">Nhóm lõi: khoảng tuổi tối đa 5 năm. Nhóm chính: 10 năm. Nhóm phụ / mở rộng: rộng hơn, cả người ảnh hưởng.</p></div>
+      <div class="box"><h3>Moyens</h3>
+        <ul class="clean"><li>Trade marketing : PLV, APV, ODR</li><li>Actions événementielles</li><li>Marketing digital, d’influence</li><li>Achat d’espaces mass media</li><li>Relations presse / publiques</li><li>Partenariats, collaborations</li><li>Mécénat, sponsoring</li><li>Growth marketing</li></ul>
+        <p data-l="vi" class="cell-vi">Trade marketing, sự kiện, digital, influencer, mua quảng cáo đại chúng, PR, hợp tác, tài trợ, growth marketing.</p></div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-pub">
+    <h2><span class="n">06</span> Supports publicitaires <small>Khung luật Évin (quảng cáo đồ uống có cồn)</small></h2>
+    <div class="duo">
+      <div class="box ok"><h3>Autorisés · Được phép</h3>
+        <ul class="clean"><li>Presse écrite (sauf revues jeunesse)</li><li>Affichage (panneaux, abribus…)</li><li>Radio, uniquement à certains horaires</li><li>Tracts postaux, catalogues, brochures</li><li>Sites internet (sauf jeunesse ou sport)</li></ul>
+        <p data-l="vi" class="cell-vi">Báo in (trừ báo thiếu nhi), biển quảng cáo, radio theo khung giờ, tờ rơi/catalogue, website (trừ trang cho trẻ vị thành niên hoặc thể thao).</p></div>
+      <div class="box bad"><h3>Interdits · Bị cấm</h3>
+        <ul class="clean"><li>Télévision et cinéma</li><li>Presse et sites destinés aux mineurs</li><li>Sites internet liés au sport</li></ul>
+        <p data-l="vi" class="cell-vi">Truyền hình và rạp chiếu phim; báo/website dành cho trẻ vị thành niên; website thể thao.</p></div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-crm">
+    <h2><span class="n">07</span> Relation client &amp; CRM <small>Quan hệ khách hàng</small></h2>
+    <div class="bi">
+      <div data-l="fr" lang="fr">
+        <p><strong>2 types de messages.</strong> <em>One to many</em> : envois groupés (promotions, nouveautés). <em>One to one</em> : messages personnalisés (anniversaire, promotion personnalisée, récompense, offre internet, offre en boutique).</p>
+        <p><strong>Vente en boutique.</strong> Les vendeuses déclenchent des promotions et messages personnalisés pour faire venir les clients (<em>drive to store</em>) et enrichissent la fiche CRM avec ce qu’elles apprennent (yoga, chien, naissance) → <strong>score d’appétence</strong>.</p>
+        <p><strong>Outils CRM (séance 4).</strong> Salesforce, HubSpot, Brevo (aussi Pipedrive, Zoho). Ils servent à piloter la rétention, automatiser les relances et analyser le cycle de vie client.</p>
+        <p><strong>Piège.</strong> Les <em>vanity metrics</em> (likes, vues, nombre de contacts) : viser les actions qui impactent directement le CA.</p>
+      </div>
+      <div data-l="vi" lang="vi">
+        <p><strong>2 loại tin nhắn.</strong> <em>One to many</em>: gửi hàng loạt (khuyến mãi, hàng mới). <em>One to one</em>: tin cá nhân hóa (sinh nhật, ưu đãi riêng, phần thưởng, ưu đãi online hoặc tại cửa hàng).</p>
+        <p><strong>Bán tại cửa hàng.</strong> Nhân viên bán hàng gửi khuyến mãi riêng để kéo khách đến cửa hàng và bổ sung thông tin khách (tập yoga, nuôi chó, mới sinh con) vào CRM → tính <strong>điểm mức độ quan tâm</strong>.</p>
+        <p><strong>Công cụ CRM (buổi 4).</strong> Salesforce, HubSpot, Brevo (thêm Pipedrive, Zoho): quản lý giữ chân, tự động nhắc lại, phân tích vòng đời khách hàng.</p>
+        <p><strong>Bẫy.</strong> Chỉ số « làm đẹp » (like, view, số contact). Hãy tập trung vào hành động tạo ra doanh thu.</p>
+      </div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-tools">
+    <h2><span class="n">08</span> Les 10 catégories d’outils du growth <small>10 nhóm công cụ</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Catégorie</th><th>Outils cités</th></tr></thead>
+      <tbody>
+        <tr><td class="term">1. Sites &amp; landing pages (CMS)</td><td>WordPress, Webflow, Shopify, Framer · Landing : Unbounce, Leadpages, Systeme.io<span data-l="vi" class="cell-vi">Tạo website và trang đích</span></td></tr>
+        <tr><td class="term">2. Communication &amp; projets</td><td>Slack, Microsoft Teams · Notion, Asana, Trello, Monday.com, ClickUp<span data-l="vi" class="cell-vi">Giao tiếp nội bộ, quản lý dự án</span></td></tr>
+        <tr><td class="term">3. CRM</td><td>HubSpot, Salesforce, Pipedrive, Zoho CRM (PME, scale-ups) · Brevo<span data-l="vi" class="cell-vi">Quản lý quan hệ khách hàng</span></td></tr>
+        <tr><td class="term">4. Automatisation &amp; scraping</td><td>No-code : Make (ex-Integromat), Zapier, n8n · Scraping : PhantomBuster, Captain Data, Octoparse, Apify<span data-l="vi" class="cell-vi">Tự động hóa không cần code; thu thập dữ liệu</span></td></tr>
+        <tr><td class="term">5. Prospection &amp; emailing</td><td>Cold outreach : Lemlist, Instantly, Waalaxy (LinkedIn) · Email marketing : Brevo (ex-Sendinblue), Mailchimp, ActiveCampaign, Klaviyo<span data-l="vi" class="cell-vi">Tìm khách chủ động; gửi newsletter</span></td></tr>
+        <tr><td class="term">6. SEO</td><td>Mots-clés : Semrush, Ahrefs, SE Ranking · Audit technique : Google Search Console, Screaming Frog<span data-l="vi" class="cell-vi">Phân tích từ khóa, kiểm tra kỹ thuật website</span></td></tr>
+        <tr><td class="term">7. Paid ads</td><td>Google Ads, Meta Ads Manager, LinkedIn Campaign Manager, TikTok Ads Manager · Optimisation : Madgicx<span data-l="vi" class="cell-vi">Quảng cáo trả phí</span></td></tr>
+        <tr><td class="term">8. Analyse de données</td><td>Web : Google Analytics (GA4), Matomo, Plausible · Reporting : Looker Studio, Power BI, Tableau<span data-l="vi" class="cell-vi">Đo lường web, trực quan hóa dữ liệu</span></td></tr>
+        <tr><td class="term">9. Design &amp; création</td><td>Figma, Canva, Adobe Creative Cloud · IA : Midjourney, DALL-E, Ideogram<span data-l="vi" class="cell-vi">Thiết kế; tạo hình bằng AI</span></td></tr>
+        <tr><td class="term">10. Soft data</td><td>Formulaires, sondages, quiz : Typeform, Tally, Google Forms, Jotform, SurveyMonkey<span data-l="vi" class="cell-vi">Form, khảo sát, quiz</span></td></tr>
+      </tbody></table></div>
+  </article>
+
+  <article class="fiche" id="s-auto">
+    <h2><span class="n">09</span> PhantomBuster &amp; Lemlist <small>Tự động hóa prospection</small></h2>
+    <div class="bi">
+      <div data-l="fr" lang="fr">
+        <h3 style="margin-top:0">PhantomBuster</h3>
+        <p>Automatiser et optimiser son démarchage par scraping (LinkedIn, Instagram, X/Twitter).</p>
+        <ul class="clean"><li><strong>Étape 1</strong> : un fichier (Google Sheet) avec un template de profils/URL.</li><li><strong>Configurer le robot</strong> : se connecter à LinkedIn, sélectionner les profils (URL du tableur), écrire le message (#firstName#), régler le comportement (nombre de profils par lancement), email discovery, puis lancer.</li><li>« Phantoms » : LinkedIn Search Export, Profile Scraper, Message Sender, Auto Connect ; Instagram/Twitter Auto Follow, Auto Liker…</li></ul>
+        <h3>Lemlist</h3>
+        <p>Outil de prospection B2B tout-en-un, au départ spécialisé dans le <em>cold email</em>, qui crée des séquences multicanales : emails personnalisés, actions LinkedIn, appels, relances.</p>
+        <ul class="clean"><li><strong>1 Name</strong> : nommer la campagne.</li><li><strong>2 Buddies-to-be</strong> : importer les prospects (CSV), mapper les colonnes (firstName, companyName, icebreaker), gérer les doublons.</li><li><strong>3 Sequence</strong> : étapes et délais (« wait X days »), templates.</li><li><strong>4 Schedules</strong> : jours/heures d’envoi selon le fuseau du destinataire.</li><li><strong>5 Options</strong>, puis <strong>Review</strong> avant lancement.</li><li>Signature Lemlist : images et vidéos personnalisées (nom du prospect).</li></ul>
+      </div>
+      <div data-l="vi" lang="vi">
+        <h3 style="margin-top:0">PhantomBuster</h3>
+        <p>Tự động hóa việc tìm khách bằng scraping (LinkedIn, Instagram, X/Twitter).</p>
+        <ul class="clean"><li><strong>Bước 1</strong>: file Google Sheet theo mẫu, chứa danh sách hồ sơ/URL.</li><li><strong>Cấu hình robot</strong>: kết nối LinkedIn, chọn hồ sơ (link bảng tính), viết tin nhắn (#firstName#), chỉnh số hồ sơ mỗi lần chạy, tìm email, rồi chạy.</li><li>Các « Phantom »: xuất kết quả tìm kiếm LinkedIn, lấy dữ liệu hồ sơ, gửi tin nhắn, tự kết nối; tự follow/like trên Instagram, Twitter…</li></ul>
+        <h3>Lemlist</h3>
+        <p>Công cụ prospection B2B tất cả trong một, ban đầu chuyên cold email, nay tạo chuỗi đa kênh: email cá nhân hóa, LinkedIn, gọi điện, nhắc lại.</p>
+        <ul class="clean"><li><strong>1 Name</strong>: đặt tên chiến dịch.</li><li><strong>2 Buddies-to-be</strong>: nhập danh sách khách (CSV), ghép cột biến (tên, công ty, câu mở đầu riêng), xử lý trùng lặp.</li><li><strong>3 Sequence</strong>: các bước và khoảng chờ giữa chúng.</li><li><strong>4 Schedules</strong>: ngày giờ gửi theo múi giờ người nhận.</li><li><strong>5 Options</strong>, rồi <strong>Review</strong> trước khi chạy.</li><li>Đặc trưng: ảnh/video cá nhân hóa có tên người nhận.</li></ul>
+      </div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-agences">
+    <h2><span class="n">10</span> Agences &amp; médias cités <small>Tên agency được nhắc trong lớp</small></h2>
+    <div class="duo">
+      <div class="box"><h3>Agences RP / événementiel</h3><p>Pascale Venot · Melchior · Monet RP · Nice Work · Magna · Chez Julia · Kingcom · Hopscotch · Karla Otto · Ceetadel</p></div>
+      <div class="box"><h3>Médias / production / cinéma</h3><p>Mediawan (vở ghi: « Megawan ») · Webedia · Banijay (Endemol, Adventure Line Productions)</p></div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-cours">
+    <h2><span class="n">11</span> Le cours en un coup d’œil <small>Tổng quan môn học</small></h2>
+    <div class="tbl"><table>
+      <thead><tr><th>Séance</th><th>Thème</th></tr></thead>
+      <tbody>
+        <tr><td class="term">1</td><td><span data-l="fr">Fondations : rôle stratégique vs marketing traditionnel, valoriser la compétence sur son CV, AARRR, leviers de rétention avant l’acquisition, premier logiciel</span><span data-l="vi" class="cell-vi">Nền tảng, AARRR, giữ chân trước khi thu hút</span></td></tr>
+        <tr><td class="term">2</td><td><span data-l="fr">Canaux d’acquisition : marché, personas, SEO / Ads / Outbound / Content, B2B vs B2C, maturité des prospects, mix court terme / long terme, pricing des logiciels</span><span data-l="vi" class="cell-vi">Chọn kênh thu hút theo thị trường và chân dung khách hàng</span></td></tr>
+        <tr><td class="term">3</td><td><span data-l="fr">Test &amp; learn : tests et pilotes à faible coût, séquençage d’emails avec un outil de prospection B2B (Lemlist)</span><span data-l="vi" class="cell-vi">Thử nghiệm chi phí thấp, chuỗi email</span></td></tr>
+        <tr><td class="term">4</td><td><span data-l="fr">CRM : Salesforce, Brevo, HubSpot ; piège des vanity metrics</span><span data-l="vi" class="cell-vi">CRM và bẫy chỉ số « làm đẹp »</span></td></tr>
+        <tr><td class="term">5</td><td><span data-l="fr">IA et CRO : analyse de données, ultra-personnalisation, tests A/B accélérés, impact sur le CAC</span><span data-l="vi" class="cell-vi">AI, tối ưu chuyển đổi, CAC</span></td></tr>
+        <tr><td class="term">6</td><td><span data-l="fr">Scaling et ROI : réallouer le budget vers les leviers au meilleur ROI ; appel d’offres entre agences</span><span data-l="vi" class="cell-vi">Mở rộng quy mô, ROI, thi pitch giữa các agency</span></td></tr>
+      </tbody></table></div>
+    <div class="duo" style="margin-top:12px">
+      <div class="box"><h3>Évaluation</h3><ul class="clean"><li>Participation et interaction : 20 %</li><li>Portfolio d’exercices : 20 %</li><li>Travaux de groupe : 20 %</li><li><strong>Partiel : 40 %</strong>, cas pratique (2 h)</li></ul></div>
+      <div class="box"><h3>Ressources</h3><ul class="clean"><li><em>Guide pratique du growth marketing durable</em>, Alexia Huri (De Boeck Sup)</li><li><em>Le Growth Hacking</em>, 3<sup>e</sup> éd., Dunod</li><li>Elena Verna sur LinkedIn</li></ul></div>
+      <div class="box"><h3>Infos</h3><ul class="clean"><li>12 h · Module Marketing &amp; Expérience Client</li><li>RNCP 42474</li><li>RSE et IA intégrées au cours</li></ul></div>
+    </div>
+  </article>
+
+  <article class="fiche" id="s-cas">
+    <h2><span class="n">12</span> Cas vus en cours <small>Bài tập đã làm trên lớp</small></h2>
+    <div class="bi">
+      <div data-l="fr" lang="fr">
+        <h3 style="margin-top:0">Pizza Hut · flyer de street marketing</h3>
+        <p>Prestataire de Pizza Hut : revisiter le recto/verso d’un flyer distribué à des étudiants. Recto : visuel de la pizza + prix. Verso : mécanique de jeu-concours pour doper le téléchargement de l’app, avec une <strong>pyramide de dotations</strong>. Objectif : un maximum de téléchargements.</p>
+        <h3>HydraFizz (UPSA) · email</h3>
+        <p>Obtenir un rendez-vous par email avec le directeur marketing. Réponse au 1<sup>er</sup> email : 20/20 ; au 2<sup>e</sup> (relance) : 16/20 ; au 3<sup>e</sup> : 12/20 ; aucune réponse : 8/20.</p>
+      </div>
+      <div data-l="vi" lang="vi">
+        <h3 style="margin-top:0">Pizza Hut · tờ rơi marketing đường phố</h3>
+        <p>Làm lại 2 mặt tờ rơi phát cho sinh viên. Mặt trước: hình pizza + giá. Mặt sau: cơ chế mini game để tăng lượt tải app, với cơ cấu giải thưởng hình kim tự tháp. Mục tiêu: tối đa lượt tải ứng dụng.</p>
+        <h3>HydraFizz (UPSA) · email</h3>
+        <p>Xin hẹn qua email với giám đốc marketing. Được trả lời ở email 1: 20/20; email 2: 16/20; email 3: 12/20; không trả lời: 8/20.</p>
+      </div>
+    </div>
+  </article>
+</section>
+
+<!-- ===================== QUIZ ===================== -->
+<section id="p-quiz" role="tabpanel" aria-labelledby="tab-quiz" hidden>
+  <div id="quiz-home">
+    <div class="toolbar">
+      <p class="vi" style="max-width:62ch">Câu hỏi bằng tiếng Pháp như đề thật. Bật bản dịch nếu cần. Mỗi lần làm, câu hỏi và đáp án được xáo trộn.</p>
+      <label class="switch" for="vi-toggle"><input type="checkbox" id="vi-toggle" checked> Hiện tiếng Việt</label>
+    </div>
+    <div class="lv-grid" id="lv-grid"></div>
+    <h3 style="font-size:17px;margin:4px 0 8px">Mẹo cho dạng 40 câu / 12 phút</h3>
+    <div class="tips">
+      <div><b>~18 giây mỗi câu.</b> Câu nào chưa chắc thì bỏ qua, làm hết một lượt rồi quay lại.</div>
+      <div><b>Bắt từ khóa.</b> « complémentaire » → cross-sell; « gamme supérieure » → up-sell; « quantité » → shrinkflation; « recette » → cheapflation.</div>
+      <div><b>Xác định giai đoạn AARRR.</b> Hỏi: khách đang ở đâu? Mới biết đến (Acquisition), làm hành động đầu tiên (Activation), quay lại (Rétention), giới thiệu (Referral), chi thêm (Revenu).</div>
+      <div><b>Loại đáp án « vanity ».</b> Likes, vues, followers hầu như không bao giờ là KPI đúng.</div>
+    </div>
+  </div>
+  <div id="quiz-run" hidden></div>
+</section>
+
+<!-- ===================== CAS PRATIQUE ===================== -->
+<section id="p-cas" role="tabpanel" aria-labelledby="tab-cas" hidden data-lang="both">
+  <div class="toolbar">
+    <p class="vi" style="max-width:60ch">Phần thi cuối kỳ (40 %) là một cas pratique 2 giờ. Luyện theo khung dưới đây, rồi mở gợi ý để so sánh.</p>
+    <div class="seg" role="group" aria-label="Ngôn ngữ">
+      <button data-setlang="both" aria-pressed="true">FR + VI</button>
+      <button data-setlang="fr" aria-pressed="false">FR</button>
+      <button data-setlang="vi" aria-pressed="false">VI</button>
+    </div>
+  </div>
+
+  <article class="fiche">
+    <h2>Méthode en 8 étapes <small>Khung trả lời một cas pratique</small></h2>
+    <ol class="steps">
+      <li><div><span data-l="fr"><strong>Analyser le contexte</strong> : produit, marché, concurrence, B2B ou B2C, maturité des prospects.</span><span data-l="vi" class="cell-vi">Phân tích bối cảnh: sản phẩm, thị trường, đối thủ, B2B hay B2C.</span></div></li>
+      <li><div><span data-l="fr"><strong>Fixer un objectif chiffré</strong> (SMART) : ex. +20 % de ventes en 6 mois.</span><span data-l="vi" class="cell-vi">Đặt mục tiêu có số liệu và thời hạn.</span></div></li>
+      <li><div><span data-l="fr"><strong>Définir la cible</strong> : cœur de cible, cible primaire, cible secondaire, persona.</span><span data-l="vi" class="cell-vi">Xác định nhóm khách hàng và chân dung (persona).</span></div></li>
+      <li><div><span data-l="fr"><strong>Plan AARRR</strong> : 1 ou 2 leviers concrets par étape, en commençant par la rétention si elle est faible.</span><span data-l="vi" class="cell-vi">Mỗi giai đoạn AARRR 1–2 hành động cụ thể.</span></div></li>
+      <li><div><span data-l="fr"><strong>Choisir les canaux et outils</strong> : SEO, Ads, Outbound, Content ; CRM, emailing, automation, analytics.</span><span data-l="vi" class="cell-vi">Chọn kênh và công cụ phù hợp.</span></div></li>
+      <li><div><span data-l="fr"><strong>Test &amp; learn</strong> : pilote à faible coût, test A/B, puis scaler ce qui marche.</span><span data-l="vi" class="cell-vi">Thử nhỏ, A/B test, rồi mở rộng phần hiệu quả.</span></div></li>
+      <li><div><span data-l="fr"><strong>KPI liés au chiffre d’affaires</strong> : CAC, taux de conversion, LTV, churn, ROI. Pas de vanity metrics.</span><span data-l="vi" class="cell-vi">KPI gắn với doanh thu, tránh chỉ số « làm đẹp ».</span></div></li>
+      <li><div><span data-l="fr"><strong>RSE et IA</strong> : l’intégrer explicitement (exigé par le syllabus).</span><span data-l="vi" class="cell-vi">Lồng ghép trách nhiệm xã hội (RSE) và AI.</span></div></li>
+    </ol>
+  </article>
+
+  <article class="fiche">
+    <h2>Cas 1 · HydraFizz <small>B2C, bán qua nhà thuốc</small></h2>
+    <div class="bi">
+      <p data-l="fr" lang="fr">Vous êtes l’agence growth d’HydraFizz (UPSA). Objectif : +20 % de ventes en pharmacie auprès des 18–35 ans en 6 mois. Proposez une stratégie AARRR, les outils et les KPI.</p>
+      <p data-l="vi" lang="vi">Bạn là agency growth của HydraFizz. Mục tiêu: +20 % doanh số tại nhà thuốc với nhóm 18–35 tuổi trong 6 tháng. Đề xuất chiến lược AARRR, công cụ và KPI.</p>
+    </div>
+    <details class="ans"><summary>Xem gợi ý đáp án</summary><div>
+      <ul class="clean">
+        <li><strong>Cible</strong> : cœur 25–30 ans actifs urbains sportifs ; primaire 20–30 ; secondaire : pharmaciens (prescripteurs).<span data-l="vi" class="cell-vi">Nhóm lõi 25–30 tuổi năng động ở thành phố; nhóm phụ: dược sĩ.</span></li>
+        <li><strong class="st-acq">Acquisition</strong> : stands de dégustation sur courses urbaines, salles de sport, campus ; micro-influenceurs running ; SEA sur « hydratation sport ».<span data-l="vi" class="cell-vi">Quầy dùng thử ở giải chạy/phòng gym/campus, micro-influencer, quảng cáo tìm kiếm.</span></li>
+        <li><strong class="st-act">Activation</strong> : QR code → quiz « Quel HydraFizz pour vous ? » → email + bon de réduction en pharmacie (drive to store).<span data-l="vi" class="cell-vi">Quét QR làm quiz, để lại email, nhận phiếu giảm giá dùng ở nhà thuốc.</span></li>
+        <li><strong class="st-ret">Rétention</strong> : séquence d’emails conseils hydratation (marketing automation), carte de fidélité pharmacie.<span data-l="vi" class="cell-vi">Chuỗi email mẹo bù nước tự động, thẻ thành viên.</span></li>
+        <li><strong class="st-ref">Recommandation</strong> : UGC #MonÉpreuveDuJour, code parrainage.<span data-l="vi" class="cell-vi">Nội dung do khách tạo, mã giới thiệu bạn bè.</span></li>
+        <li><strong class="st-rev">Revenu</strong> : cross-sell (gammes Sport, Boost, Détox), up-sell (grand format), ODR.<span data-l="vi" class="cell-vi">Bán chéo các dòng khác, bán bản lớn hơn, hoàn tiền.</span></li>
+        <li><strong>Outils</strong> : Typeform (quiz), Brevo (emails), HubSpot (CRM), GA4, Canva.</li>
+        <li><strong>KPI</strong> : leads collectés, taux d’utilisation des bons, ventes en pharmacie, CAC, LTV.</li>
+        <li><strong>Test &amp; learn</strong> : tester 2 messages de stand sur 2 courses avant de généraliser.</li>
+        <li><strong>RSE</strong> : échantillons recyclables, messages responsables (complément alimentaire : pas d’allégations santé abusives).</li>
+      </ul></div></details>
+  </article>
+
+  <article class="fiche">
+    <h2>Cas 2 · Pizza Hut <small>Street marketing + jeu-concours</small></h2>
+    <div class="bi">
+      <p data-l="fr" lang="fr">Revisitez le flyer distribué aux étudiants. Recto : visuel de la pizza et prix. Verso : mécanique de jeu-concours qui dope le téléchargement de l’application, avec une pyramide de dotations.</p>
+      <p data-l="vi" lang="vi">Làm lại tờ rơi phát cho sinh viên. Mặt trước: hình pizza và giá. Mặt sau: mini game thúc đẩy tải ứng dụng, có cơ cấu giải thưởng kim tự tháp.</p>
+    </div>
+    <details class="ans"><summary>Xem gợi ý đáp án</summary><div>
+      <ul class="clean">
+        <li><strong>Recto</strong> : pizza en grand, prix étudiant bien visible, accroche courte.<span data-l="vi" class="cell-vi">Ảnh pizza lớn, giá sinh viên nổi bật, câu slogan ngắn.</span></li>
+        <li><strong>Verso, mécanique</strong> : « Télécharge l’app → scanne le QR → tente ta chance » ; un ticket de plus par ami parrainé.<span data-l="vi" class="cell-vi">Tải app → quét QR → tham gia; thêm lượt khi giới thiệu bạn.</span></li>
+        <li><strong>Pyramide de dotations</strong> : 1 an de pizzas (1 gagnant) · 10 pizzas offertes · 100 boissons · 1 000 codes -20 %.<span data-l="vi" class="cell-vi">1 giải lớn, 10 giải vừa, 100 giải nhỏ, 1 000 mã giảm giá.</span></li>
+        <li><strong>AARRR</strong> : flyer = acquisition ; téléchargement + inscription = activation ; notifications et fidélité = rétention ; parrainage = recommandation ; code -20 % utilisé = revenu.</li>
+        <li><strong>KPI</strong> : téléchargements, taux de scan du QR, coût par téléchargement, codes utilisés (CA).</li>
+      </ul></div></details>
+  </article>
+
+  <article class="fiche">
+    <h2>Cas 3 · SaaS B2B <small>Outbound, prospection tự động</small></h2>
+    <div class="bi">
+      <p data-l="fr" lang="fr">Une start-up SaaS (logiciel RH) veut 50 rendez-vous commerciaux par mois avec des DRH de PME. Proposez un dispositif growth.</p>
+      <p data-l="vi" lang="vi">Startup SaaS (phần mềm nhân sự) muốn 50 cuộc hẹn bán hàng mỗi tháng với giám đốc nhân sự của doanh nghiệp vừa và nhỏ. Đề xuất hệ thống growth.</p>
+    </div>
+    <details class="ans"><summary>Xem gợi ý đáp án</summary><div>
+      <ul class="clean">
+        <li><strong>Ciblage</strong> : persona DRH de PME de 50 à 250 salariés ; liste via PhantomBuster (LinkedIn Search Export) + enrichissement d’emails.<span data-l="vi" class="cell-vi">Lấy danh sách bằng PhantomBuster rồi bổ sung email.</span></li>
+        <li><strong>Séquence Lemlist multicanale</strong> : J0 email personnalisé (icebreaker) → J2 visite + invitation LinkedIn → J5 relance avec cas client → J9 appel → J14 dernier email court.<span data-l="vi" class="cell-vi">Chuỗi đa kênh: email, LinkedIn, nhắc lại, gọi điện, email cuối.</span></li>
+        <li><strong>CRM</strong> : HubSpot pour suivre leads et rendez-vous.</li>
+        <li><strong>Test A/B</strong> : 2 objets d’email sur 200 contacts chacun, garder le meilleur taux de réponse.</li>
+        <li><strong>KPI</strong> : taux de réponse, nombre de RDV, coût par RDV, taux de conversion RDV → client, CAC. Pas le nombre de contacts importés (vanity).</li>
+      </ul></div></details>
+  </article>
+</section>
+
+<p class="foot">Nguồn: syllabus Growth Marketing (EFAP 2026-2027), vở ghi 15/09 và 22/09/2026, slide « Cours 3 Growth Marketing Hydrafizz ». Một số định nghĩa bổ sung (DN, DV, PLV, CAC, A/B test…) là kiến thức marketing chuẩn, không có nguyên văn trong vở.</p>
+</main>
+
+<script>
+(function(){
+"use strict";
+var store={get:function(k,d){try{var v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set:function(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+function $(s,el){return (el||document).querySelector(s)}
+function $$(s,el){return Array.prototype.slice.call((el||document).querySelectorAll(s))}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c]})}
+var reduced=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- tabs ---------- */
+var TABS=["fiches","quiz","cas"];
+function showTab(name){
+  $$("[role=tab]").forEach(function(t){var on=t.dataset.tab===name;t.setAttribute("aria-selected",on?"true":"false");t.tabIndex=on?0:-1;document.getElementById("p-"+t.dataset.tab).hidden=!on});
+  store.set("gm-tab",name);
+}
+$$("[role=tab]").forEach(function(t){
+  t.addEventListener("click",function(){showTab(t.dataset.tab);try{history.replaceState(null,"","#"+t.dataset.tab)}catch(e){}window.scrollTo(0,0)});
+  t.addEventListener("keydown",function(ev){if(ev.key!=="ArrowRight"&&ev.key!=="ArrowLeft")return;var i=TABS.indexOf(t.dataset.tab);i=(i+(ev.key==="ArrowRight"?1:2))%3;var nt=document.getElementById("tab-"+TABS[i]);nt.click();nt.focus()});
+});
+var h=(location.hash||"").slice(1);
+showTab(TABS.indexOf(h)>=0?h:store.get("gm-tab","fiches"));
+
+/* ---------- language ---------- */
+function setLang(l){
+  ["p-fiches","p-cas"].forEach(function(id){document.getElementById(id).dataset.lang=l});
+  $$("[data-setlang]").forEach(function(b){b.setAttribute("aria-pressed",b.dataset.setlang===l?"true":"false")});
+  store.set("gm-lang",l);
+}
+$$("[data-setlang]").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.setlang)})});
+setLang(store.get("gm-lang","both"));
+$$("[data-go]").forEach(function(b){b.addEventListener("click",function(){var el=document.getElementById(b.dataset.go);if(el)el.scrollIntoView({behavior:reduced?"auto":"smooth",block:"start"})})});
+
+/* ---------- question bank ---------- */
+var BANK={easy:[],medium:[],hard:[]};
+function Q(l,t,q,qv,o,e,ev){BANK[l].push({l:l,t:t,q:q,qv:qv,o:o,e:e,ev:ev})}
+
+/* EASY */
+Q("easy","Vocabulaire","Que signifie l’acronyme SaaS ?","SaaS là viết tắt của gì?",["Software as a Service","Sales as a Service","Search Advertising and Social","Software Analytics as a System"],"Logiciel hébergé dans le cloud, accessible via un navigateur, généralement sur abonnement, sans installation locale.","Phần mềm trên cloud, dùng qua trình duyệt, trả phí thuê bao, không cần cài đặt.");
+Q("easy","Vocabulaire","Le modèle freemium consiste à…","Mô hình freemium là gì?",["Offrir une version de base gratuite et faire payer les fonctionnalités avancées","Offrir le produit 30 jours puis le supprimer","Vendre un produit premium à prix cassé","Rembourser une partie du prix après l’achat"],"Free + premium : version basique gratuite pour attirer une large base, puis conversion d’une partie en clients payants.","Bản cơ bản miễn phí để thu hút nhiều người dùng, sau đó chuyển một phần thành khách trả phí.");
+Q("easy","Vocabulaire","Une « licorne » est une start-up…","« Kỳ lân » là startup như thế nào?",["Non cotée, de moins de 10 ans, valorisée à plus d’1 milliard de dollars","Cotée en bourse et valorisée à plus d’1 milliard d’euros","Filiale d’un grand groupe valorisée à 100 millions","Financée uniquement par crowdfunding"],"Entreprise innovante de moins de 10 ans, non cotée, non affiliée à un grand groupe, valorisée à plus d’1 milliard de dollars.","Công ty dưới 10 năm, chưa niêm yết, độc lập, định giá trên 1 tỷ USD.");
+Q("easy","Vocabulaire","Que signifie CRM ?","CRM là gì?",["Customer Relationship Management","Customer Retention Marketing","Client Revenue Model","Content Reach Measurement"],"Gestion de la relation client : centralise données, appels, emails et historique de chaque client ou prospect.","Quản lý quan hệ khách hàng: gom dữ liệu, cuộc gọi, email, lịch sử của từng khách.");
+Q("easy","Vocabulaire","Le retargeting consiste à…","Retargeting là gì?",["Afficher des publicités aux personnes ayant visité un site sans réaliser l’action attendue","Envoyer des emails à des contacts achetés","Cibler uniquement des prospects jamais exposés à la marque","Recruter des distributeurs"],"Reciblage publicitaire : on relance par la pub les visiteurs qui n’ont pas acheté ou ne se sont pas inscrits.","Quảng cáo bám đuổi người đã ghé website/app mà chưa mua hoặc chưa đăng ký.");
+Q("easy","Vocabulaire","Un lead est…","Lead là gì?",["Une personne ou entreprise qui a montré de l’intérêt en laissant ses coordonnées","Un client fidèle depuis plus d’un an","Un influenceur partenaire de la marque","Le chef de projet d’une campagne"],"Une piste commerciale : contact qui a laissé un email ou un numéro de téléphone.","Khách tiềm năng đã để lại thông tin liên hệ.");
+Q("easy","Vocabulaire","Selon le cours, un « prospect » est…","Theo bài học, « prospect » là gì?",["Un lead qui a un projet d’achat réel et proche","Un contact simple sans besoin précis","Un contact dont seul le profil est vérifié","Un client qui a résilié"],"Lead brut (sans besoin précis) → lead qualifié (profil et intérêt vérifiés) → prospect (projet d’achat réel et proche).","Lead thô → lead đủ điều kiện → prospect (sắp mua thật).");
+Q("easy","Vocabulaire","Le crowdfunding est…","Crowdfunding là gì?",["Un financement participatif auprès d’un large public","Un prêt bancaire classique","Une introduction en bourse","Une subvention publique"],"Financement participatif pour la création, la reprise ou le développement d’un projet.","Gọi vốn cộng đồng từ đông đảo công chúng.");
+Q("easy","Vocabulaire","Le Drive to Store vise à…","Drive to Store nhằm mục đích gì?",["Attirer des clients en magasin physique à partir de canaux digitaux","Vendre uniquement en ligne","Livrer les clients en voiture","Fidéliser uniquement par email"],"Stratégies digitales qui amènent les clients en point de vente physique.","Dùng kênh digital để kéo khách đến cửa hàng thật.");
+Q("easy","Vocabulaire","Un pure player est une entreprise…","Pure player là doanh nghiệp như thế nào?",["Qui exerce exclusivement sur Internet","Qui ne vend qu’un seul produit","Qui vend uniquement en magasin","Spécialisée dans le bio"],"Aucun magasin ni point de vente physique.","Chỉ hoạt động trên Internet, không có cửa hàng.");
+Q("easy","Vocabulaire","Le cross-selling consiste à…","Cross-selling là gì?",["Proposer un produit complémentaire à l’achat principal","Proposer une gamme supérieure plus chère","Rembourser une partie de l’achat","Vendre à un concurrent"],"Vente croisée : ex. un smartphone + une coque.","Bán chéo: gợi ý món bổ sung, vd. điện thoại + ốp lưng.");
+Q("easy","Vocabulaire","Le cash back est…","Cash back là gì?",["Un remboursement partiel du montant de l’achat, souvent en pourcentage","Une réduction immédiate en caisse","Un paiement en trois fois","Un bon d’achat offert à un ami"],"Le consommateur récupère une partie du prix après l’achat.","Khách được hoàn lại một phần tiền đã mua.");
+Q("easy","AARRR","Dans AARRR, le premier A signifie…","Chữ A đầu tiên trong AARRR là gì?",["Acquisition","Activation","Audience","Awareness"],"Ordre : Acquisition → Activation → Rétention → Referral → Revenu.","Thứ tự: Acquisition → Activation → Rétention → Referral → Revenu.");
+Q("easy","AARRR","Le deuxième A de AARRR signifie…","Chữ A thứ hai trong AARRR là gì?",["Activation","Acquisition","Attention","Adoption"],"Activation : faire agir la cible pour qu’elle découvre la valeur du produit.","Activation: khiến khách thực hiện hành động đầu tiên.");
+Q("easy","AARRR","Les trois R de AARRR sont…","Ba chữ R trong AARRR là gì?",["Rétention, Recommandation (Referral), Revenu","Recherche, Réseau, Résultat","Rentabilité, Relance, Remise","Reach, Rate, Return"],"Rétention (faire revenir), Referral (faire recommander), Revenu (faire payer plus).","Giữ chân, giới thiệu, doanh thu.");
+Q("easy","GMS","MDD signifie…","MDD là gì?",["Marque de distributeur","Marketing digital direct","Mise à disposition","Marge directe de distribution"],"Marque propre d’une enseigne, ex. Marque Repère chez E.Leclerc.","Nhãn hàng riêng của chuỗi siêu thị.");
+Q("easy","GMS","ODR signifie…","ODR là gì?",["Offre de remboursement","Objectif de rentabilité","Opération de relance","Offre directe en rayon"],"Remboursement partiel ou total après achat, sur preuve d’achat ou formulaire en ligne.","Ưu đãi hoàn tiền sau khi mua.");
+Q("easy","GMS","Le « linéaire » désigne…","« Linéaire » là gì?",["L’espace d’exposition des produits en rayon, mesuré en mètres","La courbe de croissance des ventes","La ligne éditoriale d’une marque","Une campagne en ligne droite"],"Espace (étagères, présentoirs) attribué à une marque, mesuré en mètres linéaires.","Không gian kệ trưng bày, đo bằng mét kệ.");
+Q("easy","GMS","Le chef de secteur est…","Chef de secteur là ai?",["Un commercial itinérant qui visite les points de vente d’une zone","Le directeur d’un magasin","Le responsable informatique","Un chef de produit au siège"],"Il négocie la présence en rayon, vérifie la mise en rayon et installe les animations.","Nhân viên sales lưu động phụ trách điểm bán trong một khu vực.");
+Q("easy","GMS","La shrinkflation consiste à…","Shrinkflation là gì?",["Réduire la quantité d’un produit sans baisser son prix","Augmenter la taille d’un produit","Baisser le prix pour gagner des parts de marché","Supprimer un produit de la gamme"],"Masquer une hausse de prix en réduisant la taille ou la quantité.","Giảm khối lượng nhưng giữ nguyên giá.");
+Q("easy","AARRR","Le churn désigne…","Churn là gì?",["La perte / le désengagement de clients","Le gain de nouveaux clients","Le nombre de visites d’un site","Le prix moyen d’un abonnement"],"Réduire le churn est l’objectif de la rétention.","Tỷ lệ khách rời bỏ; giảm churn là mục tiêu của Rétention.");
+Q("easy","KPI","LTV signifie…","LTV là gì?",["Lifetime Value (valeur vie client)","Lead To Visit","Long Term Visibility","Low Traffic Volume"],"Valeur générée par un client sur toute sa relation avec la marque. C’est un KPI.","Giá trị vòng đời khách hàng; là một KPI.");
+Q("easy","Outils","Lemlist est principalement un outil de…","Lemlist chủ yếu là công cụ gì?",["Prospection et cold emailing automatisé","Design graphique","Analyse web","Gestion de projet"],"Outil de prospection B2B, au départ spécialisé dans le cold email, avec séquences multicanales.","Công cụ prospection B2B, chuyên cold email và chuỗi đa kênh.");
+Q("easy","Outils","PhantomBuster est un outil de…","PhantomBuster là công cụ gì?",["Scraping et automatisation (ex. LinkedIn)","Création de site","Comptabilité","Visioconférence"],"Il automatise le démarchage : export de profils, envoi de messages…","Thu thập dữ liệu và tự động hóa, vd. trên LinkedIn.");
+Q("easy","Outils","Lequel de ces outils sert à créer un site (CMS) ?","Công cụ nào dùng để tạo website (CMS)?",["WordPress","Slack","Semrush","Typeform"],"CMS : WordPress, Webflow, Shopify, Framer. Slack = communication, Semrush = SEO, Typeform = formulaires.","CMS: WordPress, Webflow, Shopify, Framer.");
+Q("easy","Outils","Lequel est un outil CRM ?","Công cụ nào là CRM?",["HubSpot","Canva","Figma","Matomo"],"CRM : HubSpot, Salesforce, Pipedrive, Zoho. Canva/Figma = design, Matomo = analytics.","CRM: HubSpot, Salesforce, Pipedrive, Zoho.");
+Q("easy","Agences","Laquelle est une agence RP / événementielle citée en cours ?","Đâu là agency PR / sự kiện được nhắc trong lớp?",["Hopscotch","Webedia","Banijay","Shopify"],"Agences RP/event : Pascale Venot, Melchior, Monet RP, Nice Work, Magna, Chez Julia, Kingcom, Hopscotch, Karla Otto, Ceetadel. Webedia et Banijay sont des médias / producteurs.","Webedia, Banijay là media/sản xuất, không phải agency PR.");
+Q("easy","Définition","Le marketing classique se concentre sur l’image de marque et l’acquisition. Le growth marketing, lui…","Marketing truyền thống tập trung vào hình ảnh và thu hút khách. Còn growth marketing thì…",["Analyse et optimise tout le parcours client, de la découverte à la fidélisation","Se limite à la publicité télévisée","Ne s’occupe que du prix","Remplace totalement le service commercial"],"Approche globale pilotée par la donnée, sur tout le funnel.","Tối ưu toàn bộ hành trình khách hàng, dựa trên dữ liệu.");
+Q("easy","CRM","Un message « one to many » est…","Tin nhắn « one to many » là gì?",["Un envoi groupé (promotions, nouveautés)","Un message d’anniversaire personnalisé","Un appel individuel du service client","Une récompense pour un seul client"],"One to many = envoi de masse. One to one = message personnalisé.","Gửi hàng loạt. One to one mới là tin cá nhân hóa.");
+Q("easy","Vocabulaire","Le MLM (marketing multiniveau) repose sur…","MLM (bán hàng đa cấp) dựa trên điều gì?",["Des distributeurs payés sur leurs ventes et celles des personnes qu’ils recrutent","La publicité télévisée","Le référencement naturel","Les ventes en magasin uniquement"],"Les distributeurs gagnent aussi sur les ventes de leurs filleuls.","Hưởng tiền từ doanh số của cả những người mình tuyển.");
+Q("easy","Vocabulaire","Le lobbying consiste à…","Lobbying là gì?",["Influencer les décideurs publics pour défendre des intérêts","Accueillir les clients dans le hall d’un magasin","Acheter des espaces publicitaires TV","Vendre exclusivement en ligne"],"Actions d’influence auprès des élus et administrations.","Vận động hành lang, tác động người làm chính sách.");
+Q("easy","Vocabulaire","Le marketing automation consiste à…","Marketing automation là gì?",["Automatiser des actions marketing (emails, relances) selon des scénarios","Remplacer les vendeurs par des robots en magasin","Publier manuellement chaque post","Imprimer des flyers en masse"],"Emails et relances déclenchés automatiquement selon le comportement des contacts.","Tự động gửi email, nhắc lại theo kịch bản và hành vi khách.");
+
+/* MEDIUM */
+Q("medium","Revenu","Quelle est la différence entre up-selling et cross-selling ?","Up-selling và cross-selling khác nhau thế nào?",["Up-sell = gamme supérieure ; cross-sell = produit complémentaire","Up-sell = produit complémentaire ; cross-sell = gamme supérieure","Ce sont des synonymes","Up-sell = en ligne ; cross-sell = en magasin"],"Up = monter en gamme. Cross = ajouter un produit à côté.","Up = lên đời cao cấp hơn. Cross = mua thêm món bổ sung.");
+Q("medium","Revenu","Un client achète un smartphone ; le vendeur lui propose une coque et des écouteurs. C’est…","Khách mua điện thoại, người bán gợi ý thêm ốp lưng và tai nghe. Đây là…",["Du cross-selling","De l’up-selling","Du retargeting","Du cash back"],"Produits complémentaires à l’achat principal.","Bán thêm món bổ sung = cross-selling.");
+Q("medium","Revenu","Un utilisateur passe de la version gratuite à l’abonnement Premium plus cher. Quel levier ?","Người dùng chuyển từ bản miễn phí lên gói Premium đắt hơn. Đây là đòn bẩy nào?",["Up-selling (étape Revenu)","Cross-selling","Acquisition","Referral"],"Monter en gamme augmente le revenu par utilisateur.","Lên gói cao hơn = up-selling, thuộc giai đoạn Revenu.");
+Q("medium","AARRR","S’inscrire à un webinaire ou demander une démo correspond à l’étape…","Đăng ký webinar hoặc xin demo thuộc giai đoạn nào?",["Activation","Acquisition","Rétention","Revenu"],"Le slide liste : formulaire, newsletter, essai, webinaire, démo, offre de bienvenue.","Slide liệt kê các hành động này trong Activation.");
+Q("medium","AARRR","Un programme de parrainage correspond à…","Chương trình giới thiệu bạn bè thuộc giai đoạn nào?",["Recommandation (Referral)","Activation","Acquisition","Rétention"],"Referral : parrainage, mécaniques virales, avis clients.","Referral: giới thiệu bạn bè, lan truyền, đánh giá.");
+Q("medium","AARRR","Une campagne SEA sur Google Ads relève surtout de…","Chiến dịch quảng cáo Google Ads (SEA) chủ yếu thuộc giai đoạn nào?",["L’acquisition","La rétention","Le referral","Le revenu"],"Outils clés de l’acquisition : SEO, outils gratuits, SEA, social ads / influenceurs, RP.","SEA là công cụ thu hút khách mới.");
+Q("medium","AARRR","Une newsletter de conseils pour bien utiliser le produit, envoyée aux clients, sert surtout…","Newsletter gửi khách hàng hiện tại với mẹo sử dụng sản phẩm chủ yếu phục vụ…",["La rétention","L’acquisition","Le referral","Le revenu"],"Conseils, astuces et newsletters utiles = leviers de fidélisation.","Đây là hành động giữ chân khách.");
+Q("medium","AARRR","« Proposer une offre de bienvenue » appartient à quelle étape ?","« Ưu đãi chào mừng » thuộc giai đoạn nào?",["Activation","Revenu","Referral","Rétention"],"Dans le slide, l’offre de bienvenue figure dans l’activation.","Slide xếp ưu đãi chào mừng vào Activation.");
+Q("medium","AARRR","Selon le cours, que faut-il sécuriser AVANT de lancer une acquisition à grande échelle ?","Theo bài học, cần đảm bảo điều gì TRƯỚC khi thu hút khách quy mô lớn?",["Les leviers de rétention","Le logo","Le budget TV","Le nombre d’abonnés Instagram"],"Séance 1 : identifier les leviers de rétention avant toute acquisition à grande échelle.","Buổi 1: lo giữ chân khách trước.");
+Q("medium","Vocabulaire","Différence entre lead brut et lead qualifié ?","Lead thô và lead đủ điều kiện khác nhau thế nào?",["Brut : contact sans besoin précis ; qualifié : profil et intérêt vérifiés","Brut : client fidèle ; qualifié : nouveau client","Brut : contact acheté ; qualifié : contact gratuit","Aucune différence"],"La qualification vérifie le profil et l’intérêt.","Lead đủ điều kiện là lead đã được xác minh.");
+Q("medium","GMS","Laquelle est une MDD ?","Đâu là một MDD?",["Marque Repère (E.Leclerc)","Coca-Cola","Danone","Nestlé"],"Coca-Cola, Danone, Nestlé sont des marques nationales.","Ba cái còn lại là thương hiệu quốc gia.");
+Q("medium","GMS","Le trade marketing, c’est…","Trade marketing là gì?",["Des actions conjointes fabricant-distributeur pour mieux vendre en point de vente","Le marketing des traders en bourse","La publicité TV d’une marque nationale","Le commerce international"],"Promotions, théâtralisation des rayons, PLV.","Nhà sản xuất và nhà phân phối cùng làm marketing tại điểm bán.");
+Q("medium","GMS","La DN (distribution numérique) mesure…","DN đo lường điều gì?",["Le % de points de vente qui référencent le produit","Le chiffre d’affaires en ligne","Le nombre de followers","Le % des ventes sur mobile"],"On compte les magasins, sans tenir compte de leur taille.","Đếm số điểm bán có sản phẩm, không tính quy mô.");
+Q("medium","GMS","La DV (distribution valeur) mesure…","DV đo lường điều gì?",["La présence en magasins pondérée par leur poids (CA) dans la catégorie","Le prix moyen du produit","La valeur des stocks","La valeur de la marque"],"Un hypermarché pèse plus qu’une supérette.","Có trọng số theo doanh thu: đại siêu thị « nặng » hơn cửa hàng nhỏ.");
+Q("medium","KPI","Les vanity metrics sont…","Vanity metrics là gì?",["Des indicateurs flatteurs sans impact direct sur le CA (likes, vues, contacts)","Des KPI de chiffre d’affaires","Des indicateurs de satisfaction","Des métriques financières obligatoires"],"Séance 4 : cibler les actions qui impactent directement le CA.","Chỉ số « làm đẹp », không trực tiếp tạo doanh thu.");
+Q("medium","KPI","Lequel de ces indicateurs impacte directement le chiffre d’affaires ?","Chỉ số nào tác động trực tiếp đến doanh thu?",["Le taux de conversion","Le nombre de likes","Le nombre de vues","Le nombre de followers"],"La conversion transforme les visiteurs en clients.","Tỷ lệ chuyển đổi biến người xem thành người mua.");
+Q("medium","Outils","Quels outils servent au cold emailing / à la prospection ?","Nhóm công cụ nào dùng cho cold email / prospection?",["Lemlist, Instantly, Waalaxy","Figma, Canva, Midjourney","GA4, Matomo, Plausible","Notion, Trello, Asana"],"Catégorie 5 : prospection et emailing.","Nhóm 5: prospection và emailing.");
+Q("medium","Outils","Brevo (ex-Sendinblue), Mailchimp, Klaviyo sont des outils de…","Brevo, Mailchimp, Klaviyo là công cụ gì?",["Email marketing / newsletters","SEO technique","Scraping","Visualisation de données"],"Email marketing, catégorie prospection et emailing.","Email marketing / newsletter.");
+Q("medium","Outils","Semrush et Ahrefs servent à…","Semrush và Ahrefs dùng để làm gì?",["L’analyse SEO et des mots-clés","La gestion de projet","Le CRM","La création de formulaires"],"Catégorie SEO (avec SE Ranking).","Phân tích SEO, từ khóa.");
+Q("medium","Outils","Make, Zapier et n8n sont des outils…","Make, Zapier, n8n là công cụ gì?",["D’automatisation no-code","De design","De paid ads","De CMS"],"Ils relient des applications et automatisent des tâches sans coder.","Tự động hóa không cần lập trình.");
+Q("medium","Outils","Looker Studio, Power BI et Tableau servent à…","Looker Studio, Power BI, Tableau dùng để làm gì?",["La visualisation et le reporting de données","Le cold emailing","Le scraping","Les landing pages"],"Catégorie analyse de données.","Trực quan hóa và báo cáo dữ liệu.");
+Q("medium","Outils","Typeform, Tally, Google Forms relèvent de la catégorie…","Typeform, Tally, Google Forms thuộc nhóm nào?",["Soft data : formulaires, sondages, quiz","CRM","SEO","Paid ads"],"Catégorie 10 du cours.","Nhóm 10: form, khảo sát, quiz.");
+Q("medium","Outils","Unbounce, Leadpages et Systeme.io servent à créer…","Unbounce, Leadpages, Systeme.io dùng để tạo gì?",["Des landing pages","Des factures","Des visuels IA","Des CRM"],"Catégorie 1 : sites et landing pages.","Trang đích (landing page).");
+Q("medium","Structures","Pour une start-up SaaS, le growth vise surtout à optimiser…","Với startup SaaS, growth chủ yếu tối ưu điều gì?",["Les abonnements et l’usage du produit","Les paniers abandonnés","Les mètres linéaires","La PLV"],"SaaS = abonnements.","SaaS sống nhờ thuê bao.");
+Q("medium","Structures","Pour un e-commerce, le growth optimise notamment…","Với thương mại điện tử, growth tối ưu điều gì?",["Le panier moyen, la relance des paniers abandonnés et la fidélisation","La génération de leads pour les commerciaux","Les abonnements logiciels","La DN"],"Les trois leviers e-commerce du cours.","Ba đòn bẩy e-commerce trong bài.");
+Q("medium","Structures","Pour une entreprise B2B, le growth sert surtout à…","Với doanh nghiệp B2B, growth chủ yếu dùng để…",["Générer et enrichir des leads pour les commerciaux (Sales Intelligence)","Augmenter le panier moyen en magasin","Vendre aux particuliers","Gérer les stocks"],"B2B = PME et grands comptes.","Tạo và làm giàu lead cho đội sales.");
+Q("medium","CRM","Lequel est un message « one to one » ?","Đâu là tin nhắn « one to one »?",["Un message d’anniversaire avec une promotion personnalisée","Une promotion envoyée à toute la base","Une affiche dans le métro","Un spot radio"],"One to one = personnalisé pour un client.","Tin cá nhân hóa cho từng khách.");
+Q("medium","CRM","Les vendeuses enrichissent la fiche CRM (yoga, chien, naissance) pour calculer…","Nhân viên bổ sung thông tin khách (yoga, chó, mới sinh con) vào CRM để tính…",["Un score d’appétence","La DN","Le CAC","Le linéaire"],"Mieux connaître le client pour lui proposer la bonne offre.","Điểm mức độ quan tâm, để gửi đúng ưu đãi.");
+Q("medium","Stratégie","Selon le cours, le cœur de cible correspond à une tranche d’âge de…","Theo bài, nhóm khách hàng lõi có khoảng tuổi bao nhiêu?",["5 ans maximum","10 ans","20 ans","Toute la population"],"Cœur de cible : 5 ans max ; cible primaire : 10 ans ; puis cible secondaire / élargie.","Lõi: 5 năm; chính: 10 năm; phụ: rộng hơn.");
+Q("medium","KPI","Quelle affirmation sur la LTV est correcte ?","Nhận định nào về LTV là đúng?",["C’est un KPI : la valeur d’un client sur toute sa relation avec la marque","C’est le coût pour acquérir un client","C’est le taux de désabonnement","C’est le nombre de leads par mois"],"Le slide insiste : « LTV est UN KPI ».","Slide nhấn mạnh: LTV là một KPI.");
+Q("medium","Cours","Dans l’évaluation du cours, le partiel (cas pratique de 2 h) compte pour…","Trong cách tính điểm, bài thi cuối kỳ (cas pratique 2 giờ) chiếm…",["40 %","20 %","50 %","60 %"],"20 % participation, 20 % portfolio, 20 % travaux de groupe, 40 % partiel.","20 + 20 + 20 + 40.");
+Q("medium","IA","Selon le cours, l’IA transforme le growth marketing en…","Theo bài, AI thay đổi growth marketing bằng cách…",["Automatisant l’analyse de données, ultra-personnalisant les messages et accélérant les tests A/B","Supprimant le besoin de CRM","Interdisant la prospection par email","Remplaçant le SEO par la TV"],"Séance 5 : analyse de données massives, personnalisation à grande échelle, tests A/B plus rapides.","Phân tích dữ liệu, cá nhân hóa quy mô lớn, A/B test nhanh hơn.");
+Q("medium","Agences","Webedia et Banijay (Endemol, Adventure Line Productions) sont cités comme…","Webedia và Banijay được nhắc đến như…",["Des groupes médias / de production","Des agences RP événementielles","Des logiciels CRM","Des marques de distributeur"],"Catégorie média / production / cinéma.","Nhóm media / sản xuất.");
+
+/* HARD */
+Q("hard","Cas","Une marque fait goûter son produit sur des courses, puis remet un bon de réduction à utiliser en pharmacie. Quels concepts ?","Thương hiệu cho dùng thử ở giải chạy rồi phát phiếu giảm giá dùng tại nhà thuốc. Đây là những khái niệm nào?",["Acquisition / activation + drive to store","Rétention + MLM","Referral + pure player","Revenu + shrinkflation"],"Le stand attire et fait essayer ; le bon ramène vers le point de vente physique.","Quầy dùng thử thu hút và kích hoạt; phiếu giảm giá kéo khách đến điểm bán.");
+Q("hard","Cas","Pizza Hut : le verso du flyer propose un jeu-concours avec une « pyramide de dotations ». Cela signifie…","Pizza Hut: mặt sau tờ rơi có mini game với « pyramide de dotations». Nghĩa là…",["Plusieurs niveaux de lots : peu de gros lots, beaucoup de petits","Un seul gros lot","Des réductions qui augmentent avec le prix","Un classement des vendeurs"],"Ex. 1 an de pizzas, 10 pizzas, 100 boissons, 1 000 codes promo.","Ít giải lớn, nhiều giải nhỏ.");
+Q("hard","Cas","Distribuer des flyers à des étudiants dans la rue pour faire télécharger une app, c’est…","Phát tờ rơi cho sinh viên trên phố để họ tải app là…",["Du street marketing au service de l’acquisition","Du retargeting","Du lobbying","Du cross-selling"],"Opération terrain pour toucher une nouvelle cible.","Marketing đường phố để thu hút người dùng mới.");
+Q("hard","Supports","Une marque d’alcool veut communiquer en France. Quel support est INTERDIT ?","Thương hiệu đồ uống có cồn muốn quảng cáo ở Pháp. Kênh nào bị CẤM?",["La télévision","L’affichage","La presse écrite (hors jeunesse)","La radio à certains horaires"],"Interdits : TV, cinéma, presse et sites pour mineurs, sites liés au sport.","Cấm: TV, rạp phim, báo/website cho trẻ vị thành niên, website thể thao.");
+Q("hard","Supports","Lequel de ces supports est AUTORISÉ dans ce cadre ?","Kênh nào ĐƯỢC PHÉP trong khung luật này?",["Les tracts postaux et catalogues","Le cinéma","Un site internet de sport","Une revue jeunesse"],"Autorisés : presse (hors jeunesse), affichage, radio à horaires définis, tracts, catalogues, sites hors mineurs/sport.","Được phép: tờ rơi, catalogue, báo in người lớn, biển quảng cáo…");
+Q("hard","Cas","Un e-commerce constate que 70 % des paniers sont abandonnés. L’action growth la plus adaptée ?","Một website thương mại điện tử thấy 70 % giỏ hàng bị bỏ dở. Hành động growth phù hợp nhất?",["Un email de relance automatisé (marketing automation)","Acheter plus de likes","Augmenter le budget TV","Changer le logo"],"La relance des paniers abandonnés est un levier e-commerce clé du cours.","Email nhắc giỏ hàng tự động.");
+Q("hard","AARRR","Une start-up a beaucoup de trafic mais très peu d’inscriptions. Où est le problème ?","Startup có nhiều lượt truy cập nhưng rất ít người đăng ký. Vấn đề nằm ở đâu?",["Activation","Referral","Revenu","Acquisition"],"Les visiteurs arrivent (acquisition OK) mais n’agissent pas.","Khách đã đến (acquisition ổn) nhưng không hành động.");
+Q("hard","AARRR","Une app gagne beaucoup d’utilisateurs, mais la plupart partent au bout d’une semaine. Problème principal ?","App có nhiều người dùng mới nhưng đa số bỏ đi sau một tuần. Vấn đề chính?",["La rétention (churn élevé)","L’acquisition","Le referral","La notoriété"],"Les utilisateurs ne reviennent pas : il faut travailler la fidélisation.","Khách không quay lại: phải cải thiện giữ chân.");
+Q("hard","KPI","On présente « +20 000 vues sur TikTok » comme un succès alors que les ventes n’ont pas bougé. Le piège ?","Ai đó coi « +20 000 lượt xem TikTok » là thành công dù doanh số không đổi. Đây là bẫy gì?",["Les vanity metrics","Le cross-selling","Le retargeting","Le cash back"],"Les vues flattent mais n’impactent pas directement le CA.","Lượt xem đẹp nhưng không tạo doanh thu.");
+Q("hard","Outils","Pour exporter dans un tableur la liste de profils issus d’une recherche LinkedIn, on utilise…","Muốn xuất danh sách hồ sơ từ kết quả tìm kiếm LinkedIn ra bảng tính, dùng…",["PhantomBuster (LinkedIn Search Export)","Canva","Google Search Console","Brevo"],"C’est l’un des « Phantoms » montrés en cours.","Một « Phantom » được chiếu trong lớp.");
+Q("hard","Lemlist","Dans Lemlist, l’étape « Buddies-to-be » sert à…","Trong Lemlist, bước « Buddies-to-be » dùng để…",["Importer les prospects (CSV) et mapper les variables","Écrire le contenu des emails","Choisir les horaires d’envoi","Analyser les résultats"],"Ordre : Name → Buddies-to-be → Sequence → Schedules → Options → Review.","Nhập danh sách khách và ghép các cột biến.");
+Q("hard","Lemlist","Dans une séquence Lemlist, la variable {{firstName}} sert à…","Trong chuỗi Lemlist, biến {{firstName}} dùng để…",["Personnaliser automatiquement chaque email avec le prénom du prospect","Compter les ouvertures","Supprimer les doublons","Programmer l’envoi"],"Personnalisation à grande échelle.","Tự động chèn tên của từng người nhận.");
+Q("hard","Lemlist","Dans Lemlist, l’onglet « Schedules » permet de…","Trong Lemlist, tab « Schedules » dùng để…",["Choisir jours et heures d’envoi selon le fuseau du destinataire","Importer un CSV","Créer des visuels","Payer l’abonnement"],"Ex. Paris Office Hours, New York Office Hours.","Chọn ngày giờ gửi theo múi giờ người nhận.");
+Q("hard","Lemlist","Une colonne « icebreaker » dans le fichier importé sert à…","Cột « icebreaker » trong file nhập vào dùng để…",["Insérer une première phrase personnalisée, différente pour chaque prospect","Supprimer les doublons","Stocker les numéros de téléphone","Classer les prospects par score"],"Phrase d’accroche spécifique qui montre qu’on connaît le prospect.","Câu mở đầu viết riêng cho từng người.");
+Q("hard","Lemlist","Lemlist est dit « multicanal » car une séquence peut combiner…","Lemlist được gọi là « đa kênh » vì một chuỗi có thể kết hợp…",["Emails, actions LinkedIn, appels et relances","TV, radio et presse","SEO et SEA uniquement","PLV et ODR"],"Séquences multicanales : emails personnalisés, LinkedIn, téléphone, relances.","Email, LinkedIn, gọi điện, nhắc lại.");
+Q("hard","Cas","Exercice HydraFizz : l’étudiant n’obtient une réponse qu’après le 2e email (relance). Sa note ?","Bài HydraFizz: sinh viên chỉ được trả lời sau email thứ 2. Được mấy điểm?",["16/20","20/20","12/20","8/20"],"1er email : 20 ; 2e : 16 ; 3e : 12 ; aucune réponse : 8.","Email 1: 20; email 2: 16; email 3: 12; không trả lời: 8.");
+Q("hard","Cas","Exercice HydraFizz : aucune réponse après les 3 emails. La note ?","Bài HydraFizz: không được trả lời sau cả 3 email. Điểm?",["8/20","0/20","10/20","12/20"],"Barème : 20 / 16 / 12, puis 8 sans réponse.","Không trả lời vẫn được 8/20.");
+Q("hard","Lemlist","Quel enchaînement correspond à une bonne séquence de cold email ?","Chuỗi nào là một chuỗi cold email tốt?",["Email personnalisé → relance avec une nouvelle valeur → dernier email court","Le même email envoyé 3 fois le même jour","Un seul long email avec 5 pièces jointes","Un email générique envoyé à 1 000 contacts achetés"],"Personnalisation, délais entre étapes, valeur ajoutée à chaque relance.","Cá nhân hóa, có khoảng cách, mỗi lần nhắc mang thêm giá trị.");
+Q("hard","Outils","Une PME B2B veut trouver des décideurs, récupérer leurs emails puis les contacter automatiquement. Combinaison la plus logique ?","Doanh nghiệp B2B muốn tìm người ra quyết định, lấy email rồi liên hệ tự động. Kết hợp hợp lý nhất?",["PhantomBuster + Lemlist + HubSpot","Canva + Figma + Midjourney","GA4 + Tableau + Power BI","WordPress + Shopify + Framer"],"Scraping → séquence de prospection → suivi dans le CRM.","Thu thập → chuỗi tiếp cận → quản lý trong CRM.");
+Q("hard","GMS","Une marque nationale négocie du linéaire, installe de la PLV et lance une ODR avec une enseigne. On parle de…","Thương hiệu quốc gia đàm phán kệ, đặt PLV và chạy ODR cùng một chuỗi siêu thị. Đây là…",["Trade marketing","Growth hacking SaaS","Lobbying","Crowdfunding"],"Coopération fabricant-distributeur en point de vente.","Hợp tác nhà sản xuất – nhà phân phối tại điểm bán.");
+Q("hard","GMS","Une marque passe son paquet de 500 g à 450 g au même prix. C’est…","Một thương hiệu giảm gói từ 500 g xuống 450 g, giá giữ nguyên. Đây là…",["De la shrinkflation","De la cheapflation","De l’up-selling","Du cash back"],"La quantité baisse, le prix reste.","Giảm khối lượng = shrinkflation.");
+Q("hard","GMS","Une marque remplace une partie du beurre de sa recette par une huile moins chère, au même prix. C’est…","Thương hiệu thay một phần bơ bằng dầu rẻ hơn, giá giữ nguyên. Đây là…",["De la cheapflation","De la shrinkflation","Une ODR","Du cross-selling"],"La composition se dégrade, le prix reste.","Giảm chất lượng công thức = cheapflation.");
+Q("hard","GMS","L’objectif « augmenter la DN » signifie…","Mục tiêu « tăng DN » nghĩa là…",["Être référencé dans une plus grande part des points de vente","Augmenter le prix de vente","Augmenter les likes","Réduire les coûts de production"],"DN = part des magasins (en nombre) qui vendent le produit.","Có mặt ở nhiều điểm bán hơn.");
+Q("hard","Définition","Pour les relations presse, le growth marketing sert à…","Với quan hệ báo chí, growth marketing giúp…",["Mieux relancer les journalistes et les influenceurs","Acheter des espaces TV","Calculer la DN","Gérer la paie"],"Usage RP cité dans le cours.","Follow-up nhà báo và influencer tốt hơn.");
+Q("hard","KPI","Un client dépense en moyenne 30 € par achat, achète 4 fois par an et reste client 3 ans. Sa LTV (CA) est d’environ…","Một khách chi trung bình 30 € mỗi lần, mua 4 lần mỗi năm và gắn bó 3 năm. LTV (doanh thu) khoảng…",["360 €","120 €","90 €","37 €"],"Panier moyen × fréquence × durée = 30 × 4 × 3 = 360 €.","30 × 4 × 3 = 360 €.");
+Q("hard","CRM","Une enseigne veut que ses vendeuses déclenchent des promotions personnalisées pour faire venir les clients en boutique. Outil central ?","Chuỗi cửa hàng muốn nhân viên gửi khuyến mãi riêng để kéo khách đến cửa hàng. Công cụ trung tâm là gì?",["Un CRM","Un CMS","Un outil de scraping","Un logiciel de montage vidéo"],"Le CRM porte la fiche client et déclenche les messages one to one.","CRM chứa hồ sơ khách và gửi tin cá nhân hóa.");
+Q("hard","KPI","Pour mesurer l’efficacité d’une campagne d’acquisition payante, l’indicateur le plus pertinent est…","Để đo hiệu quả chiến dịch thu hút khách trả phí, chỉ số phù hợp nhất là…",["Le CAC (coût d’acquisition client)","Le nombre de likes","Le nombre de vues","Le nombre d’abonnés"],"Séance 5 : mesurer l’impact sur le CAC.","Đo chi phí để có một khách hàng.");
+Q("hard","KPI","Un test A/B consiste à…","A/B test là gì?",["Comparer deux versions sur deux groupes et garder la plus performante","Envoyer deux fois le même email","Tester un produit en laboratoire","Comparer deux concurrents"],"Ex. deux objets d’email ; on garde celui qui a le meilleur taux de réponse.","Vd. 2 tiêu đề email, giữ cái có tỷ lệ phản hồi cao hơn.");
+Q("hard","KPI","« Scaler » une campagne performante (séance 6) signifie…","« Scale » một chiến dịch hiệu quả (buổi 6) nghĩa là…",["Réallouer et augmenter le budget vers les leviers au meilleur ROI","Arrêter toutes les campagnes","Baisser les prix","Changer de cible"],"Industrialisation et pilotage du ROI.","Dồn thêm ngân sách vào kênh có ROI tốt nhất.");
+Q("hard","KPI","Une campagne coûte 3 000 € et génère 60 nouveaux clients. Le CAC est de…","Chiến dịch tốn 3 000 € và mang về 60 khách mới. CAC là…",["50 €","180 €","20 €","3 060 €"],"CAC = coût ÷ nouveaux clients = 3 000 ÷ 60 = 50 €.","3 000 ÷ 60 = 50 €.");
+Q("hard","KPI","LTV = 360 € et CAC = 50 €. Que conclure ?","LTV = 360 €, CAC = 50 €. Kết luận gì?",["Chaque client rapporte bien plus qu’il ne coûte : on peut investir davantage en acquisition","La campagne est déficitaire","Il faut arrêter l’acquisition","LTV et CAC ne se comparent pas"],"LTV/CAC ≈ 7 : rentable, on peut scaler. Repère courant : viser au moins 3.","Khách mang lại gấp ~7 lần chi phí: có lãi, có thể tăng ngân sách. Mốc phổ biến: ≥ 3.");
+Q("hard","AARRR","Un dirigeant veut lancer une grosse campagne d’acquisition alors que 60 % des nouveaux clients partent après le 1er achat. Recommandation ?","Lãnh đạo muốn chạy chiến dịch thu hút lớn trong khi 60 % khách mới bỏ đi sau lần mua đầu. Lời khuyên?",["Corriger d’abord la rétention avant d’accélérer l’acquisition","Doubler le budget publicitaire tout de suite","Acheter un fichier de contacts","Baisser le prix de 50 %"],"Sinon on remplit un seau percé (séance 1).","Phải sửa giữ chân trước, nếu không là đổ nước vào thùng thủng.");
+
+/* ---------- quiz engine ---------- */
+var LV={easy:{vi:"Dễ",fr:"Facile",desc:"Định nghĩa và từ vựng cơ bản."},medium:{vi:"Trung bình",fr:"Moyen",desc:"Phân biệt khái niệm, xếp đúng giai đoạn AARRR, nhóm công cụ."},hard:{vi:"Khó",fr:"Difficile",desc:"Tình huống, Lemlist, luật quảng cáo, tính CAC/LTV."},exam:{vi:"Thi thử",fr:"Examen blanc",desc:"40 câu ngẫu nhiên từ cả 3 mức, 12 phút, chấm điểm khi nộp bài."},retry:{vi:"Làm lại câu sai",fr:"Révision",desc:""}};
+var EXAM_N=40, EXAM_MS=12*60*1000;
+var home=$("#quiz-home"), run=$("#quiz-run"), viToggle=$("#vi-toggle");
+var S=null, tickId=null;
+
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function best(){return store.get("gm-best",{})}
+function applyVi(){var on=viToggle.checked;run.classList.toggle("hide-vi",!on);store.set("gm-vi",on)}
+viToggle.checked=store.get("gm-vi",true);
+viToggle.addEventListener("change",applyVi);
+
+function renderHome(){
+  var b=best(), html="";
+  ["easy","medium","hard","exam"].forEach(function(k){
+    var n=k==="exam"?EXAM_N:BANK[k].length, lv=LV[k], bs=b[k];
+    var dots=k==="exam"?"":'<span class="dots" aria-hidden="true"><i class="on"></i><i'+(k!=="easy"?' class="on"':"")+'></i><i'+(k==="hard"?' class="on"':"")+'></i></span>';
+    html+='<div class="lv'+(k==="exam"?" exam":"")+'">'+dots+'<h3>'+lv.vi+'<small>'+lv.fr+'</small></h3><p>'+lv.desc+'</p><div class="meta">'+n+' câu'+(k==="exam"?" · 12:00":"")+'</div>'+
+      '<div class="best">'+(bs?("Cao nhất: "+bs.s+"/"+bs.n+" · "+(Math.round(bs.s/bs.n*200)/10)+"/20"):"Chưa làm")+'</div>'+
+      '<button class="btn" data-start="'+k+'">'+(k==="exam"?"Bắt đầu thi thử":"Bắt đầu")+'</button></div>';
+  });
+  $("#lv-grid").innerHTML=html;
+  $$("[data-start]").forEach(function(b){b.addEventListener("click",function(){start(b.dataset.start)})});
+}
+
+function start(level,subset){
+  var items;
+  if(level==="exam") items=shuffle(BANK.easy.concat(BANK.medium,BANK.hard)).slice(0,EXAM_N);
+  else if(subset) items=shuffle(subset);
+  else items=shuffle(BANK[level]);
+  S={level:level,exam:level==="exam",items:items.map(function(it){return Object.assign({},it,{ord:shuffle([0,1,2,3])})}),i:0,ans:items.map(function(){return null}),end:level==="exam"?Date.now()+EXAM_MS:null,confirm:false};
+  home.hidden=true;run.hidden=false;applyVi();
+  clearInterval(tickId);
+  if(S.exam) tickId=setInterval(tick,500);
+  renderQ();window.scrollTo(0,0);
+}
+
+function fmt(ms){ms=Math.max(0,ms);var s=Math.ceil(ms/1000);var m=Math.floor(s/60);s=s%60;return (m<10?"0":"")+m+":"+(s<10?"0":"")+s}
+function tick(){if(!S||!S.exam)return;var left=S.end-Date.now();var el=$("#timer");if(el){el.textContent=fmt(left);el.classList.toggle("low",left<60000)}if(left<=0)finish()}
+
+function renderQ(){
+  var it=S.items[S.i], n=S.items.length, chosen=S.ans[S.i], answered=chosen!==null;
+  var practice=!S.exam, letters=["A","B","C","D"];
+  var correctCount=S.ans.filter(function(a,i){return a===0}).length, done=S.ans.filter(function(a){return a!==null}).length;
+  var head='<div class="run-head"><div><span class="lvname">'+LV[S.level].vi+'</span> <span class="counter">· Câu '+(S.i+1)+'/'+n+'</span></div><div style="display:flex;gap:8px;align-items:center">'+
+    (S.exam?'<span class="timer" id="timer" role="timer" aria-label="Thời gian còn lại">'+fmt(S.end-Date.now())+'</span>':'<span class="counter">Đúng '+correctCount+'/'+done+'</span>')+
+    '<button class="btn ghost small" id="quit">Thoát</button></div></div>';
+  var bar='<div class="bar" aria-hidden="true"><div style="width:'+Math.round(done/n*100)+'%"></div></div>';
+  var opts=it.ord.map(function(k,pos){
+    var cls="opt", dis="", pressed="";
+    if(practice&&answered){dis=" disabled";if(k===0)cls+=" right";else if(k===chosen)cls+=" wrong"}
+    if(S.exam)pressed=' aria-pressed="'+(chosen===k?"true":"false")+'"';
+    return '<li><button class="'+cls+'" data-k="'+k+'"'+dis+pressed+' lang="fr"><span class="k">'+letters[pos]+'</span><span>'+esc(it.o[k])+'</span></button></li>';
+  }).join("");
+  var fb="";
+  if(practice&&answered){var ok=chosen===0;
+    fb='<div class="fb" role="status"><div class="verdict '+(ok?"ok":"bad")+'">'+(ok?"Chính xác · Correct":"Chưa đúng · Réponse : "+esc(it.o[0]))+'</div><div lang="fr">'+esc(it.e)+'</div><div class="evi" lang="vi">'+esc(it.ev)+'</div></div>'}
+  var nav;
+  if(practice){nav='<div class="run-nav"><span></span><button class="btn" id="next"'+(answered?"":" disabled")+'>'+(S.i===n-1?"Xem kết quả":"Câu tiếp →")+'</button></div>'}
+  else{
+    var nums=S.items.map(function(_,i){return '<button data-jump="'+i+'" class="'+(S.ans[i]!==null?"done":"")+(i===S.i?" cur":"")+'" aria-label="Câu '+(i+1)+'">'+(i+1)+'</button>'}).join("");
+    nav='<div class="run-nav"><button class="btn ghost" id="prev"'+(S.i===0?" disabled":"")+'>← Câu trước</button><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" id="submit">Nộp bài</button><button class="btn" id="next"'+(S.i===n-1?" disabled":"")+'>Câu sau →</button></div></div>'+
+      (S.confirm?'<div class="confirm" role="alert"><span>Còn <b>'+(n-done)+'</b> câu chưa làm. Nộp bài ngay?</span><button class="btn small" id="confirm-yes">Nộp</button><button class="btn ghost small" id="confirm-no">Làm tiếp</button></div>':"")+
+      '<div class="grid-nums" aria-label="Chọn câu">'+nums+'</div>';
+  }
+  run.innerHTML=head+bar+'<article class="qcard"><div class="qtopic">'+esc(it.t)+'</div><h3 class="qtext" lang="fr">'+esc(it.q)+'</h3><p class="qvi" lang="vi">'+esc(it.qv)+'</p><ol class="opts">'+opts+'</ol>'+fb+nav+'</article>';
+
+  $("#quit").addEventListener("click",quit);
+  $$(".opt",run).forEach(function(b){b.addEventListener("click",function(){
+    var k=+b.dataset.k;
+    if(practice){if(S.ans[S.i]!==null)return;S.ans[S.i]=k;renderQ();var nx=$("#next");if(nx)nx.focus()}
+    else{S.ans[S.i]=k;S.confirm=false;renderQ()}
+  })});
+  var nx=$("#next"); if(nx) nx.addEventListener("click",function(){if(practice&&S.i===n-1){finish();return}S.i=Math.min(n-1,S.i+1);S.confirm=false;renderQ();window.scrollTo(0,0)});
+  var pv=$("#prev"); if(pv) pv.addEventListener("click",function(){S.i=Math.max(0,S.i-1);S.confirm=false;renderQ()});
+  var sb=$("#submit"); if(sb) sb.addEventListener("click",function(){var left=S.ans.filter(function(a){return a===null}).length;if(left>0&&!S.confirm){S.confirm=true;renderQ();return}finish()});
+  var cy=$("#confirm-yes"); if(cy) cy.addEventListener("click",finish);
+  var cn=$("#confirm-no"); if(cn) cn.addEventListener("click",function(){S.confirm=false;renderQ()});
+  $$("[data-jump]",run).forEach(function(b){b.addEventListener("click",function(){S.i=+b.dataset.jump;S.confirm=false;renderQ()})});
+}
+
+function finish(){
+  clearInterval(tickId);tickId=null;
+  var n=S.items.length, s=S.ans.filter(function(a){return a===0}).length, on20=Math.round(s/n*200)/10;
+  if(S.level!=="retry"){var b=best();if(!b[S.level]||s/n>b[S.level].s/b[S.level].n){b[S.level]={s:s,n:n};store.set("gm-best",b)}}
+  var wrong=S.items.map(function(it,i){return {it:it,a:S.ans[i]}}).filter(function(x){return x.a!==0});
+  var msg=on20>=16?"Rất tốt! Bạn nắm chắc phần này.":on20>=12?"Khá ổn. Xem lại các câu sai bên dưới.":"Cần ôn thêm. Đọc lại phần Kiến thức rồi làm lại các câu sai.";
+  var rv=wrong.map(function(x){var it=x.it;return '<div class="rv"><div class="q" lang="fr">'+esc(it.q)+'</div><div class="qvi" lang="vi">'+esc(it.qv)+'</div><div class="a">'+(x.a===null?'<span class="yours">Chưa trả lời</span>':'<span class="yours">Bạn chọn: '+esc(it.o[x.a])+'</span>')+' · <span class="good">Đáp án: '+esc(it.o[0])+'</span></div><div class="e" lang="fr">'+esc(it.e)+'</div><div class="e evi" lang="vi">'+esc(it.ev)+'</div></div>'}).join("");
+  run.innerHTML='<div class="run-head"><span class="lvname">Kết quả · '+LV[S.level].vi+'</span><button class="btn ghost small" id="quit">Về danh sách đề</button></div>'+
+    '<div class="qcard"><div class="score"><span class="big">'+s+'/'+n+'</span><span class="sub">≈ '+on20+'/20</span></div><p>'+msg+'</p>'+
+    '<div class="run-nav" style="justify-content:flex-start">'+(wrong.length?'<button class="btn" id="retry">Làm lại '+wrong.length+' câu sai</button>':"")+(S.level==="retry"?"":'<button class="btn ghost" id="again">'+(S.exam?"Thi thử đề mới":"Làm lại cả đề")+'</button>')+'</div>'+
+    (wrong.length?'<h3 style="font-size:17px;margin-top:18px">Các câu cần xem lại</h3><div class="review">'+rv+'</div>':'<p style="margin-top:10px">Không sai câu nào.</p>')+'</div>';
+  var lvl=S.level, wrongItems=wrong.map(function(x){var c=Object.assign({},x.it);delete c.ord;return c});
+  $("#quit").addEventListener("click",quit);
+  var r=$("#retry"); if(r) r.addEventListener("click",function(){start("retry",wrongItems)});
+  var ag=$("#again"); if(ag) ag.addEventListener("click",function(){start(lvl)});
+  window.scrollTo(0,0);
+}
+function quit(){clearInterval(tickId);tickId=null;S=null;run.hidden=true;run.innerHTML="";home.hidden=false;renderHome()}
+
+renderHome();
+})();
+</script>
