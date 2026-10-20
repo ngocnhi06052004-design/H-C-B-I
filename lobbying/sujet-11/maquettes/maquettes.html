@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  :root{
+    --bg:#000;
+    --cyan:#C6FBFF;
+    --cyan-dim:#8FD9E3;
+    --white:#F3F7F9;
+    --grey:#7E878D;
+    --amber:#FFC75A;
+    --line:#EAFBFF;
+  }
+  @page{ size:1600px 900px; margin:0 }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html,body{ background:#111; }
+  body{ font-family:'Exo 2',sans-serif; color:var(--white); }
+  .slide{ position:relative; width:1600px; height:900px; overflow:hidden; background:var(--bg); page-break-after:always; }
+  /* glow + grain, same mood as the Contexte slide */
+  .glow{ position:absolute; inset:0; pointer-events:none;
+    background:
+      radial-gradient(620px 560px at 86% 50%, rgba(78,130,195,.78), rgba(40,80,140,.42) 45%, rgba(0,0,0,0) 74%),
+      radial-gradient(360px 300px at 80% 86%, rgba(185,135,80,.22), rgba(0,0,0,0) 70%),
+      radial-gradient(300px 260px at 92% 18%, rgba(60,150,170,.20), rgba(0,0,0,0) 70%);
+    filter:blur(6px);
+  }
+  .glow.left{ background:
+      radial-gradient(520px 480px at 12% 88%, rgba(70,120,185,.55), rgba(40,75,130,.30) 45%, rgba(0,0,0,0) 72%),
+      radial-gradient(420px 360px at 92% 12%, rgba(60,110,170,.45), rgba(0,0,0,0) 70%);
+  }
+  .grain{ position:absolute; inset:0; opacity:.16; mix-blend-mode:screen; pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+  }
+  nav{ position:absolute; top:38px; left:92px; display:flex; gap:66px; font-size:15px; letter-spacing:.5px; color:var(--grey); text-transform:uppercase; }
+  nav .on{ color:var(--white); }
+  h1{ position:absolute; left:88px; font-family:'Poppins',sans-serif; font-weight:700; color:var(--cyan); line-height:.98; letter-spacing:-.5px; }
+  .sub{ position:absolute; left:92px; font-weight:800; font-size:30px; color:var(--white); letter-spacing:.3px; text-transform:uppercase; }
+  .sources{ position:absolute; left:92px; bottom:30px; font-size:13.5px; color:#8F989E; font-weight:600; }
+  .arrow{ position:absolute; right:56px; bottom:30px; width:40px; height:40px; }
+  /* box with title breaking the border (Contexte style) */
+  .box{ position:absolute; border:3px solid var(--line); border-radius:12px; padding:34px 28px 22px; }
+  .box > .bt{ position:absolute; top:-24px; left:26px; padding:0 14px; background:#000; font-weight:800; font-size:30px; line-height:1.15; color:var(--white); text-transform:uppercase; letter-spacing:.2px; white-space:nowrap; }
+  .tag{ color:var(--cyan); font-style:italic; font-weight:500; font-size:21px; margin-bottom:12px; }
+  .row{ font-size:21px; line-height:1.45; font-weight:500; }
+  .row b{ color:var(--cyan); font-weight:700; }
+  .quote{ margin-top:10px; font-style:italic; color:var(--cyan-dim); font-size:19px; }
+  .star{ width:34px; height:34px; display:block; }
+  .chip{ display:inline-block; border:1.5px solid var(--cyan-dim); color:var(--cyan); border-radius:999px; padding:2px 12px; font-size:15px; font-weight:600; margin:0 6px 6px 0; }
+  .ph{ display:inline-flex; align-items:center; justify-content:center; width:70px; height:70px; border-radius:50%; border:2px dashed #5f7a85; color:#6f8a95; font-size:11px; margin-right:8px; }
+  .amber{ color:var(--amber) !important; }
+  .ok{ color:var(--cyan); font-weight:800; }
+  .no{ color:var(--amber); font-weight:800; }
+</style>
+</head>
+<body>
+
+<!-- reusable symbols -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#EAFBFF"/></symbol>
+    <symbol id="staramber" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#FFC75A"/></symbol>
+    <symbol id="arr" viewBox="0 0 40 40"><path d="M6 6 L34 34 M34 12 L34 34 L12 34" stroke="#C6FBFF" stroke-width="6" fill="none" stroke-linecap="square"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ SLIDE 2 : ENJEUX ============ -->
+<div class="slide" id="s2">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span class="on">Enjeux</span><span>Acteurs</span><span>Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:92px;font-size:104px">ENJEUX</h1>
+  <div class="sub" style="top:212px">Une bataille d'intérêts</div>
+
+  <div class="box" style="left:92px;top:300px;width:690px;height:244px">
+    <div class="bt">Économique</div>
+    <div class="tag">Coût de la conformité · concurrence</div>
+    <div class="row"><b>BIG TECH</b> → réguler les usages, pas les modèles</div>
+    <div class="row"><b>START-UP UE</b> (Mistral AI, Aleph Alpha) → obligations allégées</div>
+    <div class="row"><b>OPEN SOURCE</b> → exemption des modèles ouverts</div>
+    <div class="row"><b>PME EN AVAL</b> → transparence des fournisseurs</div>
+  </div>
+
+  <div class="box" style="left:818px;top:300px;width:690px;height:244px">
+    <div class="bt">Politique</div>
+    <div class="tag">Souveraineté numérique</div>
+    <div class="row"><b>ÉTATS (FR, DE, IT)</b> → protéger leurs champions</div>
+    <div class="quote">«&nbsp;On régulera des choses qu'on ne produira plus<br>ou qu'on n'inventera pas.&nbsp;» — E. Macron, 11/12/2023</div>
+  </div>
+
+  <div class="box" style="left:92px;top:590px;width:690px;height:220px">
+    <div class="bt">Social &amp; environnemental</div>
+    <div class="tag">Désinformation · droits d'auteur · énergie</div>
+    <div class="row"><b>AYANTS DROIT</b> → transparence des données</div>
+    <div class="row"><b>PARLEMENT, ONG</b> → documenter l'énergie</div>
+  </div>
+
+  <div class="box" style="left:818px;top:590px;width:690px;height:220px">
+    <div class="bt">Réputationnel</div>
+    <div class="tag">Image · leadership</div>
+    <div class="row"><b>UE</b> → première à réguler l'IA</div>
+    <div class="row"><b>MISTRAL AI</b> → champion européen de l'innovation</div>
+  </div>
+
+  <div class="sources">Sources : TIME (20/06/2023) · Siècle Digital (12/12/2023) · Règlement (UE) 2024/1689, annexe XI</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+</div>
+
+<!-- ============ SLIDE 3 : ACTEURS ============ -->
+<div class="slide" id="s3">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span class="on">Acteurs</span><span>Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:92px;font-size:96px">ACTEURS</h1>
+  <div class="sub" style="top:204px">Cartographie des positions</div>
+
+  <!-- spectrum -->
+  <div style="position:absolute;left:92px;top:268px;width:1416px;">
+    <div style="display:flex;justify-content:space-between;font-weight:800;font-size:17px;letter-spacing:.6px;text-transform:uppercase;">
+      <span>◀ Autorégulation / réguler les usages</span>
+      <span class="amber">Compromis</span>
+      <span>Règles contraignantes pour les modèles ▶</span>
+    </div>
+    <div style="position:relative;height:30px;margin-top:6px">
+      <div style="position:absolute;left:0;right:0;top:14px;height:3px;background:linear-gradient(90deg,#EAFBFF,#FFC75A 50%,#EAFBFF)"></div>
+      <svg style="position:absolute;left:233px;top:-2px;width:34px;height:34px"><use href="#star"/></svg>
+      <svg style="position:absolute;left:691px;top:-2px;width:34px;height:34px"><use href="#staramber"/></svg>
+      <svg style="position:absolute;left:1149px;top:-2px;width:34px;height:34px"><use href="#star"/></svg>
+    </div>
+  </div>
+
+  <div class="box" style="left:92px;top:362px;width:500px;height:440px">
+    <div class="bt">Pour des règles légères</div>
+    <div class="row"><b>France · Allemagne · Italie</b> (Conseil)</div>
+    <div class="row" style="margin-bottom:12px">→ codes de conduite, sans sanctions au départ</div>
+    <div class="row"><b>Mistral AI · Aleph Alpha</b></div>
+    <div class="row" style="margin-bottom:12px">→ obligations légères, exemption open source</div>
+    <div class="row"><b>Big Tech</b> (OpenAI, Google, Microsoft, Meta)</div>
+    <div class="row" style="margin-bottom:12px">→ réguler les usages, pas les modèles</div>
+    <div class="row"><b>Fédérations &amp; industrie</b> (DigitalEurope, CCIA)</div>
+    <div class="row">→ contre des obligations lourdes</div>
+  </div>
+
+  <div class="box" style="left:628px;top:362px;width:344px;height:440px;border-color:var(--amber)">
+    <div class="bt amber" style="color:var(--amber)">Médiateurs</div>
+    <div class="row"><b class="amber">Commission</b></div>
+    <div class="row">(T. Breton)</div>
+    <div class="row" style="margin-bottom:16px">→ compromis à deux niveaux</div>
+    <div class="row"><b class="amber">Présidence espagnole</b></div>
+    <div class="row">du Conseil</div>
+    <div class="row">→ textes de compromis (oct.–nov. 2023)</div>
+  </div>
+
+  <div class="box" style="left:1008px;top:362px;width:500px;height:440px">
+    <div class="bt">Pour des règles fortes</div>
+    <div class="row"><b>Parlement européen</b></div>
+    <div class="row">(B. Benifei, D. Tudorache)</div>
+    <div class="row" style="margin-bottom:12px">→ obligations pour tous les modèles</div>
+    <div class="row"><b>ONG &amp; chercheurs</b></div>
+    <div class="row" style="margin-bottom:12px">→ contrôles, transparence</div>
+    <div class="row"><b>Créateurs &amp; ayants droit</b></div>
+    <div class="row" style="margin-bottom:12px">→ transparence des données</div>
+    <div class="row"><b>Acteurs environnementaux</b></div>
+    <div class="row">→ transparence énergétique</div>
+  </div>
+
+  <div class="sources">Sources : Non-paper FR-DE-IT (18/11/2023) · Parlement européen (14/06/2023) · CEO / LobbyControl / Observatoire des multinationales (2024)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+</div>
+
+<!-- ============ SLIDE 4 : DÉROULÉ ============ -->
+<div class="slide" id="s4">
+  <div class="glow left"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span>Acteurs</span><span class="on">Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:96px;font-size:66px">DÉROULÉ &amp; ACTIONS DE LOBBYING</h1>
+
+  <!-- timeline -->
+  <div style="position:absolute;left:0;right:0;top:252px;height:3px;background:var(--line)"></div>
+  <!-- 5 columns -->
+  <div style="position:absolute;left:58px;top:236px;width:1490px;display:grid;grid-template-columns:repeat(5,1fr);gap:22px">
+    <!-- 1 -->
+    <div>
+      <svg class="star" style="margin:0 auto"><use href="#star"/></svg>
+      <div style="text-align:center;font-weight:800;font-size:26px;margin:10px 0 26px;color:var(--white)">2022</div>
+      <div class="box" style="position:relative;height:440px;padding:40px 20px 18px">
+        <div class="bt" style="font-size:18px;top:-14px;left:14px;padding:0 10px">Rencontre + document</div>
+        <div style="margin-bottom:10px"><span class="ph">logo</span></div>
+        <div class="row" style="font-size:21px"><b>OpenAI</b></div>
+        <div class="row" style="font-size:21px">Juin 2022 : rencontre avec la Commission</div>
+        <div class="row" style="font-size:21px;margin-top:8px">Sept. 2022 : livre blanc → ne pas classer ses modèles «&nbsp;à haut risque&nbsp;»</div>
+      </div>
+    </div>
+    <!-- 2 -->
+    <div>
+      <svg class="star" style="margin:0 auto"><use href="#star"/></svg>
+      <div style="text-align:center;font-weight:800;font-size:26px;margin:10px 0 26px">30 JUIN 2023</div>
+      <div class="box" style="position:relative;height:440px;padding:40px 20px 18px">
+        <div class="bt" style="font-size:18px;top:-14px;left:14px;padding:0 10px">Lettre ouverte</div>
+        <div style="margin-bottom:10px"><span class="ph">photo</span><span class="ph">photo</span><span class="ph">photo</span></div>
+        <div class="row" style="font-size:21px"><b>+150 dirigeants</b> (Airbus, Siemens, Renault…)</div>
+        <div class="row" style="font-size:21px;margin-top:6px">Organisée par <b>Cédric O</b> (Mistral AI), R. Obermann, J. zu Fürstenberg</div>
+        <div class="quote" style="font-size:18px">«&nbsp;mettrait en péril la compétitivité et la souveraineté technologique de l'Europe&nbsp;»</div>
+      </div>
+    </div>
+    <!-- 3 -->
+    <div>
+      <svg class="star" style="margin:0 auto"><use href="#star"/></svg>
+      <div style="text-align:center;font-weight:800;font-size:26px;margin:10px 0 26px">JUIN–NOV. 2023</div>
+      <div class="box" style="position:relative;height:440px;padding:40px 20px 18px">
+        <div class="bt" style="font-size:18px;top:-14px;left:14px;padding:0 10px">Rendez-vous</div>
+        <div style="margin-bottom:10px"><span class="ph">logo</span><span class="ph">photo</span></div>
+        <div class="row" style="font-size:21px"><b>Aleph Alpha</b></div>
+        <div class="row" style="font-size:21px"><b>12 rendez-vous</b> avec le gouvernement allemand</div>
+        <div class="row" style="font-size:21px;margin-top:8px">Selon LobbyControl, ses arguments sont repris par des ministres</div>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div>
+      <svg class="star" style="margin:0 auto"><use href="#star"/></svg>
+      <div style="text-align:center;font-weight:800;font-size:26px;margin:10px 0 26px">OCT.–NOV. 2023</div>
+      <div class="box" style="position:relative;height:440px;padding:40px 20px 18px">
+        <div class="bt" style="font-size:18px;top:-14px;left:14px;padding:0 10px">Coalition d'États</div>
+        <div style="margin-bottom:10px"><span class="ph">FR</span><span class="ph">DE</span><span class="ph">IT</span></div>
+        <div class="row" style="font-size:21px"><b>30/10</b> : réunion de Rome (Urso, Habeck, Le Maire)</div>
+        <div class="row" style="font-size:21px;margin-top:8px"><b>18/11</b> : non-paper → autorégulation par codes de conduite</div>
+      </div>
+    </div>
+    <!-- 5 key moment -->
+    <div>
+      <svg class="star" style="margin:0 auto"><use href="#staramber"/></svg>
+      <div class="amber" style="text-align:center;font-weight:800;font-size:26px;margin:10px 0 26px">8 DÉC. 2023</div>
+      <div class="box" style="position:relative;height:440px;padding:40px 20px 18px;border-color:var(--amber)">
+        <div class="bt amber" style="font-size:19px;top:-15px;left:16px;color:var(--amber)">Moment clé</div>
+        <div class="row" style="font-size:22px;margin-top:6px"><b class="amber">Accord politique</b></div>
+        <div class="row" style="font-size:21px;margin-top:8px">en trilogue</div>
+        <div class="row" style="font-size:21px;margin-top:14px">→ approche à <b class="amber">deux niveaux</b> de règles</div>
+        <div class="row" style="font-size:16px;margin-top:18px;color:#BFC8CC">Résultat détaillé : slide suivante</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sources">Sources : TIME (20/06/2023) · Reuters (30/06/2023) · CEO / LobbyControl / Observatoire (03/2024) · Ministère italien (30/10/2023) · Non-paper FR-DE-IT (18/11/2023)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+</div>
+
+<!-- ============ SLIDE 5 : RÉSULTAT ============ -->
+<div class="slide" id="s5">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span>Acteurs</span><span>Déroulé</span><span class="on">Résultats</span></nav>
+  <h1 style="top:96px;font-size:84px">RÉSULTAT &amp; ENSEIGNEMENTS</h1>
+
+  <!-- box 1 decision -->
+  <div class="box" style="left:92px;top:292px;width:440px;height:370px">
+    <div class="bt">Décision finale</div>
+    <div class="tag" style="font-size:18px">Chapitre V · accord du 08/12/2023</div>
+    <!-- two-tier diagram -->
+    <div style="margin:4px auto 0;width:330px;border:2px solid var(--amber);border-radius:8px;padding:10px 12px;text-align:center">
+      <div style="font-weight:800;font-size:19px;color:var(--amber)">MODÈLES LES PLUS PUISSANTS</div>
+      <div style="font-size:19px">→ obligations renforcées</div>
+    </div>
+    <div style="margin:8px auto 0;width:384px;border:2px solid var(--cyan);border-radius:8px;padding:10px 12px;text-align:center">
+      <div style="font-weight:800;font-size:19px;color:var(--cyan)">TOUS LES MODÈLES GPAI</div>
+      <div style="font-size:19px">→ transparence</div>
+    </div>
+    <div class="row" style="font-size:19px;margin-top:14px">• Open source : exemption partielle</div>
+    <div class="row" style="font-size:19px">• Adopté le 21/05/2024</div><div class="row" style="font-size:19px">• En vigueur le 01/08/2024</div>
+  </div>
+
+  <!-- box 2 who got what -->
+  <div class="box" style="left:568px;top:292px;width:470px;height:370px">
+    <div class="bt">Qui a obtenu quoi&nbsp;?</div>
+    <div class="row" style="font-size:21px"><b>Parlement</b></div>
+    <div class="row" style="font-size:20px;margin-bottom:10px"><span class="ok">✓</span> loi obligatoire + amendes</div>
+    <div class="row" style="font-size:21px"><b>FR · DE · Mistral · Aleph Alpha</b></div>
+    <div class="row" style="font-size:20px"><span class="ok">✓</span> règles plus légères</div>
+    <div class="row" style="font-size:20px;margin-bottom:10px"><span class="no">✕</span> pas d'autorégulation</div>
+    <div class="row" style="font-size:21px"><b>Big Tech américaines</b></div>
+    <div class="row" style="font-size:20px;margin-bottom:12px"><span class="ok">✓</span> pas «&nbsp;à haut risque&nbsp;»</div>
+    <div class="row amber" style="font-size:18px;font-weight:700">Compromis : 2 niveaux de règles</div>
+  </div>
+
+  <!-- box 3 lessons -->
+  <div class="box" style="left:1074px;top:292px;width:434px;height:370px">
+    <div class="bt">Enseignements</div>
+    <div class="row" style="font-size:22px;margin-bottom:16px"><b>1.</b> Méthode la plus efficace : passer par les gouvernements</div>
+    <div class="row" style="font-size:22px;margin-bottom:16px"><b>2.</b> Argument clé : la souveraineté européenne</div>
+    <div class="row" style="font-size:22px;margin-bottom:16px"><b>3.</b> Limite : la loi est quand même adoptée</div>
+    <div class="row" style="font-size:22px"><b>4.</b> Trace d'influence ≠ preuve</div>
+  </div>
+
+  <!-- conclusion banner -->
+  <div style="position:absolute;left:92px;top:700px;width:1416px;border-radius:10px;background:rgba(198,251,255,.10);border:2px solid var(--cyan);padding:14px 22px;font-size:21px;font-weight:600">
+    <span style="color:var(--cyan);font-weight:800">▶ RÉPONSE :</span> les start-up européennes et leurs gouvernements ont le plus pesé — règles allégées, mais pas empêchées.
+  </div>
+
+  <div class="sources" style="bottom:22px">Sources : Règlement (UE) 2024/1689 · Conseil de l'UE · Aleph Alpha (12/12/2023) · Non-paper FR-DE-IT (18/11/2023) · CEO / LobbyControl / Observatoire (2024)</div>
+  <svg class="arrow" style="bottom:20px"><use href="#arr"/></svg>
+</div>
+
+</body>
+</html>
