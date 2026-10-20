@@ -229,7 +229,7 @@ function renderResult(){
 let caseBuilt=false;
 function renderCase(){
   if(caseBuilt||!window.MINICAS)return;caseBuilt=true;
-  $('#caseQs').innerHTML=MINICAS.questions.map((c,i)=>`<details${i===0?' open':''}><summary>${esc(c.q)}<span class="vi">${esc(c.vi)}</span></summary><ol>${c.plan.map((p,j)=>`<li>${esc(p)}${c.planvi?`<br><span style="color:var(--muted);font-size:13px">${esc(c.planvi[j])}</span>`:''}</li>`).join('')}</ol><p class="model"><span class="eyebrow">Ví dụ mẫu · NIVEA Creme (chiến dịch giả định)</span><br>${esc(c.ex)}${c.exvi?`<br><br><span class="eyebrow">Dịch</span><br>${esc(c.exvi)}`:''}</p></details>`).join('');
+  $('#caseQs').innerHTML=MINICAS.questions.map((c,i)=>`<details${i===0?' open':''}><summary>${esc(c.q)}<span class="vi">${esc(c.vi)}</span></summary><ol>${c.plan.map((p,j)=>`<li>${esc(p)}${c.planvi?`<br><span style="color:var(--muted);font-size:13px">${esc(c.planvi[j])}</span>`:''}</li>`).join('')}</ol><p class="model"><span class="eyebrow">Ví dụ mẫu · NIVEA Creme</span><br>${esc(c.ex)}${c.exvi?`<br><br><span class="eyebrow">Dịch</span><br>${esc(c.exvi)}`:''}</p></details>`).join('');
   const draft=store.get('bc2-case',{});
   $('#caseForm').innerHTML=MINICAS.fields.map(([k,l,ph])=>`<label for="case-${k}">${esc(l)}<textarea id="case-${k}" data-k="${k}" rows="2" placeholder="${esc(ph||'')}">${esc(draft[k]||'')}</textarea></label>`).join('')+'<span class="saved" id="caseSaved">Tự lưu khi bạn gõ.</span>';
   let tm=null;
