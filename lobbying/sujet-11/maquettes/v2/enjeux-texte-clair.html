@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  :root{ --cyan:#C6FBFF; --cyan-dim:#8FD9E3; --white:#F3F7F9; --grey:#7E878D; --amber:#FFC75A; --line:#EAFBFF; }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html,body{ background:#111 }
+  body{ font-family:'Exo 2',sans-serif; color:var(--white) }
+  .slide{ position:relative; width:1600px; height:900px; overflow:hidden; background:#000; page-break-after:always }
+  .glow{ position:absolute; inset:0; pointer-events:none; filter:blur(6px);
+    background:
+      radial-gradient(620px 560px at 86% 50%, rgba(78,130,195,.78), rgba(40,80,140,.42) 45%, rgba(0,0,0,0) 74%),
+      radial-gradient(360px 300px at 80% 86%, rgba(185,135,80,.22), rgba(0,0,0,0) 70%); }
+  .glow.both{ background:
+      radial-gradient(640px 560px at 4% 8%, rgba(70,125,200,.80), rgba(40,80,140,.40) 45%, rgba(0,0,0,0) 74%),
+      radial-gradient(640px 560px at 98% 96%, rgba(70,125,200,.80), rgba(40,80,140,.40) 45%, rgba(0,0,0,0) 74%); }
+  .glow.center{ background:
+      radial-gradient(700px 520px at 50% 52%, rgba(60,110,185,.55), rgba(30,60,120,.30) 50%, rgba(0,0,0,0) 75%),
+      radial-gradient(420px 320px at 12% 90%, rgba(185,135,80,.20), rgba(0,0,0,0) 70%); }
+  .grain{ position:absolute; inset:0; opacity:.16; mix-blend-mode:screen; pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"); }
+  nav{ position:absolute; top:38px; left:92px; display:flex; gap:66px; font-size:15px; letter-spacing:.5px; color:var(--grey); text-transform:uppercase }
+  nav .on{ color:var(--white) }
+  h1{ position:absolute; left:88px; font-family:'Poppins',sans-serif; font-weight:700; color:var(--cyan); line-height:.98; letter-spacing:-.5px }
+  .sub{ position:absolute; left:92px; font-weight:800; font-size:28px; color:var(--white); letter-spacing:.3px; text-transform:uppercase }
+  .sources{ position:absolute; left:92px; bottom:30px; font-size:13.5px; color:#8F989E; font-weight:600 }
+  .arrow{ position:absolute; right:56px; bottom:30px; width:40px; height:40px }
+  .tagbox{ position:absolute; top:46px; right:60px; border:2px solid var(--white); padding:10px 18px; font-weight:600; font-size:20px; letter-spacing:.5px }
+  .chips{ position:absolute; left:0; right:0; bottom:58px; display:flex; justify-content:center; gap:18px }
+  .chips span{ background:var(--cyan); color:#000; font-weight:800; font-size:16px; padding:7px 18px; letter-spacing:.4px }
+  .amber{ color:var(--amber) !important }
+  b.c{ color:var(--cyan); font-weight:700 }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#EAFBFF"/></symbol>
+    <symbol id="starc" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#C6FBFF"/></symbol>
+    <symbol id="stara" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#FFC75A"/></symbol>
+    <symbol id="arr" viewBox="0 0 40 40"><path d="M6 6 L34 34 M34 12 L34 34 L12 34" stroke="#C6FBFF" stroke-width="6" fill="none" stroke-linecap="square"/></symbol>
+  </defs>
+</svg>
+
+
+<div class="slide" id="enjeux3">
+  <div class="glow center"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span class="on">Enjeux</span><span>Acteurs</span><span>Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:88px;font-size:92px">ENJEUX</h1>
+  <div class="sub" style="top:190px">Une bataille d'intérêts</div>
+  <div style="position:absolute;left:92px;top:232px;font-size:20px;color:#C9D2D6;font-style:italic">Règles fortes ou légères : chacun a quelque chose à gagner ou à perdre.</div>
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900">
+    <g stroke="#8FD9E3" stroke-width="2" stroke-dasharray="6 6" fill="none">
+      <path d="M712 505 L668 470"/><path d="M888 505 L932 470"/>
+      <path d="M712 625 L668 660"/><path d="M888 625 L932 660"/>
+    </g>
+  </svg>
+  <div style="position:absolute;left:695px;top:460px;width:210px;height:210px;border-radius:50%;border:3px solid var(--cyan);background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;text-align:center">
+    <div style="font-family:'Poppins';font-weight:700;font-size:25px;color:var(--cyan);line-height:1.1">QUI A<br>INTÉRÊT<br>À QUOI&nbsp;?</div>
+  </div>
+  
+  <div style="position:absolute;left:92px;top:282px;width:560px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:46px;color:#2E4A55;line-height:1">01</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:27px">ÉCONOMIQUE</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:20px;margin:2px 0 8px">Qui paie le coût des règles&nbsp;?</div>
+      <div style="font-size:18px;line-height:1.38"><b class='c'>Big Tech américaines</b> : réguler les usages, pas leurs modèles<br><b class='c'>Start-up européennes</b> (Mistral AI, Aleph Alpha) : des règles légères, car elles ont moins de moyens<br><b class='c'>Entreprises utilisatrices</b> : savoir comment les modèles fonctionnent</div>
+    </div>
+  </div>
+  
+  <div style="position:absolute;left:948px;top:282px;width:560px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:46px;color:#2E4A55;line-height:1">02</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:27px">POLITIQUE</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:20px;margin:2px 0 8px">L'Europe peut-elle avoir ses champions&nbsp;?</div>
+      <div style="font-size:18px;line-height:1.38"><b class='c'>France, Allemagne, Italie</b> : protéger leurs start-up face aux Américains<br>Leur argument : trop de règles = l'Europe prend du retard<br><span style='font-style:italic;color:var(--cyan-dim)'>«&nbsp;On régulera des choses qu'on ne produira plus&nbsp;»<br>— E. Macron, 11/12/2023</span></div>
+    </div>
+  </div>
+  
+  <div style="position:absolute;left:92px;top:612px;width:560px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:46px;color:#2E4A55;line-height:1">03</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:27px">SOCIAL &amp; ENVIRONNEMENTAL</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:20px;margin:2px 0 8px">Protéger les citoyens, les créateurs et la planète</div>
+      <div style="font-size:18px;line-height:1.38"><b class='c'>Citoyens</b> : se protéger de la désinformation et des deepfakes<br><b class='c'>Créateurs</b> : savoir si leurs œuvres ont servi à entraîner l'IA<br><b class='c'>Parlement, ONG</b> : publier la consommation d'énergie des modèles</div>
+    </div>
+  </div>
+  
+  <div style="position:absolute;left:948px;top:612px;width:560px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:46px;color:#2E4A55;line-height:1">04</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:27px">RÉPUTATIONNEL</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:20px;margin:2px 0 8px">Une question d'image</div>
+      <div style="font-size:18px;line-height:1.38"><b class='c'>Union européenne</b> : être la première au monde à réguler l'IA<br><b class='c'>Mistral AI</b> : apparaître comme le champion européen de l'innovation</div>
+    </div>
+  </div>
+  <div class="sources">Sources : TIME (20/06/2023) · Siècle Digital (12/12/2023) · Règlement (UE) 2024/1689, annexe XI</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+</div>
+</body></html>
