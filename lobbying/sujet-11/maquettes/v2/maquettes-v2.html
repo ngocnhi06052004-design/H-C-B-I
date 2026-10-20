@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  :root{ --cyan:#C6FBFF; --cyan-dim:#8FD9E3; --white:#F3F7F9; --grey:#7E878D; --amber:#FFC75A; --line:#EAFBFF; }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  html,body{ background:#111 }
+  body{ font-family:'Exo 2',sans-serif; color:var(--white) }
+  .slide{ position:relative; width:1600px; height:900px; overflow:hidden; background:#000; page-break-after:always }
+  .glow{ position:absolute; inset:0; pointer-events:none; filter:blur(6px);
+    background:
+      radial-gradient(620px 560px at 86% 50%, rgba(78,130,195,.78), rgba(40,80,140,.42) 45%, rgba(0,0,0,0) 74%),
+      radial-gradient(360px 300px at 80% 86%, rgba(185,135,80,.22), rgba(0,0,0,0) 70%); }
+  .glow.both{ background:
+      radial-gradient(640px 560px at 4% 8%, rgba(70,125,200,.80), rgba(40,80,140,.40) 45%, rgba(0,0,0,0) 74%),
+      radial-gradient(640px 560px at 98% 96%, rgba(70,125,200,.80), rgba(40,80,140,.40) 45%, rgba(0,0,0,0) 74%); }
+  .glow.center{ background:
+      radial-gradient(700px 520px at 50% 52%, rgba(60,110,185,.55), rgba(30,60,120,.30) 50%, rgba(0,0,0,0) 75%),
+      radial-gradient(420px 320px at 12% 90%, rgba(185,135,80,.20), rgba(0,0,0,0) 70%); }
+  .grain{ position:absolute; inset:0; opacity:.16; mix-blend-mode:screen; pointer-events:none;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 .55 0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>"); }
+  nav{ position:absolute; top:38px; left:92px; display:flex; gap:66px; font-size:15px; letter-spacing:.5px; color:var(--grey); text-transform:uppercase }
+  nav .on{ color:var(--white) }
+  h1{ position:absolute; left:88px; font-family:'Poppins',sans-serif; font-weight:700; color:var(--cyan); line-height:.98; letter-spacing:-.5px }
+  .sub{ position:absolute; left:92px; font-weight:800; font-size:28px; color:var(--white); letter-spacing:.3px; text-transform:uppercase }
+  .sources{ position:absolute; left:92px; bottom:30px; font-size:13.5px; color:#8F989E; font-weight:600 }
+  .arrow{ position:absolute; right:56px; bottom:30px; width:40px; height:40px }
+  .tagbox{ position:absolute; top:46px; right:60px; border:2px solid var(--white); padding:10px 18px; font-weight:600; font-size:20px; letter-spacing:.5px }
+  .chips{ position:absolute; left:0; right:0; bottom:58px; display:flex; justify-content:center; gap:18px }
+  .chips span{ background:var(--cyan); color:#000; font-weight:800; font-size:16px; padding:7px 18px; letter-spacing:.4px }
+  .amber{ color:var(--amber) !important }
+  b.c{ color:var(--cyan); font-weight:700 }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <symbol id="star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#EAFBFF"/></symbol>
+    <symbol id="starc" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#C6FBFF"/></symbol>
+    <symbol id="stara" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#FFC75A"/></symbol>
+    <symbol id="arr" viewBox="0 0 40 40"><path d="M6 6 L34 34 M34 12 L34 34 L12 34" stroke="#C6FBFF" stroke-width="6" fill="none" stroke-linecap="square"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= COVER A : anneau d'étoiles ================= -->
+<div class="slide" id="coverA">
+  <div class="glow center"></div><div class="grain"></div>
+  <div class="tagbox">4E A (402) · STRATÉGIE, INFLUENCE ET LOBBYING</div>
+  <div id="ring" style="position:absolute;inset:0"></div>
+  <div style="position:absolute;left:0;right:0;top:318px;text-align:center">
+    <div style="font-family:'Poppins';font-weight:700;font-size:96px;color:var(--cyan);line-height:1">IA GÉNÉRATIVE</div>
+    <div style="font-family:'Poppins';font-weight:400;font-size:30px;letter-spacing:3px;margin-top:22px;line-height:1.35">LA BATAILLE AUTOUR DES RÈGLES<br>APPLICABLES AUX GRANDS MODÈLES D'IA</div>
+    <div style="margin-top:22px;font-style:italic;color:var(--cyan-dim);font-size:22px">AI Act · chapitre V · 2021 → 2026</div>
+  </div>
+  <div class="chips"><span>AUDE AGNIMEL</span><span>NGOC NHI LUU</span><span>ZHIYING ZOU</span><span>TANIA CHEHAIBAR</span></div>
+</div>
+
+<!-- ================= COVER B : barre de prompt ================= -->
+<div class="slide" id="coverB">
+  <div class="glow both"></div><div class="grain"></div>
+  <div class="tagbox">4E A (402) · STRATÉGIE, INFLUENCE ET LOBBYING</div>
+  <div style="position:absolute;left:0;right:0;top:190px;text-align:center;font-family:'Poppins';font-weight:700;font-size:132px;color:var(--cyan);line-height:1">IA GÉNÉRATIVE</div>
+  <div style="position:absolute;left:0;right:0;top:350px;text-align:center;font-family:'Poppins';font-size:30px;letter-spacing:3px">LA BATAILLE AUTOUR DES RÈGLES APPLICABLES AUX GRANDS MODÈLES D'IA</div>
+  <!-- prompt bar -->
+  <div style="position:absolute;left:260px;top:470px;width:1080px;height:104px;border:2px solid var(--cyan);border-radius:52px;background:rgba(198,251,255,.06);display:flex;align-items:center;padding:0 22px 0 40px">
+    <span style="font-size:32px;color:var(--white);font-weight:500">Qui a réussi à peser sur les règles de l'IA en Europe&nbsp;?</span>
+    <span style="display:inline-block;width:3px;height:40px;background:var(--cyan);margin-left:8px"></span>
+    <span style="margin-left:auto;width:62px;height:62px;border-radius:50%;background:var(--cyan);display:flex;align-items:center;justify-content:center">
+      <svg width="28" height="28" viewBox="0 0 28 28"><path d="M14 24 V5 M6 12 L14 4 L22 12" stroke="#000" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </span>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:600px;text-align:center;color:var(--grey);font-size:17px">Exposé · Règlement (UE) 2024/1689 — chapitre V</div>
+  <div class="chips"><span>AUDE AGNIMEL</span><span>NGOC NHI LUU</span><span>ZHIYING ZOU</span><span>TANIA CHEHAIBAR</span></div>
+</div>
+
+<!-- ================= COVER C : bras de fer ================= -->
+<div class="slide" id="coverC">
+  <div class="glow center"></div><div class="grain"></div>
+  <div class="tagbox">4E A (402) · STRATÉGIE, INFLUENCE ET LOBBYING</div>
+  <div style="position:absolute;left:0;right:0;top:150px;text-align:center;font-family:'Poppins';font-weight:700;font-size:88px;color:var(--white);line-height:1">IA GÉNÉRATIVE</div>
+  <div style="position:absolute;left:0;right:0;top:262px;text-align:center;font-family:'Poppins';font-size:28px;letter-spacing:3px;color:var(--cyan-dim)">LA BATAILLE AUTOUR DES RÈGLES APPLICABLES AUX GRANDS MODÈLES D'IA</div>
+  <!-- tug of war -->
+  <div style="position:absolute;left:110px;top:430px;font-family:'Poppins';font-weight:700;font-size:78px;color:var(--amber)">INNOVATION</div>
+  <div style="position:absolute;right:110px;top:430px;font-family:'Poppins';font-weight:700;font-size:78px;color:var(--cyan)">RÉGULATION</div>
+  <div style="position:absolute;left:110px;right:110px;top:560px;height:4px;background:linear-gradient(90deg,#FFC75A,#EAFBFF 50%,#C6FBFF)"></div>
+  <svg style="position:absolute;left:765px;top:527px;width:70px;height:70px"><use href="#starc"/></svg>
+  <div style="position:absolute;left:0;right:0;top:612px;text-align:center;font-weight:800;font-size:22px;letter-spacing:2px">AI ACT · 2024</div>
+  <div style="position:absolute;left:110px;top:590px;font-size:19px;color:var(--grey)">États · start-up · Big Tech</div>
+  <div style="position:absolute;right:110px;top:590px;font-size:19px;color:var(--grey)">Parlement · ONG · créateurs</div>
+  <div class="chips"><span>AUDE AGNIMEL</span><span>NGOC NHI LUU</span><span>ZHIYING ZOU</span><span>TANIA CHEHAIBAR</span></div>
+</div>
+
+<!-- ================= ENJEUX v2 : hub ================= -->
+<div class="slide" id="enjeux2">
+  <div class="glow center"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span class="on">Enjeux</span><span>Acteurs</span><span>Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:92px;font-size:96px">ENJEUX</h1>
+  <div class="sub" style="top:200px">Une bataille d'intérêts</div>
+  <!-- connector lines -->
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900">
+    <g stroke="#8FD9E3" stroke-width="2" stroke-dasharray="6 6" fill="none">
+      <path d="M690 500 L600 420"/><path d="M910 500 L1000 420"/>
+      <path d="M690 620 L600 690"/><path d="M910 620 L1000 690"/>
+    </g>
+  </svg>
+  <!-- hub -->
+  <div style="position:absolute;left:670px;top:430px;width:260px;height:260px;border-radius:50%;border:3px solid var(--cyan);background:rgba(0,0,0,.6);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center">
+    <div style="font-family:'Poppins';font-weight:700;font-size:30px;color:var(--cyan);line-height:1.1">QUI A<br>INTÉRÊT<br>À QUOI&nbsp;?</div>
+  </div>
+  <!-- 4 cards with left accent bar -->
+  <div style="position:absolute;left:92px;top:285px;width:520px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:48px;color:#2E4A55;line-height:1">01</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:28px">ÉCONOMIQUE</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:19px;margin:4px 0 8px">Coût de la conformité · concurrence</div>
+      <div style="font-size:19px;line-height:1.45"><b class="c">Big Tech</b> → réguler les usages<br><b class="c">Start-up UE</b> → obligations allégées<br><b class="c">Open source</b> → exemption · <b class="c">PME</b> → transparence</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:988px;top:285px;width:520px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:48px;color:#2E4A55;line-height:1">02</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:28px">POLITIQUE</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:19px;margin:4px 0 8px">Souveraineté numérique</div>
+      <div style="font-size:19px;line-height:1.45"><b class="c">États (FR, DE, IT)</b> → protéger leurs champions<br><span style="font-style:italic;color:var(--cyan-dim)">«&nbsp;On régulera des choses qu'on ne produira plus&nbsp;»<br>— E. Macron, 11/12/2023</span></div>
+    </div>
+  </div>
+  <div style="position:absolute;left:92px;top:610px;width:520px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:48px;color:#2E4A55;line-height:1">03</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:28px">SOCIAL &amp; ENVIRONNEMENTAL</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:19px;margin:4px 0 8px">Désinformation · droit d'auteur · énergie</div>
+      <div style="font-size:19px;line-height:1.45"><b class="c">Ayants droit</b> → transparence des données<br><b class="c">Parlement, ONG</b> → documenter l'énergie</div>
+    </div>
+  </div>
+  <div style="position:absolute;left:988px;top:610px;width:520px">
+    <div style="font-family:'Poppins';font-weight:700;font-size:48px;color:#2E4A55;line-height:1">04</div>
+    <div style="border-left:4px solid var(--cyan);padding-left:18px;margin-top:-6px">
+      <div style="font-weight:800;font-size:28px">RÉPUTATIONNEL</div>
+      <div style="color:var(--cyan);font-style:italic;font-size:19px;margin:4px 0 8px">Image · leadership</div>
+      <div style="font-size:19px;line-height:1.45"><b class="c">UE</b> → première à réguler l'IA<br><b class="c">Mistral AI</b> → champion européen de l'innovation</div>
+    </div>
+  </div>
+  <div class="sources">Sources : TIME (20/06/2023) · Siècle Digital (12/12/2023) · Règlement (UE) 2024/1689, annexe XI</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+</div>
+
+<!-- ================= ACTEURS v2 : carte 2D ================= -->
+<div class="slide" id="acteurs2">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span class="on">Acteurs</span><span>Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:92px;font-size:84px">ACTEURS</h1>
+  <div class="sub" style="top:190px">Cartographie des positions</div>
+  <!-- plot area: x 170..1490, y 270..790 -->
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900">
+    <defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#EAFBFF"/></marker></defs>
+    <line x1="170" y1="790" x2="1500" y2="790" stroke="#EAFBFF" stroke-width="3" marker-end="url(#ah)"/>
+    <line x1="170" y1="790" x2="170" y2="262" stroke="#EAFBFF" stroke-width="3" marker-end="url(#ah)"/>
+    <line x1="835" y1="270" x2="835" y2="790" stroke="#FFC75A" stroke-width="2" stroke-dasharray="8 8"/>
+  </svg>
+  <div style="position:absolute;left:96px;top:262px;transform:rotate(-90deg) translateX(-100%);transform-origin:left top;font-weight:800;font-size:16px;letter-spacing:2px">INFLUENCE</div>
+  <div style="position:absolute;left:172px;top:800px;font-weight:800;font-size:16px;letter-spacing:1px">◀ AUTORÉGULATION / RÉGULER LES USAGES</div>
+  <div style="position:absolute;right:100px;top:800px;font-weight:800;font-size:16px;letter-spacing:1px">RÈGLES CONTRAIGNANTES POUR LES MODÈLES ▶</div>
+  <div style="position:absolute;left:775px;top:236px;font-weight:800;font-size:16px;letter-spacing:1px" class="amber">COMPROMIS</div>
+
+  <!-- bubbles: left = x, top = y (center), size = d -->
+  <div class="bub" style="--x:330px;--y:330px;--d:150px">France · Allemagne<br>· Italie<small>Conseil · non-paper</small></div>
+  <div class="bub" style="--x:470px;--y:470px;--d:128px">Mistral AI<br>Aleph Alpha<small>accès aux gouvernements</small></div>
+  <div class="bub" style="--x:300px;--y:600px;--d:120px">Big Tech US<small>réguler les usages</small></div>
+  <div class="bub" style="--x:560px;--y:690px;--d:110px">Fédérations<br>&amp; industrie<small>lettre des 150</small></div>
+  <div class="bub med" style="--x:835px;--y:420px;--d:140px">Commission<br>&amp; présidence<br>espagnole<small>2 niveaux</small></div>
+  <div class="bub" style="--x:1200px;--y:360px;--d:150px">Parlement<br>européen<small>Benifei · Tudorache</small></div>
+  <div class="bub" style="--x:1110px;--y:640px;--d:110px">Créateurs<br>&amp; ayants droit</div>
+  <div class="bub" style="--x:1340px;--y:600px;--d:116px">ONG &amp;<br>chercheurs</div>
+  <div class="bub" style="--x:1290px;--y:730px;--d:96px;font-size:14px">Acteurs<br>environ-<br>nementaux</div>
+
+  <div style="position:absolute;right:100px;top:236px;font-size:14px;color:var(--grey);font-style:italic">Taille du cercle = poids estimé · positionnement indicatif d'après les sources</div>
+  <div class="sources">Sources : Non-paper FR-DE-IT (18/11/2023) · Parlement européen (14/06/2023) · CEO / LobbyControl / Observatoire des multinationales (2024)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+  <style>
+    #acteurs2 .bub{ position:absolute; left:calc(var(--x) - var(--d)/2); top:calc(var(--y) - var(--d)/2); width:var(--d); height:var(--d);
+      border-radius:50%; border:2.5px solid var(--cyan); background:#0B1A1E; display:flex; flex-direction:column; align-items:center; justify-content:center;
+      text-align:center; font-weight:700; font-size:16px; line-height:1.15; color:var(--white); padding:8px }
+    #acteurs2 .bub small{ display:block; font-weight:500; font-size:12.5px; color:var(--cyan); margin-top:5px }
+    #acteurs2 .bub.med{ border-color:var(--amber); background:#1E1708 }
+    #acteurs2 .bub.med small{ color:var(--amber) }
+  </style>
+</div>
+
+<!-- ================= DÉROULÉ v2 : zigzag ================= -->
+<div class="slide" id="deroule2">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span>Acteurs</span><span class="on">Déroulé</span><span>Résultats</span></nav>
+  <h1 style="top:92px;font-size:62px">DÉROULÉ &amp; ACTIONS DE LOBBYING</h1>
+  <!-- axis -->
+  <div style="position:absolute;left:0;right:0;top:540px;height:3px;background:var(--line)"></div>
+  <!-- nodes x: 210, 500, 790, 1080, 1370 -->
+  <svg style="position:absolute;left:192px;top:524px;width:36px;height:36px"><use href="#star"/></svg>
+  <svg style="position:absolute;left:482px;top:524px;width:36px;height:36px"><use href="#star"/></svg>
+  <svg style="position:absolute;left:772px;top:524px;width:36px;height:36px"><use href="#star"/></svg>
+  <svg style="position:absolute;left:1062px;top:524px;width:36px;height:36px"><use href="#star"/></svg>
+  <svg style="position:absolute;left:1340px;top:510px;width:64px;height:64px"><use href="#stara"/></svg>
+  <!-- connectors -->
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900"><g stroke="#8FD9E3" stroke-width="2">
+    <line x1="210" y1="455" x2="210" y2="522"/><line x1="500" y1="560" x2="500" y2="610"/>
+    <line x1="790" y1="455" x2="790" y2="522"/><line x1="1080" y1="560" x2="1080" y2="610"/>
+    <line x1="1372" y1="455" x2="1372" y2="508" stroke="#FFC75A"/></g></svg>
+  <!-- dates near axis -->
+  <div class="dt" style="left:110px;top:568px">2022</div>
+  <div class="dt" style="left:400px;top:488px">30 JUIN 2023</div>
+  <div class="dt" style="left:690px;top:568px">JUIN–NOV. 2023</div>
+  <div class="dt" style="left:980px;top:488px">OCT.–NOV. 2023</div>
+  <div class="dt amber" style="left:1272px;top:585px;font-size:24px">8 DÉC. 2023</div>
+  <!-- cards above (top) / below -->
+  <div class="cd" style="left:70px;top:236px"><div class="k">Rencontre + document</div><b class="c">OpenAI</b><br>Juin 2022 : rencontre avec la Commission<br>Sept. 2022 : livre blanc → pas «&nbsp;à haut risque&nbsp;»</div>
+  <div class="cd" style="left:360px;top:614px"><div class="k">Lettre ouverte</div><b class="c">+150 dirigeants</b> (Airbus, Siemens…)<br>organisée par <b class="c">Cédric O</b>, R. Obermann, J. zu Fürstenberg</div>
+  <div class="cd" style="left:650px;top:236px"><div class="k">Rendez-vous</div><b class="c">Aleph Alpha</b><br><b class="c">12 rendez-vous</b> avec le gouvernement allemand (selon LobbyControl)</div>
+  <div class="cd" style="left:940px;top:614px"><div class="k">Coalition d'États</div><b class="c">30/10</b> : réunion de Rome<br><b class="c">18/11</b> : non-paper FR-DE-IT → codes de conduite</div>
+  <div class="cd" style="left:1230px;top:236px;border-color:var(--amber)"><div class="k amber">Moment clé</div><b class="amber">Accord politique</b><br>en trilogue → <b class="amber">2 niveaux</b> de règles</div>
+  <div class="sources">Sources : TIME (20/06/2023) · Reuters (30/06/2023) · CEO / LobbyControl / Observatoire (03/2024) · Ministère italien (30/10/2023) · Non-paper (18/11/2023)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+  <style>
+    #deroule2 .dt{ position:absolute; width:200px; text-align:center; font-weight:800; font-size:21px; letter-spacing:.5px }
+    #deroule2 .cd{ position:absolute; width:290px; min-height:196px; border:2.5px solid var(--line); border-radius:12px; padding:16px 18px; font-size:18px; line-height:1.4; background:rgba(0,0,0,.55) }
+    #deroule2 .cd .k{ font-weight:800; font-size:15px; letter-spacing:1px; text-transform:uppercase; color:var(--grey); margin-bottom:8px }
+  </style>
+</div>
+
+<!-- ================= RÉSULTAT v2 : verdict ================= -->
+<div class="slide" id="resultat2">
+  <div class="glow"></div><div class="grain"></div>
+  <nav><span>Contexte</span><span>Enjeux</span><span>Acteurs</span><span>Déroulé</span><span class="on">Résultats</span></nav>
+  <h1 style="top:92px;font-size:68px">RÉSULTAT &amp; ENSEIGNEMENTS</h1>
+  <!-- verdict -->
+  <div style="position:absolute;left:92px;top:196px;width:1416px;border-left:6px solid var(--amber);padding:6px 0 6px 22px;font-size:25px;font-weight:600;font-style:italic">
+    <span class="amber" style="font-style:normal;font-weight:800">VERDICT —</span> les start-up européennes et leurs gouvernements ont le plus pesé : règles allégées, mais pas empêchées.
+  </div>
+  <!-- pyramid -->
+  <div style="position:absolute;left:92px;top:292px;font-weight:800;font-size:22px;letter-spacing:.5px">LA DÉCISION FINALE <span style="font-weight:500;font-style:italic;color:var(--cyan);font-size:18px">· chapitre V, accord du 08/12/2023</span></div>
+  <svg style="position:absolute;left:92px;top:336px" width="560" height="300">
+    <polygon points="190,10 370,10 430,135 130,135" fill="rgba(255,199,90,.12)" stroke="#FFC75A" stroke-width="2.5"/>
+    <polygon points="122,150 438,150 540,290 20,290" fill="rgba(198,251,255,.08)" stroke="#C6FBFF" stroke-width="2.5"/>
+    <text x="280" y="62" text-anchor="middle" font-family="Exo 2" font-weight="800" font-size="19" fill="#FFC75A">MODÈLES LES PLUS</text>
+    <text x="280" y="86" text-anchor="middle" font-family="Exo 2" font-weight="800" font-size="19" fill="#FFC75A">PUISSANTS</text>
+    <text x="280" y="114" text-anchor="middle" font-family="Exo 2" font-size="17" fill="#F3F7F9">→ obligations renforcées</text>
+    <text x="280" y="215" text-anchor="middle" font-family="Exo 2" font-weight="800" font-size="21" fill="#C6FBFF">TOUS LES MODÈLES GPAI</text>
+    <text x="280" y="246" text-anchor="middle" font-family="Exo 2" font-size="18" fill="#F3F7F9">→ transparence</text>
+  </svg>
+  <div style="position:absolute;left:92px;top:646px;font-size:17px;line-height:1.5;color:#C9D2D6">Open source : exemption partielle · adopté le 21/05/2024 · en vigueur le 01/08/2024</div>
+  <!-- scoreboard -->
+  <div style="position:absolute;left:720px;top:292px;width:788px">
+    <div style="font-weight:800;font-size:22px;letter-spacing:.5px;margin-bottom:12px">QUI A OBTENU QUOI ?</div>
+    <table style="width:100%;border-collapse:collapse;font-size:18px">
+      <tr style="color:var(--grey);font-weight:800;font-size:14px;letter-spacing:1px"><td style="padding:6px 8px">ACTEUR</td><td style="padding:6px 8px;color:var(--cyan)">✓ OBTENU</td><td style="padding:6px 8px;color:var(--amber)">✕ PAS OBTENU</td></tr>
+      <tr style="border-top:2px solid #EAFBFF"><td style="padding:12px 8px;font-weight:700;color:var(--cyan);width:30%">Parlement</td><td style="padding:12px 8px">loi obligatoire + amendes</td><td style="padding:12px 8px">obligations lourdes pour tous</td></tr>
+      <tr style="border-top:1px solid #3A4A50"><td style="padding:12px 8px;font-weight:700;color:var(--cyan)">FR · DE · Mistral · Aleph Alpha</td><td style="padding:12px 8px">règles plus légères, exemption open source</td><td style="padding:12px 8px">autorégulation</td></tr>
+      <tr style="border-top:1px solid #3A4A50"><td style="padding:12px 8px;font-weight:700;color:var(--cyan)">Big Tech US</td><td style="padding:12px 8px">pas «&nbsp;à haut risque&nbsp;»</td><td style="padding:12px 8px">leurs plus gros modèles = «&nbsp;risque systémique&nbsp;»</td></tr>
+    </table>
+    <div style="margin-top:12px;font-weight:700;font-size:18px" class="amber">Compromis : 2 niveaux de règles, entre Parlement et États</div>
+  </div>
+  <!-- lessons strip -->
+  <div style="position:absolute;left:92px;top:712px;width:1416px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+    <div class="ls"><span>1</span>Passer par les gouvernements = méthode la plus efficace</div>
+    <div class="ls"><span>2</span>Argument clé : la souveraineté européenne</div>
+    <div class="ls"><span>3</span>Limite : la loi est quand même adoptée</div>
+    <div class="ls"><span>4</span>Trace d'influence ≠ preuve</div>
+  </div>
+  <div class="sources" style="bottom:22px">Sources : Règlement (UE) 2024/1689 · Conseil de l'UE · Aleph Alpha (12/12/2023) · Non-paper FR-DE-IT (18/11/2023) · CEO / LobbyControl / Observatoire (2024)</div>
+  <svg class="arrow" style="bottom:20px"><use href="#arr"/></svg>
+  <style>
+    #resultat2 .ls{ border:2px solid var(--line); border-radius:40px; padding:12px 18px 12px 12px; font-size:17px; font-weight:600; display:flex; align-items:center; gap:12px; line-height:1.25 }
+    #resultat2 .ls span{ flex:0 0 38px; height:38px; border-radius:50%; background:var(--cyan); color:#000; font-weight:800; display:flex; align-items:center; justify-content:center; font-size:19px }
+  </style>
+</div>
+
+<script>
+  // ring of 12 stars (EU flag reference) on cover A
+  (function(){
+    const ring=document.getElementById('ring'); const cx=800, cy=430, rx=560, ry=300;
+    for(let i=0;i<12;i++){
+      const a=-Math.PI/2 + i*2*Math.PI/12;
+      const x=cx+rx*Math.cos(a), y=cy+ry*Math.sin(a), s=34;
+      ring.insertAdjacentHTML('beforeend', `<svg style="position:absolute;left:${x-s/2}px;top:${y-s/2}px;width:${s}px;height:${s}px"><use href="#starc"/></svg>`);
+    }
+  })();
+</script>
+</body>
+</html>
