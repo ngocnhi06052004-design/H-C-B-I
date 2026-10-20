@@ -10,5 +10,5 @@ Repo chứa bài tập của Lưu Ngọc Nhi (Master Communication, EFAP Paris).
 ## Cấu trúc
 - `talkshow/`: bài Médiatraining.
 - `growth-marketing/`: môn Growth Marketing (thầy Benjamin Dahan, benjamin.dahan@ffbde.fr).
-  - `on-tap/revisions-growth-marketing.html`: trang ôn tập (fiches FR/VI + 97 câu trắc nghiệm 3 mức + thi thử 40 câu/12 phút + cas pratique), đã publish tại https://claude.ai/artifact/EjTdwHLpFCaAa6yMBs3jJH
+  - `on-tap/revisions-growth-marketing.html`: trang ôn tập (fiches FR/VI + 105 câu trắc nghiệm 3 mức + thi thử 40 câu/12 phút + cas pratique), đã publish tại https://claude.ai/artifact/EjTdwHLpFCaAa6yMBs3jJH
   - `hydrafizz-email/`: exercice portfolio (email xin hẹn phỏng vấn với vai giám đốc marketing UPSA / HydraFizz, chuỗi 3 email, hạn 18/10, 26/10, 1/11).
