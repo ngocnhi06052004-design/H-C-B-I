@@ -53,7 +53,7 @@ SUMMARY.push(
 <div class="tip"><b>La Big Idea n'est PAS un format !</b> "Faire une série TikTok", "créer un podcast"… ❌ đó là formats, không phải Big Idea. Nhớ 5 tiêu chí: <b>S-F-P-D-M</b> (Simple, Forte, Propre, Déclinable, Mémorisable).</div>
 <h3>Un schéma à suivre</h3>
 <div class="tbl"><table>
-<tr><th>Bước</th><th>Vai trò</th><th>Ví dụ trong cours: marque AQUALYS</th></tr>
+<tr><th>Bước</th><th>Vai trò</th><th>Ví dụ trong slide: AQUALYS (thương hiệu nước dùng làm ví dụ trong cours)</th></tr>
 <tr><td><b>1. BIG IDEA</b></td><td>L'idée centrale: idée mạnh, cho ý nghĩa, truyền cảm hứng cho toàn bộ chiến lược, thể hiện được nhiều cách</td><td>« Agir aujourd'hui pour un demain plus clair » (l'eau d'aujourd'hui pour préserver le monde de demain)</td></tr>
 <tr><td><b>2. MESSAGE</b></td><td>Ce qu'on veut faire passer: chuyển Big Idea thành thông điệp rõ ràng, cible hiểu được</td><td>« Chaque geste compte » (réduire son empreinte plastique grâce à une eau plus responsable)</td></tr>
 <tr><td><b>3. SLOGAN</b></td><td>Une accroche mémorable: ngắn, mạnh, dễ nhớ</td><td>« Naturellement engagés »</td></tr>
