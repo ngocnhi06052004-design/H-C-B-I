@@ -52,7 +52,7 @@ const GROUPS=[
   {name:'Đề theo chủ đề (bám từng phần của slide)',items:Object.keys(TOPICS).map((t,i)=>({id:t,k:SEANCE[t]+' · Đề '+(i+1),name:TOPICS[t],d:DESC[t],pick:()=>shuffle(byTopic(t)),size:byTopic(t).length,mode:'practice'}))},
   {name:'Đề theo buổi học',items:['S1','S2','S3','S4'].map(s=>({id:'seance-'+s,k:'Séance '+s.slice(1),name:'Toàn bộ buổi '+s.slice(1),d:'Mọi câu hỏi thuộc séance '+s.slice(1)+', trộn ngẫu nhiên.',pick:()=>shuffle(bySeance(s)),size:bySeance(s).length,mode:'practice'}))},
   {name:'Đề tổng hợp (trộn toàn bộ kiến thức)',items:[
-    {id:'exam',k:'Thi thử',name:'12 câu · 15 phút',d:'Giống đề thật (10–12 câu QCM): bấm giờ, chỉ chấm khi nộp bài, hết giờ tự nộp. Mỗi lần là một đề mới.',pick:()=>balanced(12),size:12,mode:'exam',time:15*60,dark:1},
+    {id:'exam',k:'Thi thử',name:'11 câu QCM · 12 phút',d:'Giống phần QCM của đề thật (11 câu, 11 điểm): bấm giờ 12 phút để còn ~18 phút cho 3 câu mở, chỉ chấm khi nộp, hết giờ tự nộp. Mỗi lần là một đề mới.',pick:()=>balanced(11),size:11,mode:'exam',time:12*60,dark:1},
     {id:'mixB',k:'Tổng hợp A',name:'24 câu chia đều chủ đề',d:'Mỗi chủ đề góp 3 câu, giúp phát hiện phần còn yếu.',pick:()=>balanced(24),size:24,mode:'practice'},
     {id:'mixA',k:'Tổng hợp B',name:'40 câu ngẫu nhiên',d:'Bốc ngẫu nhiên từ toàn bộ ngân hàng, mỗi lần làm là một đề mới.',pick:()=>shuffle(ALL).slice(0,40),size:40,mode:'practice'},
     {id:'all',k:'Toàn bộ',name:'Tất cả câu hỏi',d:'Làm hết ngân hàng câu hỏi theo thứ tự ngẫu nhiên.',pick:()=>shuffle(ALL),size:ALL.length,mode:'practice'}

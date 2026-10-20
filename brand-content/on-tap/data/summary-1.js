@@ -1,12 +1,20 @@
 SUMMARY.push(
-{id:'evaluation',title:'Đề thi gồm những gì?',en:'Les évaluations',html:`
+{id:'evaluation',title:'Đề thi gồm những gì?',en:'Convocation · QCM Brand Content oct2026',html:`
+<p>Theo email triệu tập của cô Céline Crespin (gửi qua <b>Evalmee</b>), đây là <b>bài đánh giá đầu tiên</b> của module Brand Content.</p>
 <div class="tbl"><table>
-<tr><th>Điểm</th><th>Tỷ trọng</th><th>Nội dung</th></tr>
-<tr><td><b>Note individuelle : QCM + mini cas</b></td><td><mark>30%</mark></td><td><b>10–12 câu QCM (8 điểm)</b> về lý thuyết, chiến lược, formats, từ vựng của cours + <b>3 câu về chiến dịch nhóm bạn (12 điểm)</b></td></tr>
-<tr><td>Note de groupe : oral final</td><td>60%</td><td>Thuyết trình 10–12 phút chiến dịch "fil rouge" kèm các contenus đã tạo</td></tr>
-<tr><td>Note individuelle : implication</td><td>10%</td><td>Thái độ, chuyên cần, vai trò trong nhóm (từ buổi prise de vue đến buổi thuyết trình)</td></tr>
+<tr><th>Thông tin</th><th>Chi tiết</th></tr>
+<tr><td>Khi nào</td><td><mark>Thứ Ba 20/10</mark>, <b>ngay trong buổi học</b>. Cô sẽ tự bấm bắt đầu bài thi.</td></tr>
+<tr><td>Ai được thi</td><td>Chỉ những người <b>CÓ MẶT</b> trên lớp. <b>Không thi online từ xa</b>. Vắng mặt = <b>0 điểm</b>, trừ khi có lý do được trường chấp nhận.</td></tr>
+<tr><td>Thời gian</td><td><mark>30 phút</mark> tính từ lúc bắt đầu</td></tr>
+<tr><td>Phần 1</td><td><mark>11 câu đóng / QCM = 11 điểm</mark> (1 điểm mỗi câu)</td></tr>
+<tr><td>Phần 2</td><td><mark>3 câu mở = 9 điểm</mark> (khoảng 3 điểm mỗi câu) về <b>chiến dịch của nhóm bạn</b>, phải trả lời chi tiết (« à détailler »)</td></tr>
+<tr><td>Trước giờ thi</td><td>Đăng nhập <b>sớm 5 phút</b> để đọc và xác nhận hướng dẫn</td></tr>
+<tr><td>Link thi</td><td>Nút « Aller à mon examen » trong email. <b>Link là của riêng bạn, không chia sẻ.</b></td></tr>
+<tr><td>Quy định</td><td>Phải ký <b>cam kết danh dự</b> (déclaration sur l'honneur); có <b>biện pháp chống gian lận</b></td></tr>
+<tr><td>Cần hỗ trợ</td><td>Trả lời email đó, hoặc bấm nút <b>AIDE</b> trong lúc thi</td></tr>
 </table></div>
-<div class="tip">Phần mini cas (12 điểm) còn nặng hơn phần QCM. Hãy mở tab <b>Mini cas</b> để chuẩn bị sẵn cible, insight, objectif, Big Idea và écosystème của nhóm bạn.</div>
+<div class="tip">Chia thời gian gợi ý: khoảng <b>10–12 phút cho 11 câu QCM</b> (không quá 1 phút mỗi câu), còn lại <b>khoảng 18 phút cho 3 câu mở</b> (6 phút mỗi câu). Câu mở chiếm 9/20 điểm: mỗi câu nên có khái niệm của cours + ví dụ cụ thể từ chiến dịch nhóm bạn.</div>
+<p>Bài này là phần <b>note individuelle (30%)</b> trong 3 điểm của môn; 60% còn lại là thuyết trình nhóm cuối kỳ, 10% là thái độ và mức độ tham gia.</p>
 <p>Nội dung theo buổi: <b>S1</b> Brand Content vs Content Marketing, direction artistique, prise de vue · <b>S2</b> univers et codes de marque, cible, insight, objectifs, Big Idea, storytelling · <b>S3</b> content design, écosystème de contenus, déclinaisons, contenu natif, vidéo verticale · <b>S4</b> format/support/contenu, formats offline classiques et créatifs, phygital, formats online, expériences immersives.</p>
 `},
 {id:'bc-vs-cm',title:'Brand Content vs Content Marketing',en:'Séance 1 · Pourquoi produire du brand content ?',html:`
