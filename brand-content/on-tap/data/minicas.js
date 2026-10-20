@@ -38,3 +38,12 @@ fields:[
 ['declinaisons','Déclinaisons et adaptations'],
 ['offline','2 contenus offline créatifs (format / support / contenu)']
 ]};
+[
+'Ví dụ Aqualys: « Cœur de cible của chúng tôi: sinh viên thành thị 19–24 tuổi, hay mua nước khi đang di chuyển. Insight (bình luận TikTok, bảng hỏi 40 người trả lời): họ muốn hành động vì hành tinh nhưng thấy bất lực trước những vấn đề lớn. Persona: Léa, 21 tuổi, học vừa làm; rào cản = giá; động lực = những hành động nhỏ, cụ thể; một ngày trên mạng = TikTok và Instagram. Lựa chọn này hợp lý vì mục tiêu ưu tiên là hình ảnh: đổi cách nhìn từ "một chai nước nhựa" sang "một thương hiệu dấn thân". »',
+'Ví dụ Aqualys: Big Idea « Hành động hôm nay cho một ngày mai trong trẻo hơn » → message « Mỗi cử chỉ đều có ý nghĩa » → slogan « Dấn thân một cách tự nhiên » → contenus: phim, mạng xã hội, áp phích, sự kiện. Simple (hiểu trong 3 giây), forte (gợi cảm giác trách nhiệm), propre (nước = gắn trực tiếp với thiên nhiên), déclinable (video, podcast, bao bì…), mémorisable (gói trong một câu).',
+'Ví dụ: « Mục tiêu 1: hình ảnh (thay đổi điều người ta nghĩ về thương hiệu). Mục tiêu 2: gắn kết. Aqualys đã được biết đến nhưng bị xem là một chai nước bình thường; chúng tôi muốn gắn nó với sự dấn thân vì môi trường. »',
+'Ví dụ: Contenu maître: phim 90 giây « Mỗi cử chỉ đều có ý nghĩa » (kể chuyện, gợi cảm xúc) → teaser 10 giây (thu hút) → loạt ảnh chân dung nhân vật (kể chuyện) → podcast 5 phút với một hiệp hội (kéo dài) → thử thách UGC « cử chỉ của tôi » (cho tham gia) → bản chuyển đổi 9:16 có phụ đề cho TikTok.',
+'Ví dụ: Format: tranh tường tập thể · Support: hàng rào công trình gần một trường đại học · Contenu: mỗi người qua đường dán một giọt nước xanh ghi « cử chỉ » của mình vì hành tinh · Intérêt: cho tham gia và làm sự dấn thân tập thể trở nên hữu hình · Prolongement: video timelapse + UGC.',
+'Ví dụ: Giữ nguyên (conservé): màu xanh và giọt nước của logo. Biến tấu (détourné): giọt nước biến thành dấu chân (« mỗi cử chỉ »). Đưa vào mới (introduit): giọng điệu dấn thân hơn và hình ảnh thiên nhiên đen trắng.',
+'Ví dụ: Ai đó: Léa, sinh viên · muốn: hành động vì hành tinh · nhưng: cô nghĩ những cử chỉ của mình vô ích · thế là: cô khám phá tác động cộng dồn của cả khóa học nhờ Aqualys · cuối cùng: cô trở thành đại sứ. Thương hiệu là yếu tố kích hoạt (déclencheur), Léa là nhân vật chính.'
+].forEach((t,i)=>{if(MINICAS.questions[i])MINICAS.questions[i].exvi=t});

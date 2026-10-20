@@ -21,6 +21,7 @@ const LET='ABCDEFG';
 
 const ALL=QB.list.map(q=>{
   if(q.t==='tf'){q.o=['Vrai — Đúng','Faux — Sai'];q.a=[q.a?0:1];q.k=1}
+  else q.ov=q.ov||QV[q.id]||null;
   return q;
 });
 const byId=Object.fromEntries(ALL.map(q=>[q.id,q]));
@@ -129,12 +130,12 @@ function renderQ(){
       if(ok){c+=' right';tag=x.sel.has(oi)?'Đáp án đúng':(multi?'Bạn bỏ sót':'Đáp án đúng')}
       else if(x.sel.has(oi)){c+=' wrong';tag='Bạn chọn'}
     }else if(x.sel.has(oi))c+=' sel';
-    return `<button class="${c}" data-oi="${oi}" ${rev?'disabled':''} aria-pressed="${x.sel.has(oi)}"><span class="L">${LET[p]}</span><span>${esc(q.o[oi])}</span>${tag?`<span class="tag">${tag}</span>`:''}</button>`;
+    return `<button class="${c}" data-oi="${oi}" ${rev?'disabled':''} aria-pressed="${x.sel.has(oi)}"><span class="L">${LET[p]}</span><span class="otx"><span>${esc(q.o[oi])}</span>${q.ov&&(rev||ovAlways)?`<span class="ov">${esc(q.ov[oi])}</span>`:''}</span>${tag?`<span class="tag">${tag}</span>`:''}</button>`;
   }).join('');
   if(rev){
     const ok=isRight(x),none=!x.sel.size;
-    const ans=letters(x,q.a).map(l=>{const oi=x.order[LET.indexOf(l)];return `<b>${l}.</b> ${esc(q.o[oi])}`}).join('<br>');
-    $('#fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><div class="fb-h">${ok?'✓ Chính xác!':none?'Chưa trả lời':'✗ Chưa đúng'}</div>${ok?'':`<p><span class="lbl">Đáp án</span><br>${ans}</p>`}<p><span class="lbl">Dịch câu hỏi</span>${esc(q.vi)}</p><p><span class="lbl">Giải thích</span>${q.e}</p></div>`;
+    const ans=letters(x,q.a).map(l=>{const oi=x.order[LET.indexOf(l)];return `<b>${l}.</b> ${esc(q.o[oi])}${q.ov?`<span class="ans-vi">→ ${esc(q.ov[oi])}</span>`:''}`}).join(q.ov?'':'<br>');
+    $('#fb').innerHTML=`<div class="fb ${ok?'ok':'bad'}"><div class="fb-h">${ok?'✓ Chính xác!':none?'Chưa trả lời':'✗ Chưa đúng'}</div><p><span class="lbl">Đáp án đúng</span><br>${ans}</p><p><span class="lbl">Dịch câu hỏi</span>${esc(q.vi)}</p><p><span class="lbl">Giải thích</span>${q.e}</p></div>`;
   }else $('#fb').innerHTML='';
   $('#prevBtn').disabled=S.i===0;
   const last=S.i===S.qs.length-1,mb=$('#mainBtn');mb.disabled=false;
@@ -189,6 +190,9 @@ $('#dots').addEventListener('click',e=>{const b=e.target.closest('.dot');if(b)go
 $('#prevBtn').addEventListener('click',()=>go(S.i-1));
 $('#mainBtn').addEventListener('click',main);
 $('#finishBtn').addEventListener('click',finish);
+let ovAlways=store.get('bc2-ov',false);
+$('#ovBtn').setAttribute('aria-pressed',String(ovAlways));
+$('#ovBtn').addEventListener('click',()=>{ovAlways=!ovAlways;store.set('bc2-ov',ovAlways);$('#ovBtn').setAttribute('aria-pressed',String(ovAlways));if(S)renderQ()});
 document.addEventListener('keydown',e=>{
   if($('#view-quiz').hidden||e.metaKey||e.ctrlKey||e.altKey)return;
   const k=e.key.toUpperCase();const x=S.qs[S.i];
@@ -225,7 +229,7 @@ function renderResult(){
 let caseBuilt=false;
 function renderCase(){
   if(caseBuilt||!window.MINICAS)return;caseBuilt=true;
-  $('#caseQs').innerHTML=MINICAS.questions.map((c,i)=>`<details${i===0?' open':''}><summary>${esc(c.q)}<span class="vi">${esc(c.vi)}</span></summary><ol>${c.plan.map(p=>`<li>${esc(p)}</li>`).join('')}</ol><p class="model"><span class="eyebrow">Ví dụ mẫu</span><br>${esc(c.ex)}</p></details>`).join('');
+  $('#caseQs').innerHTML=MINICAS.questions.map((c,i)=>`<details${i===0?' open':''}><summary>${esc(c.q)}<span class="vi">${esc(c.vi)}</span></summary><ol>${c.plan.map(p=>`<li>${esc(p)}</li>`).join('')}</ol><p class="model"><span class="eyebrow">Ví dụ mẫu</span><br>${esc(c.ex)}${c.exvi?`<br><br><span class="eyebrow">Dịch</span><br>${esc(c.exvi)}`:''}</p></details>`).join('');
   const draft=store.get('bc2-case',{});
   $('#caseForm').innerHTML=MINICAS.fields.map(([k,l])=>`<label for="case-${k}">${esc(l)}<textarea id="case-${k}" data-k="${k}" rows="2">${esc(draft[k]||'')}</textarea></label>`).join('')+'<span class="saved" id="caseSaved">Tự lưu khi bạn gõ.</span>';
   let tm=null;
@@ -245,7 +249,7 @@ function renderWrong(){
   if(!list.length){el.innerHTML=`<div class="eyebrow">Sổ tay câu sai</div><h1>Chưa có câu sai nào</h1><div class="empty">Mỗi câu bạn trả lời sai trong bất kỳ đề nào sẽ được lưu ở đây (trên trình duyệt này). Khi làm lại đúng, câu đó tự biến mất khỏi danh sách. <a href="#" id="toEx">Bắt đầu một đề</a>.</div>`;$('#toEx').onclick=e=>{e.preventDefault();show('exams')};return}
   el.innerHTML=`<div class="eyebrow">Sổ tay câu sai</div><h1>${list.length} câu cần ôn lại</h1><p class="lede">Mở từng câu để xem đáp án và giải thích, hoặc làm thành một đề riêng. Trả lời đúng thì câu sẽ được gỡ khỏi danh sách.</p>
   <div class="actions" style="justify-content:flex-start;margin-bottom:18px"><button class="btn pri" id="wDo">Làm đề ${list.length} câu sai</button><button class="btn ghost" id="wClear">Xoá danh sách</button></div>
-  <div style="display:grid;gap:8px">${list.map(q=>{const ans=q.a.map(i=>esc(q.o[i])).join(' · ');return `<details class="wq"><summary><span class="chip">${esc(TOPICS[q.topic])}</span>${esc(q.q)}</summary><div class="body"><p><span class="eyebrow">Đáp án</span> <b>${ans}</b></p><p><span class="eyebrow">Dịch</span> ${esc(q.vi)}</p><p><span class="eyebrow">Giải thích</span> ${q.e}</p></div></details>`}).join('')}</div>`;
+  <div style="display:grid;gap:8px">${list.map(q=>{const ans=q.a.map(i=>esc(q.o[i])+(q.ov?` <span style="font-weight:400;color:var(--muted)">(${esc(q.ov[i])})</span>`:'')).join(' · ');return `<details class="wq"><summary><span class="chip">${esc(TOPICS[q.topic])}</span>${esc(q.q)}</summary><div class="body"><p><span class="eyebrow">Đáp án</span> <b>${ans}</b></p><p><span class="eyebrow">Dịch</span> ${esc(q.vi)}</p><p><span class="eyebrow">Giải thích</span> ${q.e}</p></div></details>`}).join('')}</div>`;
   $('#wDo').onclick=()=>startExam(EX_WRONG);
   $('#wClear').onclick=function(){
     if(!clearArmed){clearArmed=true;this.textContent='Bấm lần nữa để xoá hết';setTimeout(()=>{clearArmed=false;if(this.isConnected)this.textContent='Xoá danh sách'},4000);return}

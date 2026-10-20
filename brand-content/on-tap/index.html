@@ -113,6 +113,12 @@ a{color:var(--accent)}
 .opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
 .opt.wrong .L{background:var(--bad);border-color:var(--bad);color:var(--surface)}
 .opt:disabled{cursor:default}
+.opt .otx{display:flex;flex-direction:column;gap:2px;min-width:0}
+.opt .ov{font-size:13px;color:var(--muted);line-height:1.45}
+.opt.right .ov,.opt.wrong .ov{color:var(--ink);opacity:.8}
+.fb .ans-vi{display:block;color:var(--muted);font-size:13px;margin:0 0 4px}
+.tgl{font:600 12px/1 var(--f-body);padding:8px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;white-space:nowrap}
+.tgl[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
 .opt .tag{margin-left:auto;flex:none;font-family:var(--f-mono);font-size:11px;padding-left:8px;white-space:nowrap}
 .opt.right .tag{color:var(--ok)} .opt.wrong .tag{color:var(--bad)}
 .fb{margin-top:16px;border-radius:10px;padding:14px 16px;border:1.5px solid var(--line);background:var(--paper)}
@@ -186,14 +192,14 @@ details.wq .body p{margin:6px 0 0}
   <section id="view-exams" hidden>
     <div class="eyebrow">Ngân hàng <span id="qTotal">0</span> câu hỏi</div>
     <h1>Chọn một đề để luyện</h1>
-    <p class="lede">Câu hỏi bằng tiếng Pháp, bám sát slide của cours. Chế độ luyện tập chấm ngay sau mỗi câu, kèm dịch nghĩa và giải thích tiếng Việt. Thi thử giống đề thật: 12 câu, bấm giờ, chỉ chấm khi nộp. Thứ tự đáp án được xáo trộn mỗi lần làm.</p>
+    <p class="lede">Câu hỏi bằng tiếng Pháp, bám sát slide của cours. Chế độ luyện tập chấm ngay sau mỗi câu, kèm dịch câu hỏi, dịch từng đáp án và giải thích tiếng Việt. Muốn xem bản dịch đáp án ngay từ đầu, bấm nút <b>Dịch đáp án</b> phía trên câu hỏi. Thi thử giống đề thật: 12 câu, bấm giờ, chỉ chấm khi nộp. Thứ tự đáp án được xáo trộn mỗi lần làm.</p>
     <div id="examGroups"></div>
   </section>
 
   <section id="view-quiz" hidden>
     <div class="qbar">
       <div class="t"><div class="eyebrow" id="qPos"></div><div id="qTitle"></div></div>
-      <div class="r"><span class="timer" id="timer" hidden></span><button class="btn ghost" id="finishBtn">Kết thúc</button></div>
+      <div class="r"><button class="tgl" id="ovBtn" aria-pressed="false" title="Hiện bản dịch tiếng Việt của đáp án ngay cả khi chưa trả lời">Dịch đáp án</button><span class="timer" id="timer" hidden></span><button class="btn ghost" id="finishBtn">Kết thúc</button></div>
     </div>
     <div class="progress"><i id="prog" style="width:0"></i></div>
     <article class="qcard" aria-live="polite">
@@ -226,7 +232,8 @@ details.wq .body p{margin:6px 0 0}
 </main>
 
 <script>
-window.QB={list:[],add(t,arr){arr.forEach((q,i)=>{q.topic=t;q.id=t+'-'+(i+1);this.list.push(q)})}};
+window.QB={list:[],n:{},add(t,arr){arr.forEach(q=>{this.n[t]=(this.n[t]||0)+1;q.topic=t;q.id=t+'-'+this.n[t];this.list.push(q)})}};
+window.QV={};window.QV_set=(t,arr)=>arr.forEach((v,i)=>{if(v)QV[t+'-'+(i+1)]=v});
 window.SUMMARY=[];
 </script>
 <script src="data/summary-1.js"></script>
@@ -241,5 +248,13 @@ window.SUMMARY=[];
 <script src="data/q-eco.js"></script>
 <script src="data/q-offline.js"></script>
 <script src="data/q-online.js"></script>
+<script src="data/q2-intro-da.js"></script>
+<script src="data/q2-codes-strat.js"></script>
+<script src="data/q2-story-eco.js"></script>
+<script src="data/q2-offline-online.js"></script>
+<script src="data/t-1.js"></script>
+<script src="data/t-2.js"></script>
+<script src="data/t-3.js"></script>
+<script src="data/t-4.js"></script>
 <script src="data/minicas.js"></script>
 <script src="app.js"></script>
