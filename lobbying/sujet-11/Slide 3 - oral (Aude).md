@@ -1,6 +1,6 @@
 # Slide 3 – Acteurs : texte oral (Aude)
 
-Environ 260 mots, soit un peu moins de 2 minutes.
+Environ 240 mots, soit un peu moins de 2 minutes.
 
 ## Texte (FR)
 
