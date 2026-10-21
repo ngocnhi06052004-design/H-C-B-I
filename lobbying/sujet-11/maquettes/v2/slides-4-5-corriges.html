@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  :root{ --cyan:#C6FBFF; --cyan2:#8FE3EE; --amber:#FFC75A; --ink:#0B1620; }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{ font-family:'Exo 2',sans-serif; color:#F3F7F9; background:#111 }
+  .slide{ position:relative; width:1600px; height:900px; overflow:hidden;
+    background:
+      radial-gradient(700px 380px at 92% 105%, rgba(40,95,165,.55), rgba(0,0,0,0) 70%),
+      radial-gradient(600px 300px at 60% 100%, rgba(40,120,110,.35), rgba(0,0,0,0) 70%),
+      #000; }
+  nav{ position:absolute; top:30px; left:92px; display:flex; gap:110px; font-size:19px; color:#AFC0CC }
+  nav .on{ color:#fff }
+  .sources{ position:absolute; left:92px; bottom:22px; font-size:13.5px; color:#9AA6AD; font-weight:600 }
+  .badge{ position:absolute; width:36px; height:36px; border-radius:50%; background:var(--amber); color:#000; font-weight:800; font-size:19px; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 4px rgba(0,0,0,.85); z-index:5 }
+  .clean .badge{ display:none }
+
+  /* ---------- slide 4 ---------- */
+  .t4{ position:absolute; left:92px; top:66px; font-family:'Poppins'; font-weight:700; font-size:58px; color:var(--cyan); letter-spacing:-.5px }
+  .line{ position:absolute; left:0; right:0; top:168px; height:2px; background:#fff }
+  .star{ position:absolute; top:154px; width:30px; height:30px }
+  .date{ position:absolute; top:192px; width:268px; text-align:center; font-weight:800; font-size:25px }
+  .card{ position:absolute; top:236px; width:268px; height:572px; background:#E2F9FC; color:var(--ink); border-radius:24px; padding:14px 16px }
+  .faces{ display:flex; justify-content:center; gap:8px; height:96px }
+  .face{ display:flex; flex-direction:column; align-items:center; width:74px }
+  .face i{ width:64px; height:64px; border-radius:50%; background:radial-gradient(circle at 50% 38%, #9BA9B2 0 30%, #5F6E78 31% 100%); border:3px solid #2E7D74; display:block }
+  .face span{ margin-top:-6px; background:#13202B; color:#fff; font-size:9.5px; font-weight:700; letter-spacing:.3px; padding:2px 5px; border-radius:3px; text-align:center; line-height:1.15; white-space:nowrap }
+  .logo{ text-align:center; font-family:'Poppins'; font-weight:700; font-size:22px; margin-top:6px; line-height:1.15 }
+  .tag{ display:block; width:max-content; margin:8px auto 10px; background:#13202B; color:#C6FBFF; font-size:11.5px; font-weight:800; letter-spacing:1px; padding:4px 10px; border-radius:999px }
+  .card p{ font-size:16.5px; line-height:1.38; margin-bottom:10px }
+  .card p b{ font-weight:800 }
+  .flags{ display:flex; justify-content:center; gap:8px; margin-top:4px }
+  .flags i{ display:flex; width:40px; height:26px; border-radius:3px; overflow:hidden }
+  .flags i s{ flex:1 }
+  .arrow{ position:absolute; right:40px; bottom:20px; width:34px; height:34px }
+
+  /* ---------- slide 5 ---------- */
+  .t5{ position:absolute; left:92px; top:66px; font-family:'Poppins'; font-weight:700; font-size:58px; color:var(--cyan); letter-spacing:-.5px }
+  .sub5{ position:absolute; left:94px; top:142px; font-style:italic; font-size:21px; color:#D5E3EA }
+  .box{ position:absolute; top:212px; height:470px; border:2px solid #fff; border-radius:6px; padding:30px 22px 16px }
+  .box h3{ position:absolute; top:-17px; left:18px; right:18px; text-align:center }
+  .box h3 span{ background:#000; padding:0 12px; font-family:'Poppins'; font-weight:700; font-size:20px; letter-spacing:.2px; line-height:1.15; display:inline-block }
+  .box ul{ list-style:none }
+  .box li{ position:relative; padding-left:18px; font-size:18.5px; line-height:1.4; margin-bottom:12px }
+  .box li::before{ content:''; position:absolute; left:2px; top:11px; width:7px; height:7px; border-radius:50%; background:var(--cyan) }
+  .box li.sub{ margin-left:16px; font-size:17px; margin-bottom:8px }
+  .box li.sub::before{ background:none; border:1.5px solid var(--cyan2); width:6px; height:6px }
+  .box .k{ color:var(--cyan); font-weight:700 }
+  .ok{ color:#7CE3A1; font-weight:800 } .no{ color:#FF8A80; font-weight:800 }
+  .verdict{ position:absolute; left:92px; right:92px; top:706px; height:84px; border:2px solid var(--amber); border-radius:6px; background:rgba(255,199,90,.08); display:flex; align-items:center; gap:22px; padding:0 26px }
+  .verdict b{ flex:none; font-family:'Poppins'; font-weight:700; font-size:17px; color:var(--amber); letter-spacing:.5px; line-height:1.15 }
+  .verdict span{ font-size:21px; font-weight:600; line-height:1.3 }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <symbol id="star" viewBox="0 0 40 40"><path d="M20 0 C21.5 13 27 18.5 40 20 C27 21.5 21.5 27 20 40 C18.5 27 13 21.5 0 20 C13 18.5 18.5 13 20 0Z" fill="#fff"/></symbol>
+  <symbol id="arr" viewBox="0 0 40 40"><path d="M6 6 L34 34 M34 12 L34 34 L12 34" stroke="#C6FBFF" stroke-width="6" fill="none" stroke-linecap="square"/></symbol>
+</defs></svg>
+
+<!-- ======================= SLIDE 4 ======================= -->
+<template id="tpl4">
+  <nav><span>CONTEXTE</span><span>ENJEUX</span><span>ACTEURS</span><span class="on">DÉROULÉ</span><span>RÉSULTATS</span></nav>
+  <div class="t4">DÉROULÉ &amp; ACTIONS DE LOBBYING</div>
+  <div class="line"></div>
+  <svg class="star" style="left:211px"><use href="#star"/></svg>
+  <svg class="star" style="left:498px"><use href="#star"/></svg>
+  <svg class="star" style="left:785px"><use href="#star"/></svg>
+  <svg class="star" style="left:1072px"><use href="#star"/></svg>
+  <svg class="star" style="left:1359px"><use href="#star"/></svg>
+
+  <div class="date" style="left:92px">JUIN – SEPT. 2022</div>
+  <div class="date" style="left:379px">JUIN 2023</div>
+  <div class="date" style="left:666px">JUIN – NOV. 2023</div>
+  <div class="date" style="left:953px">OCT. – NOV. 2023</div>
+  <div class="date" style="left:1240px">28/11/2023</div>
+
+  <!-- 1 OpenAI -->
+  <div class="card" style="left:92px">
+    <div class="faces" style="align-items:center"><div style="font-family:'Poppins';font-weight:700;font-size:40px">OpenAI</div></div>
+    <div class="logo" style="font-size:15px;font-weight:600;color:#3A5566">logo seul · sans photos</div>
+    <span class="tag">LOBBYING DIRECT</span>
+    <p><b>Juin 2022 :</b> trois représentants d'OpenAI rencontrent la Commission européenne au sujet de la classification des modèles d'IA à usage général.</p>
+    <p><b>Septembre 2022 :</b> OpenAI envoie un <b>livre blanc</b> à la Commission et au Conseil : ses modèles ne doivent pas être classés automatiquement «&nbsp;à haut risque&nbsp;».</p>
+  </div>
+  <!-- 2 lettre ouverte -->
+  <div class="card" style="left:379px">
+    <div class="faces"><div class="face"><i></i><span>CÉDRIC O</span></div><div class="face"><i></i><span>RENÉ<br>OBERMANN</span></div><div class="face"><i></i><span>J. ZU<br>FÜRSTENBERG</span></div></div>
+    <div class="logo">Mistral AI · Airbus</div>
+    <span class="tag">LETTRE OUVERTE</span>
+    <p>Après le vote du Parlement (14/06/2023), <b>plus de 150 dirigeants</b> d'entreprises signent une <b>lettre ouverte (30/06/2023)</b>, à l'initiative de Cédric O, René Obermann et Jeannette zu Fürstenberg.</p>
+    <p>Des règles trop strictes «&nbsp;<b>mettraient en péril la compétitivité et la souveraineté technologique de l'Europe</b>&nbsp;».</p>
+  </div>
+  <!-- 3 Aleph Alpha -->
+  <div class="card" style="left:666px">
+    <div class="faces"><div class="face"><i></i><span>JONAS<br>ANDRULIS</span></div><div class="face"><i></i><span>ROBERT<br>HABECK</span></div><div class="face"><i></i><span>VOLKER<br>WISSING</span></div></div>
+    <div class="logo">ALEPH ALPHA</div>
+    <span class="tag">ACCÈS AUX MINISTRES</span>
+    <p><b>12 rendez-vous</b> avec le gouvernement allemand entre juin et novembre 2023.</p>
+    <p><b>Selon LobbyControl et Corporate Europe Observatory</b>, les ministres allemands reprennent ensuite ses arguments : <b>réguler les usages, pas les modèles</b>.</p>
+  </div>
+  <!-- 4 FR-DE-IT -->
+  <div class="card" style="left:953px">
+    <div class="faces"><div class="face"><i></i><span>BRUNO<br>LE MAIRE</span></div><div class="face"><i></i><span>ROBERT<br>HABECK</span></div><div class="face"><i></i><span>ADOLFO<br>URSO</span></div></div>
+    <div class="flags"><i><s style="background:#1F4FB4"></s><s style="background:#fff"></s><s style="background:#E1373D"></s></i><i style="flex-direction:column"><s style="background:#111"></s><s style="background:#D2261D"></s><s style="background:#F5C518"></s></i><i><s style="background:#1E8A4C"></s><s style="background:#fff"></s><s style="background:#D2261D"></s></i></div>
+    <span class="tag">COALITION D'ÉTATS</span>
+    <p><b>30/10/2023, Rome :</b> réunion des ministres de l'Économie B. Le Maire, R. Habeck et A. Urso.</p>
+    <p><b>18/11/2023 : non-paper commun</b> : pas d'obligations pour les modèles, mais une «&nbsp;<b>autorégulation obligatoire</b>&nbsp;» par des codes de conduite.</p>
+  </div>
+  <!-- 5 experts -->
+  <div class="card" style="left:1240px">
+    <div class="faces"><div class="face"><i></i><span>YOSHUA<br>BENGIO</span></div><div class="face"><i></i><span>GEOFFREY<br>HINTON</span></div></div>
+    <div class="logo">Chercheurs en IA</div>
+    <span class="tag">CONTRE-LOBBYING</span>
+    <p>Des chercheurs, dont <b>Y. Bengio et G. Hinton</b>, écrivent au gouvernement allemand.</p>
+    <p>Exclure les modèles de fondation de l'AI Act serait «&nbsp;<b>un échec historique</b>&nbsp;», car le risque se concentre dans ces modèles.</p>
+  </div>
+
+  <div class="sources">Sources : TIME (20/06/2023) · Reuters (30/06/2023) · CEO / LobbyControl / Observatoire des multinationales (2024) · Non-paper FR-DE-IT (18/11/2023) · Lettre de chercheurs au gouvernement allemand (28/11/2023)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+
+  <div class="badge" style="left:930px;top:190px">1</div>
+  <div class="badge" style="left:300px;top:374px">2</div>
+  <div class="badge" style="left:334px;top:220px">3</div>
+  <div class="badge" style="left:621px;top:220px">4</div>
+  <div class="badge" style="left:908px;top:220px">5</div>
+  <div class="badge" style="left:1195px;top:220px">6</div>
+  <div class="badge" style="left:1482px;top:220px">7</div>
+  <div class="badge" style="left:50px;top:858px">8</div>
+</template>
+
+<div class="slide clean" id="S4"></div>
+<div class="slide" id="S4a"></div>
+
+<!-- ======================= SLIDE 5 ======================= -->
+<template id="tpl5">
+  <nav><span>CONTEXTE</span><span>ENJEUX</span><span>ACTEURS</span><span>DÉROULÉ</span><span class="on">RÉSULTATS</span></nav>
+  <div class="t5">RÉSULTAT &amp; ENSEIGNEMENTS</div>
+  <div class="sub5">Qui a gagné la bataille des règles ?</div>
+
+  <div class="box" style="left:92px;width:452px">
+    <h3><span>1. QUELLE DÉCISION FINALE ?</span></h3>
+    <ul>
+      <li><span class="k">08/12/2023 :</span> accord politique en trilogue</li>
+      <li><span class="k">Chapitre V de l'AI Act :</span> deux niveaux de règles</li>
+      <li class="sub">Tous les modèles : <b>transparence</b> (documentation, résumé des données d'entraînement, droit d'auteur)</li>
+      <li class="sub">Modèles les plus puissants : <b>obligations renforcées</b> (tests, gestion des risques, incidents)</li>
+      <li class="sub">Open source : <b>exemption partielle</b></li>
+      <li><span class="k">21/05/2024</span> adoption · <span class="k">01/08/2024</span> entrée en vigueur · <span class="k">02/08/2025</span> règles applicables</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:574px;width:452px">
+    <h3><span>2. QUI A OBTENU QUOI ?</span></h3>
+    <ul>
+      <li><span class="k">Parlement :</span> une loi obligatoire, avec des amendes&nbsp;<span class="ok">✓</span></li>
+      <li><span class="k">France, Allemagne, Mistral AI, Aleph Alpha :</span> des règles plus légères pour la plupart des modèles <span class="ok">✓</span> mais pas l'autorégulation demandée <span class="no">✗</span></li>
+      <li><span class="k">Géants américains :</span> leurs modèles ne sont pas classés «&nbsp;à haut risque&nbsp;» <span class="ok">✓</span></li>
+      <li><span class="k">Compromis :</span> deux niveaux de règles, entre la position du Parlement et celle des États</li>
+    </ul>
+  </div>
+
+  <div class="box" style="left:1056px;width:452px">
+    <h3><span>3. QUE NOUS APPREND CE CAS ?</span></h3>
+    <ul>
+      <li><span class="k">Méthodes :</span> rendez-vous, livre blanc, lettre ouverte, coalition d'États</li>
+      <li><span class="k">La plus efficace :</span> passer par les gouvernements au Conseil (12 rendez-vous, non-paper)</li>
+      <li><span class="k">Argument clé :</span> «&nbsp;souveraineté, champions européens&nbsp;»</li>
+      <li><span class="k">Limites :</span> autorégulation refusée ; accord Microsoft–Mistral AI (02/2024)</li>
+      <li><span class="k">Prudence :</span> une trace d'influence n'est pas une preuve</li>
+    </ul>
+  </div>
+
+  <div class="verdict"><b>RÉPONSE À<br>NOTRE QUESTION</b><span>Les start-up européennes et leurs gouvernements ont le plus pesé : ils ont allégé les règles, sans pouvoir les empêcher.</span></div>
+  <div class="sources">Sources : Règlement (UE) 2024/1689, art. 51-56 · Conseil de l'UE (21/05/2024) · Non-paper FR-DE-IT (18/11/2023) · CEO / LobbyControl / Observatoire des multinationales (2024) · Microsoft (26/02/2024)</div>
+  <svg class="arrow"><use href="#arr"/></svg>
+
+  <div class="badge" style="left:62px;top:196px">1</div>
+  <div class="badge" style="left:544px;top:196px">2</div>
+  <div class="badge" style="left:1026px;top:196px">3</div>
+  <div class="badge" style="left:62px;top:731px">4</div>
+  <div class="badge" style="left:50px;top:858px">5</div>
+</template>
+
+<div class="slide clean" id="S5"></div>
+<div class="slide" id="S5a"></div>
+
+<script>
+  for (const [tpl, ids] of [['tpl4',['S4','S4a']],['tpl5',['S5','S5a']]])
+    for (const id of ids) document.getElementById(id).appendChild(document.getElementById(tpl).content.cloneNode(true));
+</script>
+</body>
+</html>
