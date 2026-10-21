@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="fonts/local.css">
+<style>
+  :root{ --cyan:#C6FBFF; --cyan2:#8FE3EE; --amber:#FFC75A; }
+  *{ box-sizing:border-box; margin:0; padding:0 }
+  body{ font-family:'Exo 2',sans-serif; color:#F3F7F9; background:#111 }
+  .slide{ position:relative; width:1600px; height:900px; overflow:hidden;
+    background:
+      radial-gradient(900px 420px at 30% -5%, rgba(46,100,170,.95), rgba(25,60,110,.55) 45%, rgba(0,0,0,0) 75%),
+      radial-gradient(700px 380px at 95% 0%, rgba(40,95,165,.85), rgba(0,0,0,0) 70%),
+      #000; }
+  nav{ position:absolute; top:34px; left:92px; display:flex; gap:110px; font-size:21px; color:#AFC0CC }
+  nav .on{ color:#fff }
+  h1{ position:absolute; left:84px; top:74px; font-weight:800; font-size:84px; color:var(--cyan); line-height:1; letter-spacing:-1px }
+  .subr{ position:absolute; right:92px; top:84px; font-weight:800; font-size:30px; color:#fff }
+  .subr2{ position:absolute; right:92px; top:126px; font-style:italic; font-size:19px; color:#D5E3EA }
+  .legend{ position:absolute; left:92px; bottom:40px; font-size:15px; color:#C9D2D6 }
+  .legend b{ font-weight:800 }
+  .sources{ position:absolute; left:92px; bottom:16px; font-size:13px; color:#9AA6AD; font-weight:600 }
+  .A{ color:var(--amber) } .C{ color:var(--cyan) }
+
+  /* actor card: name + VEUT / GAGNE / COMMENT */
+  .card{ position:absolute; border-radius:10px; padding:12px 16px; background:#1B2E44; border:2px solid var(--c) }
+  .card.L{ --c:var(--amber); background:#231C0E } .card.F{ --c:var(--cyan); background:#0F2129 } .card.M{ --c:#fff; background:#1A1D21 }
+  .card h3{ font-weight:800; font-size:19px; line-height:1.15 }
+  .card h3 span{ font-weight:500; font-size:13.5px; color:#AFC6D2; margin-left:6px }
+  .card .sub{ font-size:13.5px; color:#AFC6D2; margin-top:1px }
+  .card p{ font-size:15px; line-height:1.3; margin-top:6px; color:#E6EEF2 }
+  .card p i{ font-style:normal; font-weight:800; font-size:11.5px; letter-spacing:.8px; color:var(--c); margin-right:6px; vertical-align:1px }
+  .card p.how{ color:#AFC6D2; font-style:italic }
+  .card p.how i{ font-style:normal }
+
+  /* table (option 2) */
+  .th{ position:absolute; height:40px; background:#2E4A66; font-weight:800; font-size:15px; letter-spacing:.4px; display:flex; align-items:center; justify-content:center; text-align:center }
+  .td{ position:absolute; background:#1B2E44; font-size:15.5px; line-height:1.28; display:flex; align-items:center; justify-content:center; text-align:center; padding:6px 14px }
+  .td.who{ justify-content:flex-start; text-align:left; flex-direction:column; align-items:flex-start; padding-left:16px; border-left:6px solid var(--c) }
+  .td.who b{ font-size:17px; font-weight:800 }
+  .td.who span{ font-size:13px; color:#AFC6D2 }
+  .L{ --c:var(--amber) } .F{ --c:var(--cyan) } .M{ --c:#fff }
+  .lbl{ position:absolute; font-size:13.5px; font-weight:700; color:#E8EEF1; background:#000; padding:1px 5px; border-radius:4px; white-space:nowrap }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <marker id="ma" viewBox="0 0 12 12" markerWidth="5" markerHeight="5" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#FFC75A"/></marker>
+  <marker id="mc" viewBox="0 0 12 12" markerWidth="5" markerHeight="5" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12z" fill="#C6FBFF"/></marker>
+</defs></svg>
+
+<!-- ================= OPTION 1 : fiches autour de la table ================= -->
+<div class="slide" id="H1">
+  <nav><span>CONTEXTE</span><span>ENJEUX</span><span class="on">ACTEURS</span><span>DÉROULÉ</span><span>RÉSULTATS</span></nav>
+  <h1>ACTEURS</h1>
+  <div class="subr">QUI VEUT QUOI, ET QUI INFLUENCE QUI&nbsp;?</div>
+  <div class="subr2">Au centre ceux qui décident, autour ceux qui veulent peser.</div>
+
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900">
+    <g stroke-width="3" fill="none">
+      <path d="M422 318 C470 318 500 322 536 322" stroke="#FFC75A" marker-end="url(#ma)"/>
+      <path d="M422 556 C470 556 500 545 536 545" stroke="#FFC75A" marker-end="url(#ma)"/>
+      <path d="M1148 312 C1110 330 1090 440 1064 470" stroke="#C6FBFF" marker-end="url(#mc)"/>
+      <path d="M1148 488 C1110 492 1090 520 1064 530" stroke="#C6FBFF" marker-end="url(#mc)"/>
+      <path d="M1148 664 C1110 660 1090 620 1064 600" stroke="#C6FBFF" marker-end="url(#mc)"/>
+    </g>
+  </svg>
+
+  <!-- trilogue -->
+  <div style="position:absolute;left:510px;top:226px;width:580px;height:520px;border:2.5px solid #fff;border-radius:22px;background:rgba(255,255,255,.03)"></div>
+  <div style="position:absolute;left:536px;top:706px;font-weight:800;letter-spacing:3px;font-size:17px;color:#BFC8CC">TRILOGUE <span style="font-weight:500;letter-spacing:0;font-size:14px;color:#9AA6AD">· ceux qui décident</span></div>
+  <div class="card M" style="left:540px;top:252px;width:520px;height:140px">
+    <h3>COMMISSION EUROPÉENNE<span>+ présidence espagnole</span></h3>
+    <p><i>VEUT</i>un compromis : des règles pour tous, plus strictes pour les plus gros modèles</p>
+    <p><i>GAGNE</i>faire aboutir le texte et faire de l'UE une référence mondiale</p>
+  </div>
+  <div class="card M" style="left:540px;top:412px;width:254px;height:276px">
+    <h3>CONSEIL</h3>
+    <div class="sub">27 États<br><b class="A">dont France · Allemagne · Italie</b></div>
+    <p><i class="A">VEULENT</i>l'autorégulation des modèles par des codes de conduite</p>
+    <p><i class="A">GAGNENT</i>protéger leurs champions nationaux de l'IA</p>
+  </div>
+  <div class="card F" style="left:806px;top:412px;width:254px;height:276px">
+    <h3>PARLEMENT</h3>
+    <div class="sub">B. Benifei · D. Tudorache</div>
+    <p><i>VEUT</i>transparence, sécurité, droits fondamentaux : des obligations pour tous les grands modèles</p>
+    <p><i>GAGNE</i>protéger les citoyens</p>
+  </div>
+
+  <!-- left: règles légères -->
+  <div class="card L" style="left:92px;top:232px;width:330px;height:172px">
+    <h3>Géants de l'IA</h3><div class="sub">OpenAI · Google · Meta · Microsoft</div>
+    <p><i>VEUT</i>des règles prévisibles, sur les usages plutôt que sur les modèles</p>
+    <p><i>GAGNE</i>compétitivité, investissements, accès au marché</p>
+  </div>
+  <div class="lbl" style="left:428px;top:290px">livre blanc</div>
+  <div class="card L" style="left:92px;top:470px;width:330px;height:172px">
+    <h3>Start-up européennes</h3><div class="sub">Mistral AI · Aleph Alpha</div>
+    <p><i>VEUT</i>des obligations proportionnées à leurs moyens</p>
+    <p><i>GAGNE</i>concurrencer les grandes entreprises américaines</p>
+  </div>
+  <div class="lbl" style="left:432px;top:566px;line-height:1.2">via Paris<br>et Berlin</div>
+
+  <!-- right: règles fortes -->
+  <div class="card F" style="left:1148px;top:226px;width:360px;height:168px">
+    <h3>Créateurs &amp; médias</h3><div class="sub">Auteurs · artistes · presse</div>
+    <p><i>VEUT</i>transparence des données d'entraînement, droits d'auteur, rémunération</p>
+    <p><i>GAGNE</i>protéger leurs œuvres et leurs revenus</p>
+  </div>
+  <div class="card F" style="left:1148px;top:404px;width:360px;height:168px">
+    <h3>ONG &amp; associations</h3><div class="sub">Défense des droits · experts</div>
+    <p><i>VEUT</i>contrôles indépendants, protection des données, <span style="white-space:nowrap">non-discrimination</span></p>
+    <p><i>GAGNE</i>réduire les risques, responsabiliser les entreprises</p>
+  </div>
+  <div class="card F" style="left:1148px;top:582px;width:360px;height:164px">
+    <h3>Acteurs environnementaux</h3><div class="sub">ONG écologistes · experts</div>
+    <p><i>VEUT</i>transparence sur l'énergie consommée et les émissions</p>
+    <p><i>GAGNE</i>limiter l'empreinte écologique de l'IA</p>
+  </div>
+
+  <div class="legend"><b class="A">Jaune</b> = règles légères · <b>Blanc</b> = médiateur · <b class="C">Bleu</b> = règles fortes &nbsp;|&nbsp; <b>VEUT</b> = ce qu'ils cherchent à obtenir · <b>GAGNE</b> = ce qu'ils ont à gagner · <b>→</b> = canal d'influence</div>
+  <div class="sources">Sources : Non-paper FR-DE-IT (18/11/2023) · Parlement européen (14/06/2023) · TIME (20/06/2023) · CEO / LobbyControl / Observatoire des multinationales (2024)</div>
+</div>
+
+<!-- ================= OPTION 2 : tableau d'Aude + flèches vers les décideurs ================= -->
+<div class="slide" id="H2">
+  <nav><span>CONTEXTE</span><span>ENJEUX</span><span class="on">ACTEURS</span><span>DÉROULÉ</span><span>RÉSULTATS</span></nav>
+  <h1>ACTEURS</h1>
+  <div class="subr">QUI VEUT QUOI, ET QUI INFLUENCE QUI&nbsp;?</div>
+  <div class="subr2">À gauche ceux qui veulent peser, à droite ceux qui décident.</div>
+
+  <!-- table header -->
+  <div class="th" style="left:92px;top:190px;width:244px">CEUX QUI VEULENT PESER</div>
+  <div class="th" style="left:342px;top:190px;width:340px">CE QU'ILS CHERCHENT À OBTENIR</div>
+  <div class="th" style="left:688px;top:190px;width:316px">CE QU'ILS ONT À GAGNER</div>
+  <div class="th" style="left:1196px;top:190px;width:312px;background:#fff;color:#000">CEUX QUI DÉCIDENT · TRILOGUE</div>
+
+  <!-- rows: light camp -->
+  <div class="td who L" style="left:92px;top:236px;width:244px;height:96px"><b>Géants de l'IA</b><span>OpenAI · Google · Meta · Microsoft</span></div>
+  <div class="td" style="left:342px;top:236px;width:340px;height:96px">Règles prévisibles, qui encadrent les usages plutôt que les modèles</div>
+  <div class="td" style="left:688px;top:236px;width:316px;height:96px">Compétitivité, investissements et accès au marché</div>
+
+  <div class="td who L" style="left:92px;top:338px;width:244px;height:96px"><b>Start-up européennes</b><span>Mistral AI · Aleph Alpha</span></div>
+  <div class="td" style="left:342px;top:338px;width:340px;height:96px">Obligations proportionnées à leurs moyens</div>
+  <div class="td" style="left:688px;top:338px;width:316px;height:96px">Concurrencer les grandes entreprises américaines</div>
+
+  <!-- rows: strong camp -->
+  <div class="td who F" style="left:92px;top:452px;width:244px;height:96px"><b>Créateurs &amp; médias</b><span>Auteurs · artistes · presse</span></div>
+  <div class="td" style="left:342px;top:452px;width:340px;height:96px">Transparence des données d'entraînement, droits d'auteur et rémunération</div>
+  <div class="td" style="left:688px;top:452px;width:316px;height:96px">Protéger leurs œuvres et leurs revenus</div>
+
+  <div class="td who F" style="left:92px;top:554px;width:244px;height:96px"><b>ONG &amp; associations</b><span>Défense des droits · experts</span></div>
+  <div class="td" style="left:342px;top:554px;width:340px;height:96px"><span>Contrôles indépendants, protection des données, <span style="white-space:nowrap">non-discrimination</span></span></div>
+  <div class="td" style="left:688px;top:554px;width:316px;height:96px">Réduire les risques et responsabiliser les entreprises</div>
+
+  <div class="td who F" style="left:92px;top:656px;width:244px;height:96px"><b>Acteurs environnementaux</b><span>ONG écologistes · experts</span></div>
+  <div class="td" style="left:342px;top:656px;width:340px;height:96px">Transparence sur les consommations énergétiques et les émissions</div>
+  <div class="td" style="left:688px;top:656px;width:316px;height:96px">Limiter l'empreinte écologique de l'IA</div>
+
+  <!-- decision makers -->
+  <div class="card M" style="left:1196px;top:236px;width:312px;height:150px;border-radius:0">
+    <h3>COMMISSION</h3><div class="sub">+ présidence espagnole du Conseil</div>
+    <p><i>VEUT</i>des règles pour tous, plus strictes pour les plus gros modèles</p>
+    <p><i>GAGNE</i>un accord, l'UE en référence</p>
+  </div>
+  <div class="card M" style="left:1196px;top:396px;width:312px;height:150px;border-radius:0">
+    <h3>CONSEIL</h3><div class="sub">27 États, <b class="A">dont France · Allemagne · Italie</b></div>
+    <p><i class="A">VEULENT</i>l'autorégulation par des codes de conduite</p>
+    <p><i class="A">GAGNENT</i>protéger leurs champions nationaux</p>
+  </div>
+  <div class="card F" style="left:1196px;top:556px;width:312px;height:196px;border-radius:0">
+    <h3>PARLEMENT</h3><div class="sub">B. Benifei · D. Tudorache</div>
+    <p><i>VEUT</i>des obligations pour tous les grands modèles : transparence, sécurité, droits</p>
+    <p><i>GAGNE</i>protéger les citoyens</p>
+  </div>
+
+  <svg style="position:absolute;left:0;top:0" width="1600" height="900">
+    <g stroke-width="3" fill="none">
+      <path d="M1004 284 C1080 284 1120 300 1190 304" stroke="#FFC75A" marker-end="url(#ma)"/>
+      <path d="M1004 386 C1090 386 1110 452 1190 456" stroke="#FFC75A" marker-end="url(#ma)"/>
+      <path d="M1004 500 C1090 500 1110 616 1190 620" stroke="#C6FBFF" marker-end="url(#mc)"/>
+      <path d="M1004 602 C1090 602 1110 654 1190 656" stroke="#C6FBFF" marker-end="url(#mc)"/>
+      <path d="M1004 704 C1080 704 1120 698 1190 694" stroke="#C6FBFF" marker-end="url(#mc)"/>
+    </g>
+  </svg>
+  <div class="lbl" style="left:1012px;top:260px">livre blanc</div>
+  <div class="lbl" style="left:1012px;top:362px">via Paris · Berlin</div>
+  <div class="lbl" style="left:1012px;top:476px">campagnes</div>
+  <div class="lbl" style="left:1012px;top:578px">rapports</div>
+  <div class="lbl" style="left:1012px;top:680px">rapports</div>
+
+  <div class="legend"><b class="A">Jaune</b> = règles légères · <b>Blanc</b> = médiateur · <b class="C">Bleu</b> = règles fortes &nbsp;|&nbsp; <b>→</b> = canal d'influence</div>
+  <div class="sources">Sources : Non-paper FR-DE-IT (18/11/2023) · Parlement européen (14/06/2023) · TIME (20/06/2023) · CEO / LobbyControl / Observatoire des multinationales (2024)</div>
+</div>
+</body>
+</html>
