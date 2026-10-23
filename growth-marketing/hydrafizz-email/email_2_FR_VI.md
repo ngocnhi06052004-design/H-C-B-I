@@ -87,3 +87,27 @@ Sinh viên Thạc sĩ Truyền thông (Nhóm 402), EFAP Paris
 
 - Mỗi khung khoảng 2,5 giây. Khung 1 phải là ảnh bìa, vì Outlook bản máy tính chỉ hiện khung đầu tiên.
 - Canva: *Chia sẻ → Tải xuống → GIF*. File nên dưới 1–2 MB.
+
+---
+
+## Phương án có video (thay cho đoạn GIF slide)
+
+Video không phát được ngay trong Gmail/Outlook. Cách làm: đưa video lên YouTube (chế độ « Không công khai / Non répertoriée ») hoặc Google Drive (« Bất kỳ ai có đường liên kết »), rồi chèn **một GIF xem trước** (3–4 giây đầu của video + nút ▶ + thời lượng), gắn link tới video.
+
+**🇫🇷 Đoạn thay thế trong thư**
+
+J’ai résumé ces idées en une courte vidéo :
+
+**[GIF aperçu de la vidéo, cliquable vers la vidéo]**
+▶ Voir la vidéo ([durée])
+
+Le détail est dans le PDF ci-joint (5 slides, 2 minutes de lecture).
+
+**🇻🇳 Nghĩa**
+
+Tôi đã tóm tắt các ý tưởng này trong một video ngắn:
+
+**[GIF xem trước, bấm vào sẽ mở video]**
+▶ Xem video ([thời lượng])
+
+Chi tiết nằm trong file PDF đính kèm (5 slide, đọc trong 2 phút).
