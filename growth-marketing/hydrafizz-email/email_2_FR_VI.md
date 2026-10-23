@@ -19,17 +19,19 @@
 
 ---
 
-## 🇫🇷 Bản gửi (tiếng Pháp)
+## 🇫🇷 Bản gửi FINAL (tiếng Pháp)
 
 **Objet :** Votre future recrue a déjà travaillé sur HydraFizz
 
 Bonjour Monsieur Dahan,
 
-Je me permets de revenir vers vous au sujet du poste de chargé(e) de communication et marketing junior sur HydraFizz. Je suis Ngoc Nhi LUU, étudiante en Master Communication à l’EFAP Paris.
+Et si HydraFizz testait un nouveau levier de croissance dès la prochaine course parisienne, avec un budget limité ?
 
-Je vous ai préparé 3 idées pour développer HydraFizz auprès des « athlètes du quotidien », à retrouver dans le PDF ci-joint. La première, les « Ravitos HydraFizz », peut être testée sur une seule course avec un budget limité, afin d’en mesurer l’impact avant de la déployer.
+C’est l’une des 3 idées que j’ai préparées en vue du poste de chargé(e) de communication et marketing junior que vous souhaitez pourvoir sur HydraFizz. Je suis Ngoc Nhi LUU, étudiante en Master Communication à l’EFAP Paris, et je vous ai écrit la semaine dernière à ce sujet.
 
-**[IMAGE : slide de couverture]**
+**[GIF : couverture → idée 1 → idée 2 → idée 3 → « Le détail dans le PDF ci-joint »]**
+
+Vous trouverez le détail des 3 idées dans le PDF ci-joint (5 slides, 2 minutes de lecture).
 
 Seriez-vous disponible pour un échange de 15 minutes, le lundi 26 ou le mardi 27 octobre ? Je m’adapterai volontiers à vos disponibilités.
 
@@ -51,11 +53,13 @@ Bien cordialement,
 
 Chào ông Dahan,
 
-Tôi xin phép liên hệ lại với ông về vị trí chuyên viên truyền thông và marketing junior cho HydraFizz. Tôi là Lưu Ngọc Nhi, sinh viên Thạc sĩ Truyền thông tại EFAP Paris.
+Sẽ thế nào nếu HydraFizz thử nghiệm một đòn bẩy tăng trưởng mới ngay tại giải chạy sắp tới ở Paris, với ngân sách nhỏ?
 
-Tôi đã chuẩn bị cho ông 3 ý tưởng để phát triển HydraFizz với nhóm « vận động viên đời thường », trình bày trong file PDF đính kèm. Ý tưởng đầu tiên, « trạm tiếp nước HydraFizz », có thể thử nghiệm tại một giải chạy duy nhất với ngân sách nhỏ, để đo hiệu quả trước khi triển khai rộng.
+Đó là một trong 3 ý tưởng tôi đã chuẩn bị cho vị trí chuyên viên truyền thông và marketing junior mà ông đang muốn tuyển cho HydraFizz. Tôi là Lưu Ngọc Nhi, sinh viên Thạc sĩ Truyền thông tại EFAP Paris, và tôi đã viết thư cho ông về việc này vào tuần trước.
 
-**[ẢNH: slide bìa]**
+**[GIF: bìa → ý tưởng 1 → ý tưởng 2 → ý tưởng 3 → « Chi tiết trong file PDF đính kèm »]**
+
+Chi tiết 3 ý tưởng nằm trong file PDF đính kèm (5 slide, đọc trong 2 phút).
 
 Ông có thể dành 15 phút để trao đổi vào thứ Hai 26 hoặc thứ Ba 27 tháng 10 không? Tôi sẵn sàng sắp xếp theo lịch của ông.
 
@@ -68,3 +72,18 @@ Sinh viên Thạc sĩ Truyền thông (Nhóm 402), EFAP Paris
 06 68 57 73 85
 
 **Tệp đính kèm:** Proposition_HydraFizz_Ngoc-Nhi-LUU.pdf
+
+---
+
+## GIF trên Canva
+
+| Khung | 🇫🇷 Chữ trên khung | 🇻🇳 Nghĩa |
+|---|---|---|
+| 1 | Monsieur Dahan, j’ai 3 idées pour HydraFizz | Thưa ông Dahan, tôi có 3 ý tưởng cho HydraFizz |
+| 2 | Idée 1 · Les Ravitos HydraFizz : faire goûter, puis vendre en pharmacie | Ý tưởng 1: trạm tiếp nước, cho dùng thử rồi bán ở nhà thuốc |
+| 3 | Idée 2 · « Mon épreuve du jour » : une série vidéo avec vos clients | Ý tưởng 2: series video cùng khách hàng |
+| 4 | Idée 3 · Les athlètes d’UPSA : vos équipes, premières ambassadrices | Ý tưởng 3: nhân viên UPSA làm đại sứ thương hiệu |
+| 5 | Le détail dans le PDF ci-joint ▼ | Chi tiết trong file PDF đính kèm |
+
+- Mỗi khung khoảng 2,5 giây. Khung 1 phải là ảnh bìa, vì Outlook bản máy tính chỉ hiện khung đầu tiên.
+- Canva: *Chia sẻ → Tải xuống → GIF*. File nên dưới 1–2 MB.
