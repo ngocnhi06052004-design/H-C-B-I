@@ -90,24 +90,24 @@ Sinh viên Thạc sĩ Truyền thông (Nhóm 402), EFAP Paris
 
 ---
 
-## Phương án có video (thay cho đoạn GIF slide)
+## Phương án có video (video 10 giây → GIF tự chạy trong thư)
 
-Video không phát được ngay trong Gmail/Outlook. Cách làm: đưa video lên YouTube (chế độ « Không công khai / Non répertoriée ») hoặc Google Drive (« Bất kỳ ai có đường liên kết »), rồi chèn **một GIF xem trước** (3–4 giây đầu của video + nút ▶ + thời lượng), gắn link tới video.
+Video 10 giây chuyển **toàn bộ thành GIF** (rộng 600 px, 10–12 khung/giây, dưới 3 MB) → chèn thẳng vào thân thư: Gmail tự phát, không cần bấm, không cần tải. GIF không có tiếng → gắn link GIF tới bản có tiếng trên YouTube (Non répertoriée) hoặc Google Drive.
 
-**🇫🇷 Đoạn thay thế trong thư**
+**🇫🇷 Đoạn thay thế trong thư** (thay cho chỗ GIF slide và dòng « Vous trouverez… »)
 
-J’ai résumé ces idées en une courte vidéo :
+Je vous ai résumé ma démarche en 10 secondes :
 
-**[GIF aperçu de la vidéo, cliquable vers la vidéo]**
-▶ Voir la vidéo ([durée])
+**[GIF de la vidéo, cliquable vers la version avec le son]**
+▶ Version avec le son : [lien]
 
-Le détail est dans le PDF ci-joint (5 slides, 2 minutes de lecture).
+Le détail des 3 idées est dans le PDF ci-joint (5 slides, 2 minutes de lecture).
 
 **🇻🇳 Nghĩa**
 
-Tôi đã tóm tắt các ý tưởng này trong một video ngắn:
+Tôi đã tóm tắt cách tiếp cận của mình trong 10 giây:
 
-**[GIF xem trước, bấm vào sẽ mở video]**
-▶ Xem video ([thời lượng])
+**[GIF của video, bấm vào sẽ mở bản có tiếng]**
+▶ Bản có tiếng: [link]
 
-Chi tiết nằm trong file PDF đính kèm (5 slide, đọc trong 2 phút).
+Chi tiết 3 ý tưởng nằm trong file PDF đính kèm (5 slide, đọc trong 2 phút).
