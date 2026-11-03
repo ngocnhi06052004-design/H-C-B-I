@@ -1,42 +1,43 @@
-# Prompt Gemini — ảnh pop-up « La Tartinerie Be Nuts! »
+# Prompt Gemini — « La Tartinerie Be Nuts! » (v2, ngoài trời, không có tagline)
 
 Tải kèm **ảnh chụp gói Be Nuts!** để Gemini lấy đúng nhận diện (màu xanh ngọc, chữ BE NUTS! màu kem, logo ANDROS đỏ).
 
-## Prompt chính — mặt tiền (16:9)
+## Prompt chính — toàn cảnh ngôi làng (16:9)
 
 ```
-Photorealistic architectural visualization of an ephemeral pop-up store for the peanut spread brand "Be Nuts!" by Andros, on a lively pedestrian street in Le Marais, Paris: Haussmann-style cream stone buildings, cobblestones, soft winter morning sunlight, late January.
+Photorealistic wide view of an open-air pop-up village for the peanut spread brand "Be Nuts!" by Andros, set up on Place de la République in Paris on a sunny spring afternoon in April. Haussmann-style buildings and the Marianne statue in the background, trees with fresh green leaves, blue sky.
 
-Use the attached photo of the product sachet as the exact reference for the branding: turquoise / teal background, big bold cream-white hand-drawn letters "BE NUTS!" with a peanut drawn as a white outline next to "BE", the small red rectangular "ANDROS" logo above, light yellow accents and illustrated peanuts.
+Camera: elevated three-quarter view from about 8 metres high (like a drone shot), so that every activity is clearly visible at once. 24 mm lens, natural shadows, 16:9, high resolution.
 
-The whole storefront is designed as a giant version of the sachet, about 4 metres high: teal façade, the "BE NUTS!" logo in giant 3D letters, the red "ANDROS" logo above it, and across the top a dotted line with a small scissors icon and the words "Déchirez ici". The entrance is a doorway shaped like the torn opening of the sachet, with realistic ripped-paper edges. Above the door, a sign reads "La Tartinerie Be Nuts!".
+Branding: use the attached photo of the product sachet as the exact reference — turquoise / teal, big bold cream-white hand-drawn letters "BE NUTS!" with a peanut drawn as a white outline next to "BE", the small red rectangular "ANDROS" logo, light yellow accents, illustrated peanuts.
 
-Through the large shop windows we can see inside: a long light-wood toast bar with jars of Be Nuts! peanut spread, sliced country bread, bananas, red berries and jars of jam; a large scoreboard reading "Creamy vs Crunchy"; a photobooth corner with a ball pit filled with giant peanut-shaped balls.
+The village is completely open, with no walls: five clearly separated stations under teal canopies, connected by open walkways, with people walking freely between them:
+1. Entrance (front left): a 6-metre-tall inflatable Be Nuts! sachet whose torn top forms an entrance arch, with a dotted line, a small scissors icon and the words "Déchirez ici". Visitors walk through a curtain of recycled paper strips, tearing it as they enter. A sign above the arch reads "La Tartinerie Be Nuts!".
+2. Toast bar (left): an 8-metre-long light-wood counter under a teal canopy; staff in teal aprons; visitors build their own toast with country bread, rice cakes, crêpes and apple slices, open jars of Be Nuts! peanut spread, bowls of banana slices, red berries and honey, jars of jam.
+3. Tasting ring (back centre): a small boxing-ring-style stage with two podiums labelled "Creamy" and "Crunchy" and a large screen reading "Creamy vs Crunchy"; a host with a microphone; a blindfolded visitor tasting; people scanning QR codes with their phones to vote.
+4. Photobooth (right): a ball pit filled with thousands of giant peanut-shaped balls, a 2-metre Be Nuts! jar and a swing; friends filming a TikTok video.
+5. Exit kiosk (front right): a small teal kiosk where staff hand out small Be Nuts! sachets and coupons.
+In the middle: long communal wooden tables where people sit, eat their toasts and laugh. Small planters and teal bean bags around.
 
-In front of the store: a queue of young people aged 18 to 30 (students and sporty young adults, diverse), smiling, holding toasts topped with peanut spread and taking selfies. A staff member wearing a teal apron hands out small Be Nuts! sachets. A teal sandwich-board sign on the pavement reads "Ose être Nuts !". Small planters and warm string lights.
+People: many young visitors aged 18 to 30 (students and sporty young adults, diverse), smiling, casual spring outfits; a few young families.
 
-Style: high-end retail design render, realistic materials (painted wood, matte metal, paper texture), 35 mm lens, eye level, slight three-quarter angle, natural shadows, vibrant but natural colours, 16:9, high resolution.
+Style: realistic event-design visualization, vibrant but natural colours, realistic materials (wood, fabric canopies, inflatable vinyl, paper).
 
-All text in the image must be spelled exactly as follows, with accents: "BE NUTS!", "ANDROS", "Déchirez ici", "La Tartinerie Be Nuts!", "Creamy vs Crunchy", "Ose être Nuts !". No other text, no other brand logos, no watermark.
+Text: only these words, spelled exactly with accents: "BE NUTS!", "ANDROS", "Déchirez ici", "La Tartinerie Be Nuts!", "Creamy", "Crunchy", "Creamy vs Crunchy". No slogan, no tagline, no other text, no other brand logos, no watermark.
 ```
 
-## Prompt phụ — bên trong pop-up (16:9)
+## Prompt phụ — góc nhìn ngang tầm mắt (16:9)
 
 ```
-Photorealistic interior of the "La Tartinerie Be Nuts!" pop-up store by Andros in Paris, using the attached product sachet as the branding reference (teal, cream-white "BE NUTS!" letters, red "ANDROS" logo, yellow accents, illustrated peanuts).
+Same open-air "La Tartinerie Be Nuts!" pop-up village by Andros on Place de la République in Paris, sunny spring afternoon, using the attached product sachet as the branding reference (teal, cream-white "BE NUTS!" letters, red "ANDROS" logo, yellow accents).
 
-Wide-angle view of a bright, playful space with teal walls and peanut illustrations:
-- Left: a long light-wood toast bar where young visitors build their own toast: country bread, rice cakes, crêpes, apple slices, open jars of Be Nuts! creamy and crunchy peanut spread, bowls of sliced banana, red berries and honey, and jars of Andros jam. A chalk menu board reads "Le PB&J à la française".
-- Centre: a boxing-ring-style tasting stage with two podiums labelled "Creamy" and "Crunchy" and a big digital scoreboard reading "Creamy vs Crunchy". People scan QR codes on their phones to vote.
-- Right: a photobooth with a ball pit full of giant peanut-shaped balls, a 2-metre Be Nuts! jar and a swing; two friends film a TikTok video.
-- Exit: a staff member in a teal apron hands out small Be Nuts! sachets and coupons.
+Eye-level shot, 35 mm lens, from the communal tables looking toward the activities: in the foreground, three friends sitting at a wooden table eating toasts with peanut spread and banana; behind them, the toast bar with staff in teal aprons on the left, the "Creamy vs Crunchy" tasting ring with a host and a cheering crowd in the centre, and the ball pit full of giant peanut-shaped balls on the right; the 6-metre inflatable Be Nuts! sachet entrance visible in the background.
 
-Visitors are 18 to 30 years old, diverse, smiling, casual sporty outfits. Warm natural light plus soft spotlights, realistic materials, 24 mm lens, eye level, vibrant but natural colours, 16:9, high resolution.
+Visitors 18 to 30, diverse, smiling, casual spring outfits. Natural light, vibrant but natural colours, realistic materials, 16:9, high resolution.
 
-All text spelled exactly: "BE NUTS!", "ANDROS", "La Tartinerie Be Nuts!", "Le PB&J à la française", "Creamy", "Crunchy", "Creamy vs Crunchy". No other text, no other brand logos, no watermark.
+Text: only "BE NUTS!", "ANDROS", "Creamy", "Crunchy", "Creamy vs Crunchy", spelled exactly. No slogan, no tagline, no other text, no other brand logos, no watermark.
 ```
 
 ## Mẹo
 - Nếu chữ bị sai: thêm `No text at all in the image.` rồi tự thêm chữ trên Canva.
-- Tạo 3–4 phiên bản, chọn ảnh đẹp nhất; kiểm tra logo, bàn tay, khuôn mặt.
-- Muốn đổi sang tiếng Pháp hoàn toàn: thay « Creamy vs Crunchy » bằng « Crémeux ou Croquant ? ».
+- Tạo 3–4 phiên bản, chọn ảnh rõ các hoạt động nhất; kiểm tra logo, bàn tay, khuôn mặt.
