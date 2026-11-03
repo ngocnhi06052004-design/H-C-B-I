@@ -13,3 +13,4 @@ Repo chứa bài tập của Lưu Ngọc Nhi (Master Communication, EFAP Paris).
 - `growth-marketing/`: môn Growth Marketing (thầy Benjamin Dahan, benjamin.dahan@ffbde.fr).
   - `on-tap/revisions-growth-marketing.html`: trang ôn tập (fiches FR/VI + 105 câu trắc nghiệm 3 mức + thi thử 40 câu/12 phút + cas pratique), đã publish tại https://claude.ai/artifact/EjTdwHLpFCaAa6yMBs3jJH
   - `hydrafizz-email/`: exercice portfolio (email xin hẹn phỏng vấn với vai giám đốc marketing UPSA / HydraFizz, chuỗi 3 email, hạn 18/10, 26/10, 1/11). Email 1 không được trả lời; **email 2 (relance) thành công: thầy đã trả lời** (bài kết thúc, 16/20). Bản email ở `email_2_FR_VI.md`.
+  - `be-nuts-popup/`: bài nhóm quảng bá Andros Be Nuts! bằng pop-up store (concept « La Tartinerie Be Nuts! » + prompt Gemini tạo ảnh).
