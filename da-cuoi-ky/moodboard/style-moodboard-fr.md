@@ -38,6 +38,8 @@ Ce format répond exactement à la consigne de la planche d'intention : on voit 
 - Grain et petits textes deviennent illisibles en DOOH, où le message doit passer en 3 secondes.
 - Le rouge de « Towards the limitless » n'est pas dans la palette du sujet (jaune et vert) et évoque le danger.
 
+**Mise à jour :** le groupe garde un ton humoristique avec une touche de cinéma. L'humour vient du décalage entre une mise en scène de film et une galère banale, ce qui corrige le risque « trop mélancolique ».
+
 **Recommandation : un système en deux temps.**
 - **Plan A, le problème :** style cinéma (grain, nuit, pluie, flou, teinte verte).
 - **Plan B, la solution :** éléments nets et lumineux (l'écran de l'appli, le vert Citymapper, une typo lisible).
@@ -61,12 +63,12 @@ Ce format répond exactement à la consigne de la planche d'intention : on voit 
 | Rangée 1, « Plan A : le chaos » | Quai de nuit · foule floue et silhouette immobile · pluie et phares · néon « station fermée → plan B » · lumière ambre dans la rame | L'univers du problème |
 | Boussole détourée | « Ta boussole au cœur du chaos » | Lien avec la promesse |
 | Palette | 6 couleurs avec nom et code | Nuancier façon Party Moodboard |
-| Post-it « Intention » | La logique flou/net, plan A/plan B | Explique le choix en une phrase |
+| Post-it « Intention » | Le plan A filmé comme un drame de cinéma, le plan B en fin heureuse | Explique le choix en une phrase |
 | Affiche typo | « MOI, JE N'AI QUE le plan A. » | Piste typo façon Mirage of Transit |
 | Panneau LED | « LIGNE 7 · TRAFIC INTERROMPU » | L'alerte |
 | Carte typographie | Instrument Serif, Anton, Space Mono | Les 3 polices et leur rôle |
 | Téléphone, « Plan B : la clarté » | Écran net de l'appli avec l'itinéraire vert | L'univers de la solution |
-| Textures + ticket détouré | Carrelage, vitre mouillée, « Ticket · Plan B » | Matières et touche d'humour |
+| Textures + ticket détouré | Carrelage, vitre mouillée, « Ticket · Séance Plan B · Fin heureuse garantie » | Matières et touche d'humour façon cinéma |
 | Mots-clés | Chaos · Mouvement · Nuit · Clarté · Plan B | Résumé de l'univers |
 
 **Attention :** les images du mockup sont des illustrations de remplacement. Dans le vrai moodboard, il faut mettre de vraies photos.

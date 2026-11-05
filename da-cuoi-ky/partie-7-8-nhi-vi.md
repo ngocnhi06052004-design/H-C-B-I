@@ -29,113 +29,122 @@ Việc đổi đối tượng và insight so với đề là một lựa chọn 
 
 ---
 
-## B. Phần 7 — Giọng điệu
+## B. Phần 7 — Giọng điệu (bản « hài hước + điện ảnh »)
 
-**Thẳng thắn, thân thiết, thực tế và hơi hài hước.** Citymapper nói chuyện như một người bạn Paris biết hết mọi đường tắt, và vẫn bình tĩnh khi hệ thống giao thông rối tung.
+**Nguyên tắc:** cái hài đến từ sự tương phản. Một sự cố rất bình thường (ga đóng cửa, loa thông báo rè rè) được quay như một cảnh phim hoành tráng, có quay chậm, giọng đọc trailer, hạt film. Rồi Citymapper xuất hiện với một giải pháp đơn giản, rõ ràng: phương án B chính là « cái kết có hậu ».
 
-- **Thẳng thắn:** câu ngắn, thông tin cụ thể (tuyến, số phút, cửa ra). Đi thẳng vào phương án B.
-- **Thân thiết:** xưng « tu » với đối tượng và đứng về phía họ. Giúp họ bớt căng thẳng (« đừng lo »), nhưng không bao giờ chế giễu sự hoảng hốt của họ.
-- **Thực tế:** mỗi thông điệp đều mang lại một giải pháp, không chỉ là khẩu hiệu.
-- **Hơi hài hước:** cười về tình huống (sân ga chật kín, loa thông báo rè rè, lộ trình « đổi ý »), không bao giờ cười người đi tàu, nhân viên, người đình công hay người biểu tình.
+| Tiếng Pháp (chép vào bài) | Tiếng Việt (để hiểu) |
+|---------------------------|----------------------|
+| **Direct, complice, pragmatique et légèrement humoristique, avec une mise en scène de cinéma.** | **Thẳng thắn, thân thiết, thực tế và hơi hài hước, với cách dàn dựng kiểu điện ảnh.** |
+| L'humour naît du décalage : on filme une galère banale (une station fermée, une annonce qui grésille) comme une grande scène de film, avec ralentis, voix off de bande-annonce et grain pellicule. Puis Citymapper arrive avec une solution simple et claire : le plan B, c'est la fin heureuse. | Cái hài đến từ sự lệch pha: một rắc rối rất bình thường (ga đóng cửa, loa thông báo rè rè) được quay như một cảnh phim lớn, với quay chậm, giọng đọc trailer và hạt film. Rồi Citymapper xuất hiện với giải pháp đơn giản, rõ ràng: phương án B là cái kết có hậu. |
+| **Direct :** malgré la mise en scène, le message reste court et concret (ligne, minutes, sortie). | **Thẳng thắn:** dù dàn dựng công phu, thông điệp vẫn ngắn và cụ thể (tuyến, số phút, cửa ra). |
+| **Complice :** on tutoie la cible et on rit avec elle de la situation, jamais d'elle. | **Thân thiết:** xưng « tu » với đối tượng, cùng họ cười về tình huống, không bao giờ cười họ. |
+| **Pragmatique :** chaque scène se termine par une solution utile. | **Thực tế:** mỗi cảnh đều kết thúc bằng một giải pháp hữu ích. |
+| **Légèrement humoristique :** le drame est dans la forme (le « film »), pas dans le fond. On ne se moque jamais des usagers, des agents, des grévistes ou des manifestants. | **Hơi hài hước:** kịch tính nằm ở hình thức (« bộ phim »), không nằm ở nội dung. Không bao giờ chế giễu người đi tàu, nhân viên, người đình công hay người biểu tình. |
+| **Cinématographique :** on emprunte le vocabulaire et les codes du cinéma (bande-annonce, rebondissement, fin heureuse, prise 2, VOST, générique). | **Điện ảnh:** mượn từ ngữ và quy ước của điện ảnh (trailer, tình tiết bất ngờ, kết có hậu, cảnh quay lại lần 2, bản gốc có phụ đề, phần credit cuối phim). |
+| **Ce que le ton n'est pas :** vraiment dramatique (on ne fait pas peur), froid comme une annonce officielle, ou politique. | **Giọng điệu KHÔNG phải là:** bi kịch thật sự (không làm người xem sợ), lạnh lùng như thông báo chính thức, hay mang màu chính trị. |
 
-**Giọng điệu KHÔNG phải là:** lạnh lùng như thông báo chính thức, lên lớp, hay mang màu sắc chính trị. Thương hiệu không bao giờ bình luận về nguyên nhân của các sự cố.
+**Câu ví dụ:**
 
-**Câu ví dụ** (tiếng Pháp, kèm nghĩa):
-- « Les Parisiens ont toujours un plan B. Maintenant, toi aussi. » – Người Paris luôn có phương án B. Giờ thì bạn cũng có.
-- « Ta ligne a changé ses plans ? Nous, on en a toujours un autre. » – Tuyến của bạn đổi kế hoạch à? Bọn mình thì luôn có phương án khác.
-- « Station fermée. Toi, tu continues. » – Ga đóng cửa. Còn bạn, cứ đi tiếp.
-- « Pas besoin de connaître Paris par cœur. On le connaît pour toi. » – Không cần thuộc lòng Paris. Bọn mình thuộc giùm bạn.
-- « Plan A : la 7. Plan B : la 6 + 5 min à pied. Plan C : on a aussi. » – Phương án A: tuyến 7. Phương án B: tuyến 6 + đi bộ 5 phút. Phương án C: cũng có luôn.
+| Tiếng Pháp | Tiếng Việt |
+|------------|------------|
+| « Elle avait un plan. Un seul. » (voix off de bande-annonce) | « Cô ấy có một kế hoạch. Chỉ một. » (giọng đọc trailer) |
+| « Rebondissement : ligne 7 interrompue. Fin heureuse : la 6, à 5 min à pied. » | « Tình tiết bất ngờ: tuyến 7 gián đoạn. Kết có hậu: tuyến 6, đi bộ 5 phút. » |
+| « Plan A : interrompu. Plan B : à l'affiche. » | « Phương án A: bị gián đoạn. Phương án B: đang chiếu. » |
+| « Station fermée. Prise 2 : plan B. » | « Ga đóng cửa. Cảnh quay lần 2: phương án B. » |
+| « L'annonce du quai, enfin en VOST. » | « Thông báo ở sân ga, cuối cùng cũng có phụ đề. » (VOST = bản gốc có phụ đề) |
+| « Aucune station n'a été blessée pendant le tournage. » (mention de fin) | « Không có ga tàu nào bị thương trong quá trình quay phim. » (dòng chữ cuối phim, nhại câu « không có động vật nào bị thương ») |
 
-**Khớp với giọng thật của Citymapper**, vốn đã trấn an người dùng một cách hài hước mỗi khi có đình công: « Pas de stress, on s'occupe de tout ! » (Đừng lo, có bọn mình lo hết!); « Archi-méga-maxi grève. On est là pour vous Paris, 24/7. » (Siêu-siêu-siêu đình công. Bọn mình ở đây vì Paris, 24/7.) Khác biệt duy nhất, có chủ đích: chuyển sang xưng « tu » để nói chuyện với người 18–28 tuổi.
+| Tiếng Pháp | Tiếng Việt |
+|------------|------------|
+| **Cohérent avec la vraie voix de Citymapper**, qui rassure déjà avec humour pendant les grèves : « Pas de stress, on s'occupe de tout ! » ; « Archi-méga-maxi grève. On est là pour vous Paris, 24/7. » Ce qu'on ajoute : le tutoiement pour les 18-28 ans, et une mise en scène de cinéma qui colle au moodboard. | **Khớp với giọng thật của Citymapper**, vốn đã trấn an một cách hài hước mỗi khi có đình công: « Đừng lo, có bọn mình lo hết! »; « Siêu-siêu-siêu đình công. Bọn mình ở đây vì Paris, 24/7. » Điều nhóm thêm vào: xưng « tu » với người 18–28 tuổi, và cách dàn dựng điện ảnh khớp với moodboard. |
 
 ---
 
 ## C. Phần 8 — Ràng buộc và sản phẩm cần giao
 
-### Moodboard (bảng định hướng sáng tạo)
+### Moodboard
 
-Thế giới hình ảnh đặt **sự hỗn loạn của thành phố** (phương án A sụp đổ) đối lập với **sự rõ ràng của ứng dụng** (phương án B).
+| Tiếng Pháp (chép vào bài) | Tiếng Việt |
+|---------------------------|------------|
+| Un style photo de cinéma (grain argentique, teinte verte, flous de mouvement, nuit et pluie) met en scène le « film » du plan A ; des éléments nets et lumineux (l'écran de l'appli, le vert Citymapper) jouent la fin heureuse du plan B. | Style ảnh điện ảnh (hạt film, ám xanh, nhòe chuyển động, đêm và mưa) dựng nên « bộ phim » của phương án A; các yếu tố sắc nét, sáng (màn hình ứng dụng, xanh Citymapper) diễn cái kết có hậu của phương án B. |
+| **Images :** quais de nuit, foule en pose longue avec une silhouette immobile, pluie et phares flous, néons, lumière ambre dans la rame. | **Hình ảnh:** sân ga về đêm, đám đông phơi sáng lâu với một bóng người đứng yên, mưa và đèn xe nhòe, đèn neon, ánh sáng hổ phách trong toa tàu. |
+| **Codes de cinéma :** affiche de film, bande-annonce, sous-titres, clap, générique. | **Quy ước điện ảnh:** poster phim, trailer, phụ đề, bảng clapper, phần credit. |
+| **Typographies :** Instrument Serif (titres façon affiche de film), Anton (messages DOOH lisibles), Space Mono (infos en temps réel). | **Font chữ:** Instrument Serif (tiêu đề kiểu poster phim), Anton (thông điệp DOOH dễ đọc), Space Mono (thông tin thời gian thực). |
+| **Palette :** le jaune néon signale la perturbation, le vert Citymapper montre la solution. | **Bảng màu:** vàng neon báo sự cố, xanh Citymapper chỉ ra giải pháp. |
+| **Textures :** carrelage du métro, vitres mouillées, grain pellicule. | **Chất liệu:** gạch men metro, kính ướt, hạt film. |
 
-- **Hình ảnh:** Paris về đêm và dưới mưa thu, sân ga và hành lang metro, đám đông chuyển động, cửa ga bị đóng; ảnh phơi sáng lâu (nhòe tốc độ) đối lập với màn hình sắc nét (lộ trình trên điện thoại).
-- **Ánh sáng:** đèn neon, phản chiếu trên mặt đất ướt, ánh đèn nhân tạo của sân ga.
-- **Chất liệu:** bê tông, gạch men trắng của metro, kim loại, kính mờ hơi nước, hạt ảnh.
-- **Kiểu chữ:** một font không chân, đậm và hẹp cho tiêu đề (vd: Anton hoặc Archivo Black), một font không chân đơn giản cho nội dung (vd: Inter). Tất cả đều miễn phí trên Google Fonts.
-- **Bảng màu:** nền tối mùa thu và hai màu có ý nghĩa: **vàng neon báo hiệu sự cố, xanh Citymapper chỉ ra giải pháp.**
-
-| Màu | Mã | Vai trò |
-|-----|----|---------|
-| Đen nhựa đường | #111111 | Nền |
-| Xám than | #2E2E2E | Nền phụ |
-| Nâu mùa thu | #5A3A22 | Điểm nhấn không khí |
-| Vàng neon | #E4FF1A | Cảnh báo, sự cố |
-| Xanh Citymapper | #37AB2F | Giải pháp, phương án B |
-| Trắng | #FFFFFF | Chữ |
+| Màu (tên tiếng Pháp) | Nghĩa | Mã | Vai trò |
+|----------------------|-------|----|---------|
+| Nuit de quai | Đêm sân ga | #0E1512 | Nền |
+| Vert pellicule | Xanh film | #2F4A3A | Tông màu của ảnh |
+| Teal métro | Xanh teal metro | #5E9488 | Mảng màu, không khí |
+| Ambre d'automne | Hổ phách mùa thu | #E0AC3F | Ánh sáng, tiêu đề kiểu phim |
+| Jaune néon | Vàng neon | #E4FF1A | Cảnh báo, sự cố |
+| Vert Citymapper | Xanh Citymapper | #37AB2F | Giải pháp, phương án B |
 
 ### Kênh và định dạng
 
-| Kênh | Định dạng | Vai trò |
-|------|-----------|---------|
-| DOOH metro (màn hình ở sân ga và hành lang) | Dọc 9:16 (1080 × 1920 px), bản ngang 16:9 cho màn hình lớn ở sân ga; spot 10 giây, không âm thanh | Đưa ra phương án B đúng lúc có sự cố, với nội dung kết nối dữ liệu giao thông theo thời gian thực |
-| DOOH đường phố (nhà chờ xe buýt và màn hình đô thị gần các ga) | Dọc 9:16, spot 10 giây, không âm thanh | Tiếp cận những người vừa ra khỏi một ga bị đóng |
-| Mạng xã hội (Instagram Reels, TikTok) | Video dọc 9:16 dài 15–30 giây, phụ đề tiếng Pháp và tiếng Anh, câu mở đầu thu hút trong 2 giây đầu | Kể insight và khiến người xem muốn chia sẻ phương án B của mình |
-| Thêm cho đủ 360°: thông báo trong ứng dụng | Tin nhắn ngắn, hôm trước và trong ngày có sự cố | Biến chiến dịch thành thói quen sử dụng |
+| Support (tiếng Pháp) | Kênh | Định dạng | Vai trò |
+|----------------------|------|-----------|---------|
+| DOOH métro, couloirs | Màn hình ở hành lang metro | Dọc 9:16 (1080 × 1920 px), spot 10 giây, không âm thanh | Poster phim giả: kể insight một cách hài hước |
+| DOOH métro, quais | Màn hình ở sân ga | Dọc 9:16, bản ngang 16:9 cho màn hình lớn; 10 giây, không âm thanh | « Tình tiết bất ngờ / Kết có hậu »: phương án B theo thời gian thực, nối với dữ liệu giao thông |
+| DOOH rue | Nhà chờ xe buýt, màn hình đường phố gần ga | Dọc 9:16, 10 giây, không âm thanh | « Cảnh quay lần 2: phương án B » cho người vừa ra khỏi ga bị đóng |
+| Réseaux sociaux | Instagram Reels, TikTok | Video dọc 9:16, 15–30 giây, kiểu trailer, phụ đề Pháp + Anh | Kể câu chuyện, khiến người xem muốn chia sẻ phương án B |
+| Bonus 360° : notification | Thông báo trong ứng dụng | Tin ngắn, hôm trước và trong ngày có sự cố | Biến chiến dịch thành thói quen sử dụng |
 
 ### Ràng buộc thương hiệu
 
-- **Logo Citymapper** xuất hiện trên mọi kênh (cuối spot, góc hình). Màu xanh thương hiệu ≈ #37AB2F (lấy từ trang bên thứ ba, cần kiểm tra lại trong bộ tài liệu báo chí chính thức).
-- **Không bắt chước biển báo chính thức** của RATP / Île-de-France Mobilités (font Parisine, biểu tượng, bảng chỉ dẫn): quảng cáo không được để người xem nhầm với thông tin hành khách chính thức.
-- **Độ tin cậy:** chỉ hiển thị thông tin giao thông đã được xác minh và cập nhật; chuẩn bị một hình dự phòng khi thiếu dữ liệu.
-- **Trung lập:** không bao giờ bình luận về đình công hay biểu tình, không đứng về phía nào.
-- **Dễ đọc:** tương phản mạnh, chữ to, hiểu được thông điệp trong 3 giây; mọi video đều có phụ đề.
-- **Ngôn ngữ:** tiếng Pháp, kèm phụ đề tiếng Anh trên mạng xã hội (một phần đối tượng đến từ nước ngoài).
+| Tiếng Pháp (chép vào bài) | Tiếng Việt |
+|---------------------------|------------|
+| **Logo Citymapper** visible sur chaque support. Vert de marque ≈ #37AB2F (à vérifier dans le kit presse officiel). | **Logo Citymapper** có trên mọi kênh. Màu xanh thương hiệu ≈ #37AB2F (cần kiểm tra lại trong bộ tài liệu báo chí chính thức). |
+| **Le côté cinéma ne doit jamais ralentir la lecture :** en DOOH, l'info utile (ligne, minutes) reste l'élément le plus visible. | **Chất điện ảnh không được làm chậm việc đọc:** trên DOOH, thông tin hữu ích (tuyến, số phút) luôn là phần nổi bật nhất. |
+| **Ne pas imiter la signalétique officielle** RATP / Île-de-France Mobilités (police Parisine, pictogrammes, panneaux). | **Không bắt chước biển báo chính thức** của RATP / Île-de-France Mobilités (font Parisine, biểu tượng, bảng chỉ dẫn). |
+| **Fiabilité :** n'afficher que des infos de trafic vérifiées ; prévoir un visuel de secours si les données manquent. | **Độ tin cậy:** chỉ hiển thị thông tin giao thông đã xác minh; chuẩn bị hình dự phòng khi thiếu dữ liệu. |
+| **Neutralité :** ne jamais commenter les grèves ou les manifestations, ni prendre parti. | **Trung lập:** không bình luận về đình công hay biểu tình, không đứng về phía nào. |
+| **Lisibilité :** fort contraste, gros texte, message compris en 3 secondes ; sous-titres sur toutes les vidéos. | **Dễ đọc:** tương phản mạnh, chữ to, hiểu trong 3 giây; mọi video đều có phụ đề. |
+| **Langues :** français, avec sous-titres anglais sur les réseaux sociaux. | **Ngôn ngữ:** tiếng Pháp, kèm phụ đề tiếng Anh trên mạng xã hội. |
 
 ### Lịch (12/10 → 29/11/2026)
 
-| Giai đoạn | Thời gian | Hoạt động |
-|-----------|-----------|-----------|
-| 1. Ra mắt | Tuần từ 12/10 | Video trên mạng xã hội + DOOH thương hiệu trong metro |
-| 2. Cao điểm | Mỗi ngày có sự cố (vd: các thứ Bảy 17, 24 và 31/10) | DOOH « phương án B » theo thời gian thực gần các ga bị đóng + bài đăng trực tiếp + thông báo hôm trước |
-| 3. Củng cố | Tháng 11 | Video « mẹo cho người mới đến Paris » + phương án B do người dùng chia sẻ |
-| Tổng kết | Cuối tháng 11 | Đo các chỉ số đặt ra ở mục 2 |
+| Giai đoạn (tiếng Pháp) | Nghĩa | Thời gian | Hoạt động |
+|------------------------|-------|-----------|-----------|
+| 1. La bande-annonce | Trailer | Tuần từ 12/10 | Trailer trên mạng xã hội + poster phim giả ở hành lang metro |
+| 2. Les séances en direct | Các suất chiếu trực tiếp | Mỗi ngày có sự cố (vd: thứ Bảy 17, 24, 31/10) | DOOH « Tình tiết bất ngờ / Kết có hậu » theo thời gian thực + bài đăng trực tiếp + thông báo hôm trước |
+| 3. La suite | Phần tiếp theo | Tháng 11 | Các tập ngắn « mẹo cho người mới đến Paris » + phương án B do người dùng chia sẻ |
+| Le générique | Phần credit cuối phim | Cuối tháng 11 | Tổng kết các chỉ số ở mục 2 |
 
 ### Sản phẩm đội sáng tạo cần giao
 
-- 1 bảng moodboard
-- 3 hình DOOH, trong đó có 1 bản động « phương án B trực tiếp »
-- 3 kịch bản hoặc storyboard video ngắn
-- 1 loạt thông báo trong ứng dụng
+| Tiếng Pháp | Tiếng Việt |
+|------------|------------|
+| 1 planche moodboard | 1 bảng moodboard |
+| 3 visuels DOOH : 1 fausse affiche de film, 1 version dynamique « Rebondissement / Fin heureuse », 1 visuel abribus « Prise 2 » | 3 hình DOOH: 1 poster phim giả, 1 bản động « Tình tiết bất ngờ / Kết có hậu », 1 hình nhà chờ xe buýt « Cảnh quay lần 2 » |
+| 3 scripts ou storyboards de vidéos courtes, dont 1 bande-annonce | 3 kịch bản hoặc storyboard video ngắn, trong đó có 1 trailer |
+| 1 série de notifications dans l'appli | 1 loạt thông báo trong ứng dụng |
 
 ---
 
 ## D. Đề xuất cho hệ thống 360° (nhóm cần duyệt)
 
-### Ý tưởng: « Toujours un plan B » (Luôn có phương án B)
-Người Paris lúc nào cũng có sẵn phương án B; người mới đến chỉ có phương án A. Citymapper trở thành phương án B của họ: mỗi khi có sự cố, chiến dịch xuất hiện đúng chỗ, đúng lúc, kèm giải pháp. Câu ký tên: « Paris ne s'arrête jamais. Nous non plus. »
+### Ý tưởng: « Toujours un plan B » — Paris, le film (Luôn có phương án B — Paris, bộ phim)
+Người Paris lúc nào cũng có phương án B; người mới đến chỉ có phương án A. Mỗi sự cố trở thành một cảnh phim, và Citymapper viết nên cái kết có hậu. Câu ký tên: « Paris ne s'arrête jamais. Nous non plus. »
 
-### 3 hình DOOH
-1. **« Plan B en direct »** (phương án B trực tiếp; sân ga, nội dung động): chữ vàng « Ligne 7 interrompue. » (Tuyến 7 bị gián đoạn.); rồi chữ xanh « Ton plan B : la 6, à 5 min à pied. » (Phương án B của bạn: tuyến 6, đi bộ 5 phút.); rồi logo + câu ký tên. Nội dung thay đổi theo ga và dữ liệu giao thông.
-2. **« Maintenant, toi aussi »** (Giờ thì bạn cũng có; hành lang, thông điệp thương hiệu): đám đông nhòe, điện thoại sắc nét hiện lộ trình. « Les Parisiens ont toujours un plan B. Maintenant, toi aussi. »
-3. **« Station fermée »** (Ga đóng cửa; nhà chờ xe buýt gần ga bị đóng): cửa ga đóng và mũi tên xanh. « Station fermée. Toi, tu continues. »
-
-### 3 video ngắn
-1. **« Moi, je n'ai que le plan A »** (Mình chỉ có phương án A; 20 giây): sân ga chật kín, loa thông báo rè rè. Xung quanh Léa, người Paris quay đi ngay không chút do dự; cô đứng sững. Chữ trên màn hình: « Eux ont un plan B. Moi, je n'ai que le plan A. » (Họ có phương án B. Mình chỉ có phương án A.) Cô mở Citymapper, lộ trình màu xanh hiện ra, cô đi tiếp. Kết: « Maintenant, toi aussi. » + câu ký tên.
-2. **« Plan A, plan B, plan C »** (15 giây, kiểu trend): « POV : ton premier samedi de perturbations à Paris. » (POV: thứ Bảy đầu tiên có sự cố giao thông ở Paris.) Phương án A: tuyến bị đóng ❌. Phương án B: xe buýt + đi bộ ✅. Phương án C: xe đạp ✅. Kết: « On a toujours un plan d'avance. » (Bọn mình luôn đi trước một bước.)
-3. **« L'annonce, traduite »** (Thông báo, đã dịch; 15 giây): một thông báo ở sân ga nghe không hiểu gì, kèm phụ đề « Traduction Citymapper : prends la 6, sortie 2, tu es à l'heure. » (Bản dịch Citymapper: đi tuyến 6, cửa ra số 2, bạn vẫn kịp giờ.) Chọc cười tiếng loa rè, không bao giờ chọc nhân viên.
-
-### Thông báo trong ứng dụng
-« Demain, plus de 30 stations fermées. Ton plan B est déjà prêt. » (Ngày mai hơn 30 ga đóng cửa. Phương án B của bạn đã sẵn sàng.)
+| Sản phẩm | Tiếng Pháp (chữ trên quảng cáo) | Tiếng Việt |
+|----------|---------------------------------|------------|
+| DOOH 1: poster phim giả (hành lang) | Titre « PLAN A » · « Une histoire d'amour entre toi et la ligne 7. » · « UN FILM DE PARIS · AVEC TOI, LA LIGNE 7 ET 30 STATIONS FERMÉES » · sticker « Fin heureuse disponible sur Citymapper. » | Tựa phim « PHƯƠNG ÁN A » · « Chuyện tình giữa bạn và tuyến 7. » · « MỘT BỘ PHIM CỦA PARIS · CÓ SỰ THAM GIA CỦA BẠN, TUYẾN 7 VÀ 30 GA ĐÓNG CỬA » · nhãn dán « Kết có hậu có trên Citymapper. » |
+| DOOH 2: « Rebondissement » (sân ga, nội dung động) | Jaune : « Rebondissement : ligne 7 interrompue. » → vert : « Fin heureuse : la 6, à 5 min à pied. » → logo + signature | Vàng: « Tình tiết bất ngờ: tuyến 7 gián đoạn. » → xanh: « Kết có hậu: tuyến 6, đi bộ 5 phút. » → logo + câu ký tên |
+| DOOH 3: « Prise 2 » (nhà chờ xe buýt) | Clap « PLAN B · PRISE 2 » · « Station fermée. Prise 2 : plan B. » | Bảng clapper « PHƯƠNG ÁN B · CẢNH 2 » · « Ga đóng cửa. Cảnh quay lần 2: phương án B. » |
+| Video 1: « La bande-annonce » (30 giây) | « Paris. Samedi 24 octobre. » « Elle avait un plan. Un seul. » « 30 stations fermées. » (la musique s'arrête net, elle ouvre Citymapper) « Plan B. 12 minutes. » Fin : signature + « Aucune station n'a été blessée pendant le tournage. » | « Paris. Thứ Bảy 24 tháng 10. » « Cô ấy có một kế hoạch. Chỉ một. » « 30 ga đóng cửa. » (nhạc tắt phụt, cô mở Citymapper) « Phương án B. 12 phút. » Kết: câu ký tên + « Không có ga tàu nào bị thương trong quá trình quay phim. » |
+| Video 2: « Trois fins possibles » (15 giây) | « Fin n°1 : tu attends sur le quai. ❌ Fin n°2 : tu demandes ton chemin à quatre inconnus. ❌ Fin n°3 : tu ouvres Citymapper. ✅ » | « Kết 1: bạn đứng chờ trên sân ga. ❌ Kết 2: bạn hỏi đường bốn người lạ. ❌ Kết 3: bạn mở Citymapper. ✅ » |
+| Video 3: « L'annonce, en VOST » (15 giây) | « Traduction Citymapper : prends la 6, sortie 2, tu es à l'heure. » | « Bản dịch Citymapper: đi tuyến 6, cửa ra số 2, bạn vẫn kịp giờ. » (chọc cười tiếng loa rè, không chọc nhân viên) |
+| Thông báo trong ứng dụng | « Demain, 30 stations fermées. Ton plan B est déjà à l'affiche. » | « Ngày mai 30 ga đóng cửa. Phương án B của bạn đã lên lịch chiếu. » |
 
 ---
 
-## E. Làm bảng moodboard trong tối nay
+## E. Bảng moodboard
 
-1. **Công cụ:** Canva hoặc Figma (miễn phí), khổ A3 nằm ngang.
-2. **10–15 ảnh** miễn phí bản quyền (Unsplash, Pexels), tìm bằng các từ khóa như *paris metro night*, *neon rain*, *long exposure crowd*, *phone map night*, hoặc ảnh metro do chính nhóm chụp.
-3. **Một dải màu** với 6 mã màu ở trên.
-4. **2 kiểu chữ**, kèm một tiêu đề mẫu: « Station fermée. Toi, tu continues. »
-5. **4–5 từ khóa:** Chaos · Clarté · Mouvement · Nuit · Plan B (Hỗn loạn · Rõ ràng · Chuyển động · Đêm · Phương án B).
-6. **2–3 câu giải thích ý đồ** dưới bảng, nói rõ liên hệ với insight.
+Mockup và cách làm lại trên Canva nằm trong thư mục `moodboard/` (`moodboard-mockup.png`, `style-moodboard-vi.md`).
 
 ---
 

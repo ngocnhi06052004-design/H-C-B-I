@@ -38,6 +38,8 @@ Bố cục này đáp ứng đúng yêu cầu « bảng định hướng sáng t
 - Hạt film và chữ nhỏ sẽ khó đọc trên DOOH, nơi thông điệp phải hiểu được trong 3 giây.
 - Màu đỏ của « Towards the limitless » không có trong bảng màu của đề (vàng và xanh) và gợi cảm giác nguy hiểm.
 
+**Cập nhật:** nhóm giữ giọng hài hước, thêm chút chất điện ảnh. Cái hài đến từ sự lệch pha giữa cách dàn dựng như phim và một rắc rối rất đời thường, nên giải quyết được rủi ro « quá u buồn ».
+
 **Đề xuất: một hệ thống hai nửa.**
 - **Phương án A, vấn đề:** style điện ảnh (hạt film, đêm, mưa, nhòe, ám xanh).
 - **Phương án B, giải pháp:** các yếu tố sắc nét, sáng (màn hình ứng dụng, xanh Citymapper, chữ dễ đọc).
@@ -69,7 +71,7 @@ Bố cục này đáp ứng đúng yêu cầu « bảng định hướng sáng t
 | Néons : jaune = alerte, vert = solution | Đèn neon: vàng = cảnh báo, xanh = giải pháp |
 | Lumière ambre d'automne, soleil bas dans la rame | Ánh sáng hổ phách mùa thu, nắng xiên trong toa tàu |
 | Palette · Fond sombre teinté pellicule. Le jaune alerte, le vert rassure. | Bảng màu · Nền tối ám màu film. Vàng cảnh báo, xanh trấn an. |
-| Intention : le flou, le grain et la nuit racontent le chaos (plan A). Le net, le vert et la lumière racontent la solution (plan B). | Ý đồ: độ nhòe, hạt film và bóng đêm kể về sự hỗn loạn (phương án A). Sự sắc nét, màu xanh và ánh sáng kể về giải pháp (phương án B). |
+| Intention : le plan A est filmé comme un drame de cinéma (flou, grain, nuit). Le plan B en est la fin heureuse : net, vert, lumineux. | Ý đồ: phương án A được quay như một bộ phim bi kịch (nhòe, hạt film, đêm). Phương án B là cái kết có hậu: sắc nét, xanh, sáng sủa. |
 | MOI, JE N'AI QUE le plan A. | Mình chỉ có phương án A. |
 | Ils ont appris leur trajet par cœur en trois semaines… | Họ thuộc lòng lộ trình của mình trong ba tuần… |
 | Piste typo : grotesk + serif italique | Hướng chữ: font không chân + serif nghiêng |
@@ -79,7 +81,7 @@ Bố cục này đáp ứng đúng yêu cầu « bảng định hướng sáng t
 | Ligne 6 + 5 min à pied · Départ dans 2 min | Tuyến 6 + đi bộ 5 phút · Khởi hành sau 2 phút |
 | Plan B : la clarté | Phương án B: sự rõ ràng |
 | Textures : carrelage du métro, vitres mouillées | Chất liệu: gạch men metro, kính ướt |
-| TICKET · PLAN B · Valable même quand tout est fermé. | Vé · Phương án B · Có hiệu lực ngay cả khi mọi thứ đóng cửa. |
+| TICKET · SÉANCE PLAN B · Fin heureuse garantie. | Vé · Suất chiếu phương án B · Đảm bảo kết có hậu. |
 | Mots-clés : Chaos · Mouvement · Nuit · Clarté · Plan B | Từ khóa: Hỗn loạn · Chuyển động · Đêm · Rõ ràng · Phương án B |
 
 **Lưu ý:** ảnh trong mockup là hình minh họa giữ chỗ. Trong moodboard thật phải thay bằng ảnh thật.

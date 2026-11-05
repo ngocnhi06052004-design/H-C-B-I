@@ -288,8 +288,8 @@ const compass = `<svg class="cutout" style="left:1086px;top:262px;transform:rota
 const ticket = `<svg class="cutout" style="left:1452px;top:842px;transform:rotate(-6deg)" width="204" height="76" viewBox="0 0 204 76">
   <rect x="2" y="2" width="200" height="72" rx="5" fill="#f1e9d2"/>
   <rect x="2" y="50" width="200" height="11" fill="#7a5a34"/>
-  <text x="14" y="24" font-family="Space Mono" font-weight="700" font-size="13" fill="#1d1d1b" letter-spacing="1">TICKET · PLAN B</text>
-  <text x="14" y="41" font-family="Inter" font-size="8.6" fill="#3a3a33">Valable même quand tout est fermé.</text>
+  <text x="14" y="24" font-family="Space Mono" font-weight="700" font-size="11.5" fill="#1d1d1b" letter-spacing="1">TICKET · SÉANCE PLAN B</text>
+  <text x="14" y="41" font-family="Inter" font-size="8.6" fill="#3a3a33">Fin heureuse garantie.</text>
   <text x="190" y="72" text-anchor="end" font-family="Space Mono" font-size="6.5" fill="#5a5a50">N° 0B-2026</text></svg>`;
 
 // ---------- Hand-drawn helpers ----------
@@ -371,7 +371,7 @@ ${note(1168, 534, 290, 'Néons : jaune = alerte,<br>vert = solution', 22, 1)}
 ${note(52, 606, 140, 'Palette', 40, -2)}
 ${note(190, 612, 300, 'Fond sombre teinté pellicule.<br>Le jaune alerte, le vert rassure.', 20, -1)}
 ${paletteHtml}
-<div class="sticky" style="left:50px;top:966px;width:430px;transform:rotate(-1deg)">Intention : le flou, le grain et la nuit racontent le chaos (plan A). Le net, le vert et la lumière racontent la solution (plan B).</div>
+<div class="sticky" style="left:50px;top:966px;width:430px;transform:rotate(-1deg)">Intention : le plan A est filmé comme un drame de cinéma (flou, grain, nuit). Le plan B en est la fin heureuse : net, vert, lumineux.</div>
 
 ${tile(512, 630, 280, 390, -1.5, tileF())}
 <div class="tape" style="left:610px;top:618px;transform:rotate(-4deg)"></div>
